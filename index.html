@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DoggieStore - Todo para la felicidad de tu mejor amigo.">
+    <link rel="icon" href="img/Versión logo3.png" type="image/png">
+    <title>Dpelosd | Todo para tu felicidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header" id="inicio">
+        <div class="container nav-container">
+            <img src="img/Versión6.png" style="width: 80px;"> </img>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="mainNav">
+                <a class="active" href="#inicio">Inicio</a>
+                <a href="#tienda">Tienda</a>
+                <a href="#categorias">Categorías</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>
+                <button class="icon-btn" aria-label="Mi cuenta">♙</button>
+                <button class="cart-btn" id="cartBtn" aria-label="Carrito">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content" style="margin-top: -8em;">
+                <div class="hero-copy">
+                    <img src="img/patas de perro.png" style="width: 40px;">
+                    <p class="eyebrow"> Bienvenido a Dpelosd</p>
+
+                    <h1>
+                        La tienda ideal<br>para tu mejor<br> <span>amigo</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Encuentra alimentos, accesorios, juguetes y mucho más para que tu perro viva sano, feliz y
+                        siempre a tu lado.
+                    </p>
+
+                    <a href="#tienda" class="btn btn-primary">
+                        <img src="img/patas de perro.png" style="width: 40px;"> <span>Comprar ahora</span> <b>→</b>
+                    </a>
+                </div>
+
+                <div class="hero-message">
+                    <span>Perros felices,<br>vidas mejores</span>
+                    <b>♥</b>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFICIOS -->
+        <section class="benefits" id="nosotros">
+            <div class="container benefits-grid">
+
+                <div class="benefit">
+                    <img src="img/pataIzquierda.png" style="width: 60px; margin-left: -90px; margin-right: 10px;">
+                    <div class="benefit-icon"><img src="img/carro.png" style="width:40px" ;></div>
+                    <div>
+                        <h3>Envíos a todo el país</h3>
+                        <p>Rápidos y seguros</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon"><img src="img/calidad.png" style="width:30px" ;></div>
+                    <div>
+                        <h3>Productos de calidad</h3>
+                        <p>Para su bienestar</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon"><img src="img/variedadMarca.png" style="width:30px" ;></div>
+                    <div>
+                        <h3>Variedad de marcas</h3>
+                        <p>Las mejores opciones</p>
+                    </div>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon"><img src="img/atencionpersonalizada.png" style="width:27px" ;>
+                    </div>
+                    <div>
+                        <h3>Atención personalizada</h3>
+                        <p>Siempre para ti y tu mascota</p>
+                    </div>
+                    <img src="img/pataDerecha.png" style="width: 30px; margin-right: -7em;">
+                </div>
+            </div>
+        </section>
+
+        <!-- TIENDA -->
+        <section class="shop-section" id="tienda">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">Nuestros favoritos</span>
+                        <h2>Todo lo que necesita tu mejor amigo</h2>
+                    </div>
+                    <button class="btn btn-outline" id="viewProductsBtn">Ver productos</button>
+                </div>
+
+                <div class="products" id="products">
+                    <article class="product-card">
+                        <div class="product-emoji"> <img src="img/peluche.png" style="width: 2em;"></div>
+                        <h3>Juguetes </h3>
+                        <p> Un juguete es una oportunidad para hacerlo feliz: descubre nuestra colección.</p>
+                        <button class="add-btn" data-product="Juguete para perro">Añadir al carrito</button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-emoji"><img src="img/comidaperro.png" style="width: 2em;"></div>
+                        <h3>Alimentación</h3>
+                        <p>Opciones para cuidar su alimentación diaria.</p>
+                        <button class="add-btn" data-product="Alimento premium">Añadir al carrito</button>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-emoji"><img src="img/collar.png" style="width: 2em;"></div>
+                        <h3>Paseo y accesorios</h3>
+                        <p>Collares, correas y accesorios para salir juntos.</p>
+                        <button class="add-btn" data-product="Correa premium">Añadir al carrito</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+
+        <!-- ================================
+     SECCIÓN PELUQUERÍA CANINA
+================================= -->
+
+<section class="grooming-section" id="peluqueria">
+
+    <div class="grooming-header">
+        <span class="grooming-kicker">🐾 Peluquería canina</span>
+
+        <h2>
+            Cuidamos su imagen,<br>
+            <span>cuidamos su bienestar</span>
+        </h2>
+
+        <p>
+            Servicios profesionales para que tu mejor amigo
+            se vea y se sienta increíble.
+        </p>
+    </div>
+
+
+    <!-- SLIDER -->
+    <div class="grooming-slider-wrapper">
+
+        <button class="slider-btn slider-prev" id="prevBtn">
+            &#10094;
+        </button>
+
+
+        <div class="grooming-slider" id="groomingSlider">
+
+            <!-- SERVICIO 1 -->
+            <article class="grooming-card">
+                <img
+                    src="img/servicios/banio.jpg"
+                    alt="Baño para perros"
+                >
+
+                <div class="grooming-overlay">
+                    <div class="service-content">
+                        <span class="service-number">01</span>
+
+                        <h3>Baño y aseo</h3>
+
+                        <p>
+                            Limpieza profunda y productos
+                            adaptados a cada tipo de pelo.
+                        </p>
+
+                        <a href="#contacto" class="service-link">
+                            Ver servicio →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SERVICIO 2 -->
+            <article class="grooming-card">
+                <img
+                    src="img/servicios/corte.jpg"
+                    alt="Corte de pelo para perros"
+                >
+
+                <div class="grooming-overlay">
+                    <div class="service-content">
+                        <span class="service-number">02</span>
+
+                        <h3>Corte de pelo</h3>
+
+                        <p>
+                            Cortes adaptados a la raza,
+                            estilo y necesidades de tu mascota.
+                        </p>
+
+                        <a href="#contacto" class="service-link">
+                            Ver servicio →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SERVICIO 3 -->
+            <article class="grooming-card">
+                <img
+                    src="img/servicios/deslanado.jpg"
+                    alt="Deslanado para perros"
+                >
+
+                <div class="grooming-overlay">
+                    <div class="service-content">
+                        <span class="service-number">03</span>
+
+                        <h3>Deslanado</h3>
+
+                        <p>
+                            Eliminamos el pelo muerto para
+                            mantener su pelaje sano y brillante.
+                        </p>
+
+                        <a href="#contacto" class="service-link">
+                            Ver servicio →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SERVICIO 4 -->
+            <article class="grooming-card">
+                <img
+                    src="img/servicios/unas.jpg"
+                    alt="Corte de uñas para perros"
+                >
+
+                <div class="grooming-overlay">
+                    <div class="service-content">
+                        <span class="service-number">04</span>
+
+                        <h3>Corte de uñas</h3>
+
+                        <p>
+                            Cuidado delicado para mantener
+                            sus patas sanas y cómodas.
+                        </p>
+
+                        <a href="#contacto" class="service-link">
+                            Ver servicio →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SERVICIO 5 -->
+            <article class="grooming-card">
+                <img
+                    src="img/servicios/higiene.jpg"
+                    alt="Higiene canina"
+                >
+
+                <div class="grooming-overlay">
+                    <div class="service-content">
+                        <span class="service-number">05</span>
+
+                        <h3>Higiene completa</h3>
+
+                        <p>
+                            Limpieza de oídos, ojos, patas
+                            y cuidados básicos.
+                        </p>
+
+                        <a href="#contacto" class="service-link">
+                            Ver servicio →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SERVICIO 6 -->
+            <article class="grooming-card">
+                <img
+                    src="img/servicios/spa.jpg"
+                    alt="Spa para perros"
+                >
+
+                <div class="grooming-overlay">
+                    <div class="service-content">
+                        <span class="service-number">06</span>
+
+                        <h3>Spa canino</h3>
+
+                        <p>
+                            Una experiencia relajante pensada
+                            para mimar a tu mejor amigo.
+                        </p>
+
+                        <a href="#contacto" class="service-link">
+                            Ver servicio →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+
+        <button class="slider-btn slider-next" id="nextBtn">
+            &#10095;
+        </button>
+
+    </div>
+
+
+    <!-- INDICADORES -->
+    <div class="slider-dots" id="sliderDots"></div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="categories" id="categorias">
+            <div class="container">
+                <div class="section-heading centered">
+                    <span class="section-kicker">Explora nuestros servicios</span>
+                    <h2>Reserva por categoría</h2>
+                </div>
+
+                <div class="category-grid">
+                    <a href="#tienda" class="category-card">
+                        <span>🥩</span>
+                        <strong>Alimentación</strong>
+                    </a>
+                    <a href="#tienda" class="category-card">
+                        <span>🎾</span>
+                        <strong>Juguetes</strong>
+                    </a>
+                    <a href="#tienda" class="category-card">
+                        <span>🦮</span>
+                        <strong>Paseo</strong>
+                    </a>
+                    <a href="#tienda" class="category-card">
+                        <span>🛏️</span>
+                        <strong>Camas</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-logo">🐾 Doggie<span>Store</span></div>
+                <p>Todo para que tu mejor amigo viva feliz.</p>
+            </div>
+
+            <div>
+                <h3>Contacto</h3>
+                <p>info@doggiestore.com</p>
+                <p>+34 600 000 000</p>
+            </div>
+
+            <div>
+                <h3>Horario</h3>
+                <p>Lunes - Viernes</p>
+                <p>09:00 - 20:00</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> DoggieStore. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- MODAL DE BÚSQUEDA -->
+    <div class="modal" id="searchModal" aria-hidden="true">
+        <div class="modal-box">
+            <button class="modal-close" id="closeSearch">×</button>
+            <h2>¿Qué estás buscando?</h2>
+            <input type="search" id="searchInput" placeholder="Ej. juguetes, comida, correas...">
+            <button class="btn btn-primary search-submit" id="searchSubmit">Buscar</button>
+            <p id="searchResult"></p>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
