@@ -391,3 +391,114 @@ groomingSlider.addEventListener(
 
     }
 );
+
+/* ==========================================
+   CONSEJOS Y NOTICIAS
+========================================== */
+
+const newsFilters =
+    document.querySelectorAll(".news-filter");
+
+const newsCards =
+    document.querySelectorAll(".news-card");
+
+const newsMore =
+    document.getElementById("newsMore");
+
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+newsFilters.forEach(filter => {
+
+    filter.addEventListener("click", () => {
+
+        /* Cambiar botón activo */
+
+        newsFilters.forEach(button => {
+            button.classList.remove("active");
+        });
+
+        filter.classList.add("active");
+
+
+        /* Categoría seleccionada */
+
+        const selectedCategory =
+            filter.dataset.filter;
+
+
+        /* Mostrar / ocultar artículos */
+
+        newsCards.forEach((card, index) => {
+
+            const cardCategory =
+                card.dataset.category;
+
+
+            if (
+                selectedCategory === "todos" ||
+                cardCategory === selectedCategory
+            ) {
+
+                card.style.display = "block";
+
+                /* Reiniciar animación */
+
+                card.style.animation = "none";
+
+                void card.offsetWidth;
+
+                card.style.animation =
+                    `newsAppear .45s ease ${index * .05}s both`;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ==========================================
+   BOTÓN VER TODOS
+========================================== */
+
+newsMore.addEventListener("click", () => {
+
+    /* Activar "Todos" */
+
+    newsFilters.forEach(button => {
+        button.classList.remove("active");
+    });
+
+    const allButton =
+        document.querySelector(
+            '.news-filter[data-filter="todos"]'
+        );
+
+    allButton.classList.add("active");
+
+
+    /* Mostrar todas las noticias */
+
+    newsCards.forEach((card, index) => {
+
+        card.style.display = "block";
+
+        card.style.animation = "none";
+
+        void card.offsetWidth;
+
+        card.style.animation =
+            `newsAppear .45s ease ${index * .05}s both`;
+
+    });
+
+});

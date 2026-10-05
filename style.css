@@ -379,28 +379,21 @@ a {
 .grooming-kicker {
     display: inline-block;
     margin-bottom: 12px;
-
     color: #e5a52d;
-
     font-size: 14px;
     font-weight: 900;
-
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .grooming-header h2 {
     margin: 0;
-
     color: #173e35;
-
-    font-size: clamp(36px, 5vw, 58px);
+    font-size: clamp(30px, 5vw, 38px);
     line-height: 1;
     letter-spacing: -2px;
-
     font-weight: 900;
 }
-
 
 .grooming-header h2 span {
     color: #e6ad36;
@@ -724,9 +717,6 @@ a {
 }
 
 
-/* ==========================================
-   MÓVIL
-========================================== */
 
 @media (max-width: 600px) {
 
@@ -739,7 +729,7 @@ a {
     }
 
     .grooming-header h2 {
-        font-size: 38px;
+        font-size: 28px;
     }
 
     .grooming-header p {
@@ -769,7 +759,500 @@ a {
     }
 }
 
+/* ==========================================
+   CONSEJOS Y NOTICIAS
+========================================== */
 
+.news-section {
+    position: relative;
+
+    padding: 110px 0;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.news-container {
+    width: min(1180px, calc(100% - 48px));
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   CABECERA
+========================================== */
+
+.news-header {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 45px;
+}
+
+
+.news-title {
+    flex-shrink: 0;
+}
+
+
+.news-kicker {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #e5a52d;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.news-title h2 {
+    margin: 0;
+
+    color: #173e35;
+
+    font-size: clamp(36px, 4.5vw, 57px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    font-weight: 900;
+}
+
+
+.news-title h2 span {
+    color: #e6ad36;
+
+    font-style: italic;
+}
+
+
+.news-header > p {
+    max-width: 430px;
+
+    margin-bottom: 5px;
+
+    color: #697570;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+.news-filters {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+}
+
+
+.news-filter {
+    padding: 11px 20px;
+
+    border: 1px solid #e3e0d7;
+
+    border-radius: 50px;
+
+    background: #fbf8f0;
+
+    color: #52615c;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        color .25s ease,
+        background .25s ease,
+        border .25s ease,
+        transform .25s ease;
+}
+
+
+.news-filter:hover {
+    transform: translateY(-2px);
+
+    border-color: #f7bd45;
+}
+
+
+.news-filter.active {
+    background: #173e35;
+
+    border-color: #173e35;
+
+    color: white;
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ==========================================
+   TARJETA
+========================================== */
+
+.news-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #ebe7df;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(23, 62, 53, .06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    animation: newsAppear .45s ease both;
+}
+
+
+.news-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(23, 62, 53, .14);
+}
+
+
+/* ==========================================
+   IMAGEN
+========================================== */
+
+.news-image {
+    position: relative;
+
+    height: 245px;
+
+    overflow: hidden;
+}
+
+
+.news-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .65s ease;
+}
+
+
+.news-card:hover .news-image img {
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   CATEGORÍA
+========================================== */
+
+.news-category {
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: #f7bd45;
+
+    color: #173e35;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.12);
+}
+
+
+/* ==========================================
+   CONTENIDO
+========================================== */
+
+.news-content {
+    padding: 25px;
+}
+
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #9a9f9b; 
+    font-weight: 700;
+}
+
+
+.news-content h3 {
+    margin: 0 0 12px;
+
+    color: #173e35;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    transition: color .25s ease;
+}
+
+
+.news-card:hover .news-content h3 {
+    color: #d99b24;
+}
+
+
+.news-content p {
+    margin: 0 0 20px;
+
+    color: #6d7773;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   LINK
+========================================== */
+
+.news-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #173e35;
+
+    font-size: 14px;
+
+    font-weight: 900;
+}
+
+
+.news-link span {
+    font-size: 20px;
+
+    transition:
+        transform .25s ease;
+}
+
+
+.news-link:hover span {
+    transform: translateX(6px);
+
+    color: #e6ad36;
+}
+
+
+/* ==========================================
+   ANIMACIÓN
+========================================== */
+
+@keyframes newsAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   FOOTER DE LA SECCIÓN
+========================================== */
+
+.news-footer {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 45px;
+}
+
+
+.news-more {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 25px;
+
+    border: 2px solid #173e35;
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #173e35;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+
+.news-more span {
+    font-size: 20px;
+}
+
+
+.news-more:hover {
+    background: #173e35;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 950px) {
+
+    .news-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==========================================
+   MÓVIL
+========================================== */
+
+@media (max-width: 650px) {
+
+    .news-section {
+        padding: 75px 0;
+    }
+
+
+    .news-container {
+        width:
+            calc(100% - 30px);
+    }
+
+
+    .news-header {
+        display: block;
+    }
+
+
+    .news-header > p {
+        margin-top: 20px;
+    }
+
+
+    .news-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .news-image {
+        height: 230px;
+    }
+
+
+    .news-filters {
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+    }
+
+
+    .news-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .news-filter {
+        flex-shrink: 0;
+    }
+
+}
 
 
 
