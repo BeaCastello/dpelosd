@@ -366,6 +366,7 @@ a {
     position: relative;   
     background: #fbf8f0;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 /* CABECERA */
@@ -765,11 +766,8 @@ a {
 
 .news-section {
     position: relative;
-
-    padding: 110px 0;
-
+    padding: 90px 0;
     background: #ffffff;
-
     overflow: hidden;
 }
 
@@ -1120,8 +1118,265 @@ a {
         transform:
             translateY(0);
     }
-
 }
+
+
+/* ==========================================
+   CONTACTO DE LA SECCIÓN
+========================================== */
+
+/* Contacto */
+    .contact-section {
+      max-width: var(--container-width);
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 0;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      border-radius: 6px;
+
+    }
+
+    /* Lado izquierdo */
+    .contact-left {
+      background: var(--lavanda);
+      padding: 48px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-left h2 {
+      margin: 0 0 6px 0;
+      font-size: 36px;
+      color: #0b0b0b;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: #fff;
+      font-size: 18px;
+      color: #0b0b0b;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      opacity: 0.95;
+      color: #0b0b0b;
+    }
+
+    .contact-line a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .redes-sociales a {
+      color: #0b0b0b;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    .redes-sociales a:hover {
+      color: rgb(192, 57, 45);
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    /* Mapa */
+    .map-wrap {
+      margin-top: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 240px;
+      border: 0;
+    }
+
+    /* Lado derecho (formulario) */
+    .contact-right {
+      background: rgb(245, 203, 203);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .right-intro {
+      color: black;
+      font-size: 17px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      opacity: 0.95;
+      text-align: justify;
+    }
+
+    form.contact-form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .contact-form label {
+      font-size: 13px;
+      color: black;
+      margin-bottom: 6px;
+      display: block;
+      font-weight: bolder;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea,
+    .contact-form input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .privacy {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .privacy input {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Botón centrado */
+    .btn-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .submit {
+      background: var(--white);
+      color: var(--text-dark);
+      border: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .submit:active {
+      transform: translateY(0);
+    }
+
+    /* Pequeños ajustes visuales */
+    .contact-left small {
+      color: rgba(255, 255, 255, 0.95);
+      display: block;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    .privacy label {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* Responsivo */
+    @media (max-width: 980px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-right {
+        order: 2;
+        padding: 24px;
+      }
+
+      .contact-left {
+        order: 1;
+        padding: 28px;
+      }
+
+      .map-wrap iframe {
+        height: 200px;
+      }
+
+      .contact-right {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        width: 550px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-left h2 {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .contact-line {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px
+      }
+
+      .contact-right {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        width: 350px;
+        margin-left: 12px;
+      }
+
+      .contact-left {
+        order: 1;
+        padding: 18px;
+      }
+
+      .fa-solid,
+      .fas {
+        font-size: 20px;
+      }
+
+      .contact-form label {
+        font-size: 15px;
+      }
+    }
+
+
 
 
 /* ==========================================
