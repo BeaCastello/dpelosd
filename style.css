@@ -823,8 +823,7 @@ a {
 
     color: #173e35;
 
-    font-size: clamp(36px, 4.5vw, 57px);
-
+    font-size: clamp(30px, 5vw, 38px);
     line-height: 1;
 
     letter-spacing: -2px;
@@ -1507,84 +1506,6 @@ a {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .shop-section,
 .categories {
     padding: 65px 0;
@@ -1611,12 +1532,14 @@ a {
     letter-spacing: 2px;
     font-weight: 900;
     margin-bottom: 8px;
+    
 }
 
 .section-heading h2 {
     font-size: clamp(30px, 4vw, 45px);
     line-height: 1.05;
     letter-spacing: -1.5px;
+    font-weight: 900;
 }
 
 .btn-outline {
