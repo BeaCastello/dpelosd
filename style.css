@@ -1653,26 +1653,20 @@ a {
 
 .footer {
     background: var(--green);
-    color: white;
-    padding: 65px 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 50px;
+    color: white;    
+    display: flex;
+    margin-top: 20px;      
 }
 
 .footer-logo {
     font-size: 28px;
-    font-weight: 900;
-    margin-bottom: 12px;
+    font-weight: 900;   
 }
 
 .footer p {
     color: rgba(255,255,255,.72);
-    line-height: 1.8;
+    line-height: 2;
+    width: 300px;
 }
 
 .footer h3 {
@@ -1680,11 +1674,13 @@ a {
 }
 
 .copyright {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid rgba(255,255,255,.12);
+    text-align: center;   
+    border-top: 2px solid rgba(255,255,255,.12);
     color: rgba(255,255,255,.55);
     font-size: 13px;
+    margin-top: 10px;
+    margin-left: -4px;
+    padding-top: 10px;
 }
 
 /* MODAL */
