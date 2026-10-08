@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.getElementById("cartBtn").addEventListener("click", () => {
+    document.getElementById("addCartBtn").addEventListener("click", () => {
         if (cart === 0) {
             alert("Tu carrito está vacío 🐾");
         } else {
@@ -135,370 +135,547 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/* ==========================================
-   SLIDER PELUQUERÍA CANINA
-========================================== */
+// =====================================
+// CATÁLOGO DE PRODUCTOS
+// =====================================
 
-const groomingSlider =
-    document.getElementById("groomingSlider");
+const products = [
+    {
+        id: 1,
+        name: "Pelota de goma natural",
+        image: "img/pelota.jpg",
+        type: "pelota",
+        price: 8.50,
+        rating: 5,
+        reviews: 24,
+        sales: 120,
+        relevant: 95,
+        stock: true,
+        badge: "Más vendido"
+    },
+    {
+        id: 2,
+        name: "Mordedor resistente para perros",
+        image: "img/mordedor.jpg",
+        type: "mordedor",
+        price: 12.90,
+        rating: 4,
+        reviews: 18,
+        sales: 95,
+        relevant: 90,
+        stock: true,
+        badge: ""
+    },
+    {
+        id: 3,
+        name: "Peluche de oso para perros",
+        image: "img/peluche.jpg",
+        type: "peluche",
+        price: 10.50,
+        rating: 5,
+        reviews: 32,
+        sales: 110,
+        relevant: 98,
+        stock: true,
+        badge: "Favorito"
+    },
+    {
+        id: 4,
+        name: "Juguete interactivo dispensador",
+        image: "img/interactivo.jpg",
+        type: "interactivo",
+        price: 18.90,
+        rating: 4,
+        reviews: 15,
+        sales: 65,
+        relevant: 88,
+        stock: true,
+        badge: ""
+    },
+    {
+        id: 5,
+        name: "Pelota con sonido",
+        image: "img/pelota-sonido.jpg",
+        type: "pelota",
+        price: 6.90,
+        rating: 4,
+        reviews: 12,
+        sales: 80,
+        relevant: 82,
+        stock: true,
+        badge: ""
+    },
+    {
+        id: 6,
+        name: "Mordedor de cuerda",
+        image: "img/cuerda.jpg",
+        type: "mordedor",
+        price: 7.50,
+        rating: 5,
+        reviews: 21,
+        sales: 100,
+        relevant: 93,
+        stock: false,
+        badge: ""
+    },
+    {
+        id: 7,
+        name: "Peluche de conejo",
+        image: "img/conejo.jpg",
+        type: "peluche",
+        price: 14.50,
+        rating: 4,
+        reviews: 9,
+        sales: 45,
+        relevant: 75,
+        stock: true,
+        badge: ""
+    },
+    {
+        id: 8,
+        name: "Juguete de inteligencia canina",
+        image: "img/inteligencia.jpg",
+        type: "interactivo",
+        price: 24.90,
+        rating: 5,
+        reviews: 28,
+        sales: 70,
+        relevant: 100,
+        stock: true,
+        badge: "Recomendado"
+    }
+];
 
-const prevBtn =
-    document.getElementById("prevBtn");
 
-const nextBtn =
-    document.getElementById("nextBtn");
+// =====================================
+// ELEMENTOS HTML
+// =====================================
 
-const sliderDots =
-    document.getElementById("sliderDots");
+const productGrid = document.getElementById("productGrid");
+const resultsCount = document.getElementById("resultsCount");
+const emptyProducts = document.getElementById("emptyProducts");
 
-const groomingCards =
-    document.querySelectorAll(".grooming-card");
+const openFiltersBtn = document.getElementById("openFilters");
+const closeFiltersBtn = document.getElementById("closeFilters");
+const filterPanel = document.getElementById("filterPanel");
+const filterOverlay = document.getElementById("filterOverlay");
 
+const applyFiltersBtn = document.getElementById("applyFilters");
+const resetFiltersBtn = document.getElementById("resetFilters");
+const resetEmptyBtn = document.getElementById("resetEmpty");
 
-/* ==========================================
-   CONFIGURACIÓN
-========================================== */
+const sortTrigger = document.getElementById("sortTrigger");
+const sortMenu = document.getElementById("sortMenu");
+const sortLabel = document.getElementById("sortLabel");
 
-let currentSlide = 0;
-
-const totalSlides = groomingCards.length;
-
-
-/* ==========================================
-   CREAR PUNTOS
-========================================== */
-
-groomingCards.forEach((card, index) => {
-
-    const dot = document.createElement("button");
-
-    dot.classList.add("slider-dot");
-
-    dot.setAttribute(
-        "aria-label",
-        `Ir al servicio ${index + 1}`
-    );
-
-    dot.addEventListener("click", () => {
-
-        currentSlide = index;
-
-        scrollToSlide(currentSlide);
-
-    });
-
-    sliderDots.appendChild(dot);
-});
+const maxPriceInput = document.getElementById("maxPrice");
+const maxPriceLabel = document.getElementById("maxPriceLabel");
+const inStockInput = document.getElementById("inStock");
 
 
-const dots =
-    document.querySelectorAll(".slider-dot");
+// =====================================
+// ESTADO DE LA TIENDA
+// =====================================
+
+let cart = 0;
+let currentSort = "bestsellers";
+
+// Filtros aplicados actualmente
+let activeFilters = {
+    types: [],
+    maxPrice: 50,
+    rating: 0,
+    inStock: false
+};
 
 
-/* ==========================================
-   ACTUALIZAR PUNTO ACTIVO
-========================================== */
+// =====================================
+// ABRIR Y CERRAR EL PANEL DE FILTROS
+// =====================================
 
-function updateDots() {
+function openFilters() {
+    filterPanel.classList.add("is-open");
+    filterOverlay.classList.add("is-visible");
 
-    dots.forEach((dot, index) => {
+    filterPanel.removeAttribute("inert");
+    filterPanel.setAttribute("aria-hidden", "false");
+    openFiltersBtn.setAttribute("aria-expanded", "true");
 
-        dot.classList.toggle(
-            "active",
-            index === currentSlide
-        );
+    document.body.style.overflow = "hidden";
 
-    });
+    closeFiltersBtn.focus();
 }
 
+function closeFilters() {
+    filterPanel.classList.remove("is-open");
+    filterOverlay.classList.remove("is-visible");
 
-/* ==========================================
-   MOVER SLIDER
-========================================== */
+    filterPanel.setAttribute("inert", "");
+    filterPanel.setAttribute("aria-hidden", "true");
+    openFiltersBtn.setAttribute("aria-expanded", "false");
 
-function scrollToSlide(index) {
+    document.body.style.overflow = "";
 
-    const card =
-        groomingCards[index];
-
-    if (!card) return;
-
-    groomingSlider.scrollTo({
-
-        left: card.offsetLeft - 10,
-
-        behavior: "smooth"
-
-    });
-
-    updateDots();
+    openFiltersBtn.focus();
 }
 
+openFiltersBtn.addEventListener("click", openFilters);
+closeFiltersBtn.addEventListener("click", closeFilters);
 
-/* ==========================================
-   BOTÓN ANTERIOR
-========================================== */
+// Cerrar al pulsar fuera del panel
+filterOverlay.addEventListener("click", closeFilters);
 
-prevBtn.addEventListener("click", () => {
-
-    currentSlide--;
-
-    if (currentSlide < 0) {
-
-        currentSlide =
-            totalSlides - 1;
-
-    }
-
-    scrollToSlide(currentSlide);
-
-});
-
-
-/* ==========================================
-   BOTÓN SIGUIENTE
-========================================== */
-
-nextBtn.addEventListener("click", () => {
-
-    currentSlide++;
-
-    if (currentSlide >= totalSlides) {
-
-        currentSlide = 0;
-
-    }
-
-    scrollToSlide(currentSlide);
-
-});
-
-
-/* ==========================================
-   DETECTAR SCROLL MANUAL
-========================================== */
-
-groomingSlider.addEventListener(
-    "scroll",
-    () => {
-
-        const sliderLeft =
-            groomingSlider.scrollLeft;
-
-        let closestIndex = 0;
-
-        let smallestDistance = Infinity;
-
-
-        groomingCards.forEach(
-            (card, index) => {
-
-                const distance =
-                    Math.abs(
-                        card.offsetLeft -
-                        sliderLeft -
-                        10
-                    );
-
-                if (
-                    distance <
-                    smallestDistance
-                ) {
-
-                    smallestDistance =
-                        distance;
-
-                    closestIndex =
-                        index;
-
-                }
-
-            }
-        );
-
-
-        currentSlide =
-            closestIndex;
-
-        updateDots();
-
-    }
-);
-
-
-/* ==========================================
-   INICIALIZAR
-========================================== */
-
-updateDots();
-
-
-/* ==========================================
-   AUTOPLAY
-========================================== */
-
-let autoplay =
-    setInterval(() => {
-
-        currentSlide++;
-
-        if (
-            currentSlide >= totalSlides
-        ) {
-
-            currentSlide = 0;
-
+// Cerrar con Escape
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        if (filterPanel.classList.contains("is-open")) {
+            closeFilters();
         }
 
-        scrollToSlide(currentSlide);
-
-    }, 5000);
-
-
-/*
-   Cuando el usuario interactúa,
-   pausamos temporalmente el autoplay.
-*/
-
-groomingSlider.addEventListener(
-    "mouseenter",
-    () => {
-        clearInterval(autoplay);
+        closeSortMenu();
     }
-);
-
-
-groomingSlider.addEventListener(
-    "mouseleave",
-    () => {
-
-        autoplay =
-            setInterval(() => {
-
-                currentSlide++;
-
-                if (
-                    currentSlide >= totalSlides
-                ) {
-
-                    currentSlide = 0;
-
-                }
-
-                scrollToSlide(currentSlide);
-
-            }, 5000);
-
-    }
-);
-
-/* ==========================================
-   CONSEJOS Y NOTICIAS
-========================================== */
-
-const newsFilters =
-    document.querySelectorAll(".news-filter");
-
-const newsCards =
-    document.querySelectorAll(".news-card");
-
-const newsMore =
-    document.getElementById("newsMore");
-
-
-/* ==========================================
-   FILTROS
-========================================== */
-
-newsFilters.forEach(filter => {
-
-    filter.addEventListener("click", () => {
-
-        /* Cambiar botón activo */
-
-        newsFilters.forEach(button => {
-            button.classList.remove("active");
-        });
-
-        filter.classList.add("active");
-
-
-        /* Categoría seleccionada */
-
-        const selectedCategory =
-            filter.dataset.filter;
-
-
-        /* Mostrar / ocultar artículos */
-
-        newsCards.forEach((card, index) => {
-
-            const cardCategory =
-                card.dataset.category;
-
-
-            if (
-                selectedCategory === "todos" ||
-                cardCategory === selectedCategory
-            ) {
-
-                card.style.display = "block";
-
-                /* Reiniciar animación */
-
-                card.style.animation = "none";
-
-                void card.offsetWidth;
-
-                card.style.animation =
-                    `newsAppear .45s ease ${index * .05}s both`;
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-    });
-
 });
 
 
-/* ==========================================
-   BOTÓN VER TODOS
-========================================== */
+// =====================================
+// MENÚ DESPLEGABLE DE ORDENACIÓN
+// =====================================
 
-newsMore.addEventListener("click", () => {
+function closeSortMenu() {
+    sortMenu.hidden = true;
+    sortTrigger.setAttribute("aria-expanded", "false");
+}
 
-    /* Activar "Todos" */
+sortTrigger.addEventListener("click", event => {
+    event.stopPropagation();
 
-    newsFilters.forEach(button => {
-        button.classList.remove("active");
+    const isOpening = sortMenu.hidden;
+
+    sortMenu.hidden = !isOpening;
+    sortTrigger.setAttribute(
+        "aria-expanded",
+        String(isOpening)
+    );
+});
+
+// Cerrar el desplegable al pulsar fuera
+document.addEventListener("click", event => {
+    if (
+        !sortMenu.hidden &&
+        !sortMenu.contains(event.target) &&
+        !sortTrigger.contains(event.target)
+    ) {
+        closeSortMenu();
+    }
+});
+
+sortMenu.querySelectorAll("[data-sort]").forEach(button => {
+    button.addEventListener("click", () => {
+        currentSort = button.dataset.sort;
+
+        sortLabel.textContent = button.textContent.trim();
+
+        sortMenu.querySelectorAll("button").forEach(item => {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        closeSortMenu();
+        renderProducts();
     });
+});
 
-    const allButton =
-        document.querySelector(
-            '.news-filter[data-filter="todos"]'
+
+// =====================================
+// ACTUALIZAR EL PRECIO MÁXIMO
+// =====================================
+
+maxPriceInput.addEventListener("input", () => {
+    maxPriceLabel.textContent =
+        `${maxPriceInput.value} €`;
+});
+
+
+// =====================================
+// LEER Y APLICAR LOS FILTROS
+// =====================================
+
+function readFilters() {
+    const selectedTypes = [
+        ...document.querySelectorAll(
+            'input[name="type"]:checked'
+        )
+    ].map(input => input.value);
+
+    const selectedRating = document.querySelector(
+        'input[name="rating"]:checked'
+    );
+
+    activeFilters = {
+        types: selectedTypes,
+        maxPrice: Number(maxPriceInput.value),
+        rating: selectedRating
+            ? Number(selectedRating.value)
+            : 0,
+        inStock: inStockInput.checked
+    };
+}
+
+applyFiltersBtn.addEventListener("click", () => {
+    readFilters();
+    renderProducts();
+    closeFilters();
+});
+
+
+// =====================================
+// LIMPIAR TODOS LOS FILTROS
+// =====================================
+
+function resetFilters() {
+    document.querySelectorAll('input[name="type"]')
+        .forEach(input => {
+            input.checked = false;
+        });
+
+    document.querySelector(
+        'input[name="rating"][value="0"]'
+    ).checked = true;
+
+    maxPriceInput.value = 50;
+    maxPriceLabel.textContent = "50 €";
+    inStockInput.checked = false;
+
+    readFilters();
+    renderProducts();
+}
+
+resetFiltersBtn.addEventListener("click", resetFilters);
+resetEmptyBtn.addEventListener("click", resetFilters);
+
+
+// =====================================
+// FILTRAR Y ORDENAR LOS PRODUCTOS
+// =====================================
+
+function getVisibleProducts() {
+    let visibleProducts = products.filter(product => {
+
+        // Filtrar por tipo
+        const matchesType =
+            activeFilters.types.length === 0 ||
+            activeFilters.types.includes(product.type);
+
+        // Filtrar por precio
+        const matchesPrice =
+            product.price <= activeFilters.maxPrice;
+
+        // Filtrar por valoración
+        const matchesRating =
+            product.rating >= activeFilters.rating;
+
+        // Filtrar por disponibilidad
+        const matchesStock =
+            !activeFilters.inStock || product.stock;
+
+        return (
+            matchesType &&
+            matchesPrice &&
+            matchesRating &&
+            matchesStock
         );
-
-    allButton.classList.add("active");
-
-
-    /* Mostrar todas las noticias */
-
-    newsCards.forEach((card, index) => {
-
-        card.style.display = "block";
-
-        card.style.animation = "none";
-
-        void card.offsetWidth;
-
-        card.style.animation =
-            `newsAppear .45s ease ${index * .05}s both`;
-
     });
 
+    // Ordenar según la opción seleccionada
+    switch (currentSort) {
+        case "bestsellers":
+            visibleProducts.sort(
+                (a, b) => b.sales - a.sales
+            );
+            break;
+
+        case "relevant":
+            visibleProducts.sort(
+                (a, b) => b.relevant - a.relevant
+            );
+            break;
+
+        case "alphabetical":
+            visibleProducts.sort(
+                (a, b) => a.name.localeCompare(
+                    b.name,
+                    "es"
+                )
+            );
+            break;
+
+        case "price-asc":
+            visibleProducts.sort(
+                (a, b) => a.price - b.price
+            );
+            break;
+
+        case "price-desc":
+            visibleProducts.sort(
+                (a, b) => b.price - a.price
+            );
+            break;
+    }
+
+    return visibleProducts;
+}
+
+
+// =====================================
+// DIBUJAR LAS TARJETAS DE PRODUCTOS
+// =====================================
+
+function renderProducts() {
+    const visibleProducts = getVisibleProducts();
+
+    productGrid.innerHTML = "";
+
+    resultsCount.textContent =
+        `${visibleProducts.length} productos`;
+
+    emptyProducts.hidden = visibleProducts.length > 0;
+    productGrid.hidden = visibleProducts.length === 0;
+
+    visibleProducts.forEach(product => {
+        const card = document.createElement("article");
+
+        card.className = "product-card";
+
+        const badgeHTML = product.badge
+            ? `<span class="product-badge">${product.badge}</span>`
+            : "";
+
+        const stars = "★".repeat(product.rating) +
+            "☆".repeat(5 - product.rating);
+
+        card.innerHTML = `
+            <div class="product-image-wrap">
+                ${badgeHTML}
+
+                <img
+                    class="product-image"
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                >
+            </div>
+
+            <h2 class="product-name">
+                ${product.name}
+            </h2>
+
+            <div class="product-rating"
+                 aria-label="Valoración: ${product.rating} de 5 estrellas">
+                <span aria-hidden="true">${stars}</span>
+                <span class="rating-number">
+                    (${product.reviews})
+                </span>
+            </div>
+
+            <p class="product-price">
+                ${product.price.toLocaleString("es-ES", {
+                    style: "currency",
+                    currency: "EUR"
+                })}
+            </p>
+
+            <button
+                class="add-btn"
+                data-product-id="${product.id}"
+                ${product.stock ? "" : "disabled"}
+            >
+                ${product.stock
+                    ? "Añadir al carrito"
+                    : "Agotado"}
+            </button>
+        `;
+
+        productGrid.appendChild(card);
+
+        // Imagen alternativa si el archivo no existe
+        const image = card.querySelector(".product-image");
+
+        image.addEventListener("error", () => {
+            image.alt = `${product.name} — imagen no disponible`;
+            image.style.opacity = "0.25";
+        }, { once: true });
+    });
+}
+
+
+// =====================================
+// CARRITO
+// =====================================
+
+// En tu HTML, #cartCount es el botón completo
+// y #addCartBtn es el contador que está dentro.
+
+const cartButton = document.getElementById("cartCount");
+const cartBadge = document.getElementById("addCartBtn");
+
+function updateCartCount() {
+    cartBadge.textContent = cart;
+}
+
+// Delegación de eventos: funciona también cuando
+// se vuelven a dibujar las tarjetas filtradas.
+productGrid.addEventListener("click", event => {
+    const button = event.target.closest(".add-btn");
+
+    if (!button || button.disabled) return;
+
+    const productId = Number(button.dataset.productId);
+    const product = products.find(
+        item => item.id === productId
+    );
+
+    if (!product || !product.stock) return;
+
+    cart++;
+
+    updateCartCount();
+
+    const originalText = button.textContent;
+
+    button.textContent = "✓ Añadido al carrito";
+    button.disabled = true;
+
+    setTimeout(() => {
+        // Solo restaurar el botón si sigue en el catálogo
+        if (button.isConnected) {
+            button.textContent = originalText;
+            button.disabled = false;
+        }
+    }, 1400);
 });
+
+// Consultar el carrito
+cartButton.addEventListener("click", () => {
+    if (cart === 0) {
+        alert("Tu carrito está vacío 🐾");
+    } else {
+        alert(
+            `Tienes ${cart} producto${cart !== 1 ? "s" : ""} en el carrito 🛒`
+        );
+    }
+});
+
+
+// =====================================
+// INICIALIZAR TIENDA
+// =====================================
+
+readFilters();
+
+sortMenu.querySelector(
+    '[data-sort="bestsellers"]'
+).classList.add("active");
+
+renderProducts();
+updateCartCount();
