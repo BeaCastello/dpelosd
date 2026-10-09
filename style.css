@@ -200,7 +200,7 @@ a {
     color: var(--white);
     display: flex;
     align-items: center;
-    background-image: url("img/banner-home.png");
+    background-image: url("img/banner-home1.png");
     background-size: cover;
     background-position: center;
     transform: scale(1.01);
