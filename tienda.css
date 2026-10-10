@@ -196,6 +196,7 @@ a {
 
 .nav-actions {
     display: flex;
+    margin-top: -7px;
 }
 
 .icon-btn,

@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // CARRITO
     let cart = 0;
     const cartCount = document.getElementById("cartCount");
+    const cartNumber = document.getElementById("addCartBtn");
 
     document.querySelectorAll(".add-btn").forEach(button => {
         button.addEventListener("click", () => {
@@ -142,9 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const products = [
     {
         id: 1,
-        name: "Pelota de goma natural",
+        name: "Calabaza",
         image: "img/pelota.jpg",
-        type: "pelota",
+        type: "calabaza",
         price: 8.50,
         rating: 5,
         reviews: 24,
@@ -155,9 +156,9 @@ const products = [
     },
     {
         id: 2,
-        name: "Mordedor resistente para perros",
+        name: "Vampiro",
         image: "img/mordedor.jpg",
-        type: "mordedor",
+        type: "vampiro",
         price: 12.90,
         rating: 4,
         reviews: 18,
@@ -168,9 +169,9 @@ const products = [
     },
     {
         id: 3,
-        name: "Peluche de oso para perros",
+        name: "Murciélago",
         image: "img/peluche.jpg",
-        type: "peluche",
+        type: "Murciélago",
         price: 10.50,
         rating: 5,
         reviews: 32,
@@ -181,9 +182,9 @@ const products = [
     },
     {
         id: 4,
-        name: "Juguete interactivo dispensador",
+        name: "Reno navideño",
         image: "img/interactivo.jpg",
-        type: "interactivo",
+        type: "renonavideño",
         price: 18.90,
         rating: 4,
         reviews: 15,
@@ -207,9 +208,9 @@ const products = [
     },
     {
         id: 6,
-        name: "Mordedor de cuerda",
+        name: "Papá Noel",
         image: "img/cuerda.jpg",
-        type: "mordedor",
+        type: "papanoel",
         price: 7.50,
         rating: 5,
         reviews: 21,
@@ -220,9 +221,9 @@ const products = [
     },
     {
         id: 7,
-        name: "Peluche de conejo",
+        name: "Boda y eventos",
         image: "img/conejo.jpg",
-        type: "peluche",
+        type: "bodaeventos",
         price: 14.50,
         rating: 4,
         reviews: 9,
@@ -233,9 +234,9 @@ const products = [
     },
     {
         id: 8,
-        name: "Juguete de inteligencia canina",
+        name: "Cumpleaños",
         image: "img/inteligencia.jpg",
-        type: "interactivo",
+        type: "cumpleaños",
         price: 24.90,
         rating: 5,
         reviews: 28,

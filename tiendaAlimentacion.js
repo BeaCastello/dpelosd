@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // CARRITO
     let cart = 0;
     const cartCount = document.getElementById("cartCount");
+    const cartNumber = document.getElementById("addCartBtn");
 
     document.querySelectorAll(".add-btn").forEach(button => {
         button.addEventListener("click", () => {
@@ -142,9 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const products = [
     {
         id: 1,
-        name: "Pelota de goma natural",
-        image: "img/pelota.jpg",
-        type: "pelota",
+        name: "Alimento seco (Pienso)",
+        image: "img/alimentoseco.png",
+        type: "alimentoseco",
         price: 8.50,
         rating: 5,
         reviews: 24,
@@ -155,9 +156,9 @@ const products = [
     },
     {
         id: 2,
-        name: "Mordedor resistente para perros",
-        image: "img/mordedor.jpg",
-        type: "mordedor",
+        name: "Alimento húmedo",
+        image: "img/pate.png",
+        type: "alimento humedo",
         price: 12.90,
         rating: 4,
         reviews: 18,
