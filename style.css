@@ -1544,17 +1544,17 @@ a {
 
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
+    grid-template-columns: repeat(4, 1fr);
+   }
 
 .product-card {
-    padding: 32px;
+    padding: 22px;
     background: white;
     border: 1px solid var(--border);
     border-radius: 25px;
     box-shadow: 0 8px 25px rgba(23,62,53,.05);
     transition: transform .2s ease, box-shadow .2s ease;
+    width: 94%;
 }
 .product-card:hover {
     transform: translateY(-5px);
@@ -1583,8 +1583,6 @@ a {
 }
 
 .add-btn {
-    width: 100%;
-    min-height: 45px;
     border: 0;
     border-radius: 12px;
     background: var(--green);
@@ -1592,6 +1590,7 @@ a {
     cursor: pointer;
     font-weight: 800;
     transition: background .2s ease;
+    padding: 12px 50px 12px 50px;
 }
 
 .add-btn:hover {

@@ -45,30 +45,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // CARRITO
-    let cart = 0;
-    const cartCount = document.getElementById("cartCount");
+     // let cart = 0;
+     // const cartCount = document.getElementById("cartCount");
 
-    document.querySelectorAll(".add-btn").forEach(button => {
-        button.addEventListener("click", () => {
-            cart++;
-            cartCount.textContent = cart;
+      // document.querySelectorAll(".add-btn").forEach(button => {
+        //  button.addEventListener("click", () => {
+           //  cart++;
+           //  cartCount.textContent = cart;
 
-            const originalText = button.textContent;
-            button.textContent = "✓ Añadido al carrito";
+           //  const originalText = button.textContent;
+           //  button.textContent = "✓ Añadido al carrito";
 
-            setTimeout(() => {
-                button.textContent = originalText;
-            }, 1400);
-        });
-    });
+           //  setTimeout(() => {
+            //     button.textContent = originalText;
+           //  }, 1400);
+       //  });
+    // });
 
-    document.getElementById("cartBtn").addEventListener("click", () => {
-        if (cart === 0) {
-            alert("Tu carrito está vacío 🐾");
-        } else {
-            alert(`Tienes ${cart} producto${cart > 1 ? "s" : ""} en el carrito 🛒`);
-        }
-    });
+    // document.getElementById("cartBtn").addEventListener("click", () => {
+       //  if (cart === 0) {
+            //  alert("Tu carrito está vacío 🐾");
+      //   } else {
+        //     alert(`Tienes ${cart} producto${cart > 1 ? "s" : ""} en el carrito 🛒`);
+      //   }
+   //  });
 
     // MODAL DE BÚSQUEDA
     const searchModal = document.getElementById("searchModal");

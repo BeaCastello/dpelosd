@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // CARRITO
     let cart = 0;
     const cartCount = document.getElementById("cartCount");
+    const cartNumber = document.getElementById("addCartBtn");
 
     document.querySelectorAll(".add-btn").forEach(button => {
         button.addEventListener("click", () => {
