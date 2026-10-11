@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-banner");
+  const overlay = document.getElementById("page-overlay");
+  const acceptBtn = document.getElementById("acceptCookies");
+  const rejectBtn = document.getElementById("rejectCookies");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -501,13 +506,6 @@ newsFilters.forEach(filter => {
 
     });
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const banner = document.getElementById("cookie-banner");
-  const overlay = document.getElementById("page-overlay");
-  const acceptBtn = document.getElementById("acceptCookies");
-  const rejectBtn = document.getElementById("rejectCookies");
 
   // Verifica si el usuario ya ha tomado una decisión
   const cookiesDecision = localStorage.getItem("cookiesDecision");
