@@ -512,7 +512,7 @@ newsFilters.forEach(filter => {
 
   if (!cookiesDecision) {
     banner.style.display = "block";
-    overlay.style.display = "block";
+   
   } else {
     banner.style.display = "none";
       }
