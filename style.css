@@ -1778,18 +1778,8 @@ a {
       height: 30px;
     }
 
-    /* Texto emergente */
-    .whatsapp-text {
-      margin-left: 10px;
-      margin-right: 10px;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    /* Mostrar texto emergente al hacer hover */
-    .whatsapp-button:hover .whatsapp-text {
+        /* Mostrar texto emergente al hacer hover */
+    .whatsapp-button:hover  {
       opacity: 1;
       transform: translateX(0);
     }
