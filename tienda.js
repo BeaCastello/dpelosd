@@ -72,56 +72,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // MODAL DE BÚSQUEDA
+    const searchModal = document.getElementById("searchModal");
+    const searchBtn = document.getElementById("searchBtn");
+    const closeSearch = document.getElementById("closeSearch");
+    const searchInput = document.getElementById("searchInput");
+    const searchSubmit = document.getElementById("searchSubmit");
+    const searchResult = document.getElementById("searchResult");
 
-const searchForm = document.getElementById("searchForm");
-const searchInput = document.getElementById("searchInput");
+    function openSearch() {
+        searchModal.classList.add("show");
+        searchModal.setAttribute("aria-hidden", "false");
+        setTimeout(() => searchInput.focus(), 100);
+    }
 
-// Buscador: por ahora muestra el término introducido
-searchForm.addEventListener("submit", event => {
-  event.preventDefault();
+    function closeSearchModal() {
+        searchModal.classList.remove("show");
+        searchModal.setAttribute("aria-hidden", "true");
+        searchInput.value = "";
+        searchResult.textContent = "";
+    }
 
-  const query = searchInput.value.trim();
+    searchBtn.addEventListener("click", openSearch);
+    closeSearch.addEventListener("click", closeSearchModal);
 
-  if (!query) {
-    showToast("Escribe qué producto estás buscando.");
-    searchInput.focus();
-    return;
-  }
-
-  showToast(`Has buscado: ${query}`);
-
-  // Aquí podrás conectar el buscador con tu catálogo.
-});
-
-
-
-
-// =====================================
-//NAVEGADOR
-// =====================================
-
-const navLinks = document.querySelectorAll(
-  "#navCategories .nav-link"
-);
-
-navLinks.forEach(link => {
-  link.addEventListener("click", function () {
-    navLinks.forEach(item => {
-      item.classList.remove("active");
-      item.removeAttribute("aria-current");
+    searchModal.addEventListener("click", (event) => {
+        if (event.target === searchModal) {
+            closeSearchModal();
+        }
     });
 
-    this.classList.add("active");
-    this.setAttribute("aria-current", "page");
-  });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeSearchModal();
+        }
+    });
+
+    function doSearch() {
+        const value = searchInput.value.trim();
+
+        if (!value) {
+            searchResult.textContent = "Escribe algo para buscar.";
+            return;
+        }
+
+        searchResult.textContent =
+            `Buscando "${value}"... Próximamente conectaremos esta búsqueda con tu catálogo.`;
+    }
+
+    searchSubmit.addEventListener("click", doSearch);
+
+    searchInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            doSearch();
+        }
+    });
+
+    // BOTÓN "VER PRODUCTOS"
+    document.getElementById("viewProductsBtn").addEventListener("click", () => {
+        document.getElementById("products").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    });
 });
-
-
-
-
-
-
-
 
 // =====================================
 // CATÁLOGO DE PRODUCTOS
@@ -130,9 +143,9 @@ navLinks.forEach(link => {
 const products = [
     {
         id: 1,
-        name: "Pelota de goma natural",
+        name: "Collares",
         image: "img/pelota.jpg",
-        type: "pelota",
+        type: "collares",
         price: 8.50,
         rating: 5,
         reviews: 24,
@@ -143,9 +156,9 @@ const products = [
     },
     {
         id: 2,
-        name: "Mordedor resistente para perros",
+        name: "Correas",
         image: "img/mordedor.jpg",
-        type: "mordedor",
+        type: "correas",
         price: 12.90,
         rating: 4,
         reviews: 18,
@@ -156,9 +169,9 @@ const products = [
     },
     {
         id: 3,
-        name: "Peluche de oso para perros",
+        name: " Arneses",
         image: "img/peluche.jpg",
-        type: "peluche",
+        type: " arneses",
         price: 10.50,
         rating: 5,
         reviews: 32,
@@ -169,9 +182,9 @@ const products = [
     },
     {
         id: 4,
-        name: "Juguete interactivo dispensador",
+        name: "Complementos de paseo",
         image: "img/interactivo.jpg",
-        type: "interactivo",
+        type: "complementospaseo",
         price: 18.90,
         rating: 4,
         reviews: 15,
@@ -182,9 +195,9 @@ const products = [
     },
     {
         id: 5,
-        name: "Pelota con sonido",
+        name: "Mochilas para perros",
         image: "img/pelota-sonido.jpg",
-        type: "pelota",
+        type: "mochilasperro",
         price: 6.90,
         rating: 4,
         reviews: 12,
@@ -195,9 +208,9 @@ const products = [
     },
     {
         id: 6,
-        name: "Mordedor de cuerda",
+        name: "Colgantes luminosos",
         image: "img/cuerda.jpg",
-        type: "mordedor",
+        type: "colgantesluminosos",
         price: 7.50,
         rating: 5,
         reviews: 21,
@@ -208,9 +221,9 @@ const products = [
     },
     {
         id: 7,
-        name: "Peluche de conejo",
+        name: "Chubasqueros",
         image: "img/conejo.jpg",
-        type: "peluche",
+        type: "chubasqueros",
         price: 14.50,
         rating: 4,
         reviews: 9,
@@ -221,9 +234,9 @@ const products = [
     },
     {
         id: 8,
-        name: "Juguete de inteligencia canina",
+        name: "Portabolsas",
         image: "img/inteligencia.jpg",
-        type: "interactivo",
+        type: "portabolsas",
         price: 24.90,
         rating: 5,
         reviews: 28,
@@ -667,3 +680,6 @@ sortMenu.querySelector(
 
 renderProducts();
 updateCartCount();
+
+// Conectando con el whatsapp
+const whatsappContainer = document.getElementById('whatsapp-container');

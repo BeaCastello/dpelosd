@@ -54,8 +54,7 @@ a {
 .header {
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #eee;
+    z-index: 100;    
     backdrop-filter: blur(12px);
 }
 
@@ -80,7 +79,7 @@ a {
     font-family: Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
-    animation: moverTexto 20s linear infinite;
+    animation: moverTexto 18s linear infinite;
 }
 
 .promo-text img {
@@ -217,7 +216,7 @@ a {
 
 .nav a {
     position: relative;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     padding: 36px 0 33px;
     transition: color .2s ease;
@@ -315,6 +314,8 @@ a {
   background: var(--green);
   border-top: 1px solid #f1f1ed;
   border-bottom: 1px solid #eee;
+  height: 40px;
+ 
 }
 
 .nav-link {
@@ -325,7 +326,7 @@ a {
   padding: 16px 0;
   color: #fafbfc;
   font-family: "Nunito", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -514,6 +515,61 @@ a {
     font-size: 35px;
 }
 
+/* BENEFITS */
+
+.benefits {
+    z-index: 5;
+    margin-top: -5px;
+    background-color: #F8F6F2;
+    border-radius: 0 0 55% 55% / 0 0 35px 35px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
+}
+
+.benefits-grid {
+    min-height: 150px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    width: 1300px;
+    padding-left: 0px;
+}
+
+.benefit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 72px;    
+    border-right: 1px solid var(--border);
+    text-align: center;
+}
+
+.benefit:last-child {
+    border-right: 0;
+}
+
+.benefit-icon {
+    width: 72px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f7f2e6;
+    color: var(--green);
+    font-size: 25px;
+}
+
+.benefit h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.benefit p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
 /* JUGUETES */
 
 .grooming-section {
@@ -527,7 +583,7 @@ a {
 
 .grooming-header {
     width: min(1180px, calc(100% - 48px));
-    margin: 0 auto 45px;
+    margin: 0 auto 15px;
     text-align: center;
     margin-top: 30px;
 }
@@ -1225,3 +1281,49 @@ a {
     margin-left: -4px;
     padding-top: 10px;
 }
+/* Estilo Whatsapp */
+
+    .whatsapp-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 1000;
+    }
+
+    /* Botón de WhatsApp */
+    .whatsapp-button {
+      display: flex;
+      align-items: center;
+      background-color: #25d366;
+      padding: 10px;
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      position: relative;
+      transition: background-color 0.3s;
+    }
+
+    /* Icono de WhatsApp */
+    .whatsapp-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+        /* Mostrar texto emergente al hacer hover */
+    .whatsapp-button:hover  {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Mostrar el botón cuando es visible */
+    .whatsapp-container.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-10px);
+      transition: opacity 0.3s, transform 0.5s;
+    }
