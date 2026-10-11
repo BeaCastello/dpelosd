@@ -470,7 +470,7 @@ newsFilters.forEach(filter => {
    BOTÓN VER TODOS
 ========================================== */
 
-newsMore.addEventListener("click", () => {
+
 
     /* Activar "Todos" */
 
@@ -501,4 +501,32 @@ newsMore.addEventListener("click", () => {
 
     });
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const banner = document.getElementById("cookie-banner");
+  const overlay = document.getElementById("page-overlay");
+  const acceptBtn = document.getElementById("acceptCookies");
+  const rejectBtn = document.getElementById("rejectCookies");
+
+  // Verifica si el usuario ya ha tomado una decisión
+  const cookiesDecision = localStorage.getItem("cookiesDecision");
+
+  if (!cookiesDecision) {
+    banner.style.display = "block";
+    overlay.style.display = "block";
+  } else {
+    banner.style.display = "none";
+      }
+
+  function hideBanner(decision) {
+    localStorage.setItem("cookiesDecision", decision);
+    banner.style.display = "none";
+    overlay.style.opacity = "0";
+    setTimeout(() => overlay.style.display = "none", 300);
+  }
+
+  acceptBtn.addEventListener("click", () => hideBanner("accepted"));
+  rejectBtn.addEventListener("click", () => hideBanner("rejected"));
 });
+
