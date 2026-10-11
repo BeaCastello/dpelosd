@@ -17,9 +17,9 @@
 
 <body>
     <header class="header" id="inicio">
-       
+
         <div class="container nav-container">
-            <img src="img/Versión6.png" style="width: 80px;"> </img>
+            <img src="img/Versión6.png" style="width: 60px;"> </img>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
                 <span></span>
@@ -35,29 +35,14 @@
                 <button type="submit" aria-label="Buscar">⌕</button>
             </form>
 
-            <!-- <nav class="nav" id="mainNav">
-                <a href="index.html">Inicio</a>
-                <a href="tienda.html">Juguetes</a>
-                <a href="tiendaAlimentacion.html">Alimentación</a>
-                <a href="tiendaAccesorios.html">Paseos y Accesorios</a>
-                <a href="tiendaDisfraces.html">Disfraces</a>
-            </nav>
-
-            <nav class="nav" id="mainNav">
-                <a href="index.html">Inicio</a>
-                <a href="tienda.html">Tienda</a>
-                <a href="index.html#servicios">Servicios</a>
-                <a href="index.html#servicios">Blog</a>
-                <a href="#contacto">Contacto</a>
-            </nav>-->
-
             <div class="nav-actions">
                 <!--  <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>-->
                 <button class="icon-btn" aria-label="Mi cuenta"><img src="img/persona.png"
                         style="width: 15px; margin-top: 1px;"></button>
-                <img src="img/carrito.png" style="width: 22px; height: 22px; margin-top: 15px;"> <button
-                    class="cart-btn" id="cartCount" aria-label="Carrito">
-                    <span class="cart-count" id="addCartBtn">0</span>
+                <img src="img/carrito.png" style="width: 22px; height: 22px; margin-top: 15px;">
+
+                <button class="cart-btn" id="cart-button" type="button" aria-label="Ver carrito">
+                    <span class="cart-count" id="cart-count">0</span>
                 </button>
             </div>
         </div>
@@ -105,25 +90,8 @@
         </div>
     </section>
 
-            <!-- <nav class="nav" id="mainNav">
-     <div class="promo-bar">
-            <div class="promo-text" id="promoText">
-                <img src="img/pataIzquierda.png" style="width: 20px;" alt="Pata de perro">
-                <img src="img/pataDerecha.png" style="width: 20px;" alt="Pata de perro">
 
-                <span>
-                    NUEVOS CLIENTES:
-                    <strong>20% DE DESCUENTO</strong>
-                    EN TU PRIMERA COMPRA
-                </span>
-
-                <img src="img/pataIzquierda.png" style="width: 20px;" alt="Pata de perro">
-                <img src="img/pataDerecha.png" style="width: 20px;" alt="Pata de perro">
-
-            </div>
-        </div>-->
-
-        <!-- BENEFICIOS -->
+    <!-- BENEFICIOS -->
     <section class="benefits" id="nosotros">
         <div class="container benefits-grid">
 
@@ -145,7 +113,7 @@
             </div>
 
             <div class="benefit">
-                <div class="benefit-icon"><img src="img/variedadMarca.png" style="width:30px;"  ;></div>
+                <div class="benefit-icon"><img src="img/variedadMarca.png" style="width:30px;" ;></div>
                 <div>
                     <h3>Variedad de marcas</h3>
                     <p>Las mejores opciones</p>
@@ -164,176 +132,47 @@
         </div>
     </section>
 
+    <!-- SECCIÓN CATEGORIAS -->
 
-    <!-- CATEGORIAS -->
-
-    <section class="grooming-section" id="juguetes">
-
-        <div class="grooming-header" id="servicios">
-            <img src="img/patas de perro.png" style="width: 2em;">
-            <span class="grooming-kicker"> Juguetes</span>
-            <h2>
-                Detalles que hablan de <span> amor.</span>
-            </h2>
-        </div>
-
-        <section class="shop-page">
-
-            <!-- Migas de pan -->
-            <nav class="breadcrumbs" aria-label="Ruta de navegación">
-                <a href="index.html">Inicio</a>
-                <span>›</span>
-                <a href="tienda.html">Tienda</a>
-                <span>›</span>
-                <span class="current">Juguetes</span>
-            </nav>
-
-            <h1 class="shop-title">Juguetes para perros</h1>
-
-            <!-- Barra de filtros y ordenación -->
-            <div class="shop-toolbar">
-
-                <div class="toolbar-left">
-                    <button class="filter-trigger" id="openFilters" aria-expanded="false" aria-controls="filterPanel">
-                        <span class="filter-icon">☷</span>
-                        Filtrar
-                    </button>
-
-                    <div class="sort-wrapper">
-                        <button class="sort-trigger" id="sortTrigger" aria-expanded="false" aria-controls="sortMenu">
-                            <span id="sortLabel">Los más vendidos</span>
-                            <span class="sort-arrow">⌄</span>
-                        </button>
-
-                        <div class="sort-menu" id="sortMenu" hidden>
-                            <button data-sort="bestsellers">Los más vendidos</button>
-                            <button data-sort="relevant">Los más relevantes</button>
-                            <button data-sort="alphabetical">Orden alfabético</button>
-                            <button data-sort="price-asc">Precio: menor a mayor</button>
-                            <button data-sort="price-desc">Precio: mayor a menor</button>
-                        </div>
-                    </div>
-                </div>
-
-                <span class="results-count" id="resultsCount" aria-live="polite"></span>
+    <section class="shop-section">
+        <header class="shop-intro" style="text-align: left;">
+            <div style="display: flex; gap: 20px;">
+                <h1>Un mundo de cosas bonitas para tu peludo </h1> <img src="img/patas de perro.png"
+                    style="width: 60px; height: 40px;">
             </div>
+            <p>Juega, disfruta de cada paseo y encuentra sus imprescindibles.</p>
+        </header>
 
-            <!-- Fondo oscuro al abrir filtros -->
-            <div class="filter-overlay" id="filterOverlay"></div>
+        <nav class="category-nav" aria-label="Categorías de productos">
+            <button class="category-chip active" data-category="Juegos"><span>Juguetes</span></button>
+            <button class="category-chip" data-category="Alimentos"><span>Alimentos</span></button>
+            <button class="category-chip" data-category="Paseos"><span>Paseos y Accesorios</span></button>
+            <button class="category-chip" data-category="Disfraces"><span>Disfraces</span></button>
+            <button class="view-all" type="button" data-view-all="destacados"
+                style="font-size: 16px; margin-left: 30em;">Ver todos
+                <span>→</span></button>
+        </nav>
 
-            <!-- Panel emergente desde la izquierda -->
-            <aside class="filter-panel" id="filterPanel" aria-label="Filtros de productos" aria-hidden="true" inert>
 
-                <div class="filter-panel-header">
-                    <h2>Filtrar productos</h2>
-                    <button class="close-filters" id="closeFilters" aria-label="Cerrar filtros">×</button>
+        <section class="product-section featured-section" aria-labelledby="featured-title">
+            <div class="section-heading">
+                <div class="heading-title"><span class="paw" aria-hidden="true"></span>
+                    <img src="img/patas de perro.png" style="width: 60px; height: 40px;">
+                    <h2 id="featured-title">Productos destacados</h2>
                 </div>
 
-                <div class="filter-panel-content">
-
-                    <fieldset class="filter-group">
-                        <legend>Tipo de Juguetes</legend>
-
-                        <label>
-                            <input type="checkbox" name="type" value="pelota">
-                            Pelota de goma natural
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="type" value="mordedor">
-                            "Mordedor resistente para perros
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="type" value="peluche">
-                            Peluche de oso para perros
-                        </label>
-
-                        <label>
-                            <input type="checkbox" name="type" value="interactivo">
-                            Pelota con sonido
-
-                        </label>
-                    </fieldset>
-
-                    <fieldset class="filter-group">
-                        <legend>Precio máximo</legend>
-
-                        <div class="price-filter">
-                            <label for="maxPrice">
-                                Hasta <strong id="maxPriceLabel">50 €</strong>
-                            </label>
-
-                            <input type="range" id="maxPrice" min="5" max="50" value="50" step="1">
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="filter-group">
-                        <legend>Valoración mínima</legend>
-
-                        <label>
-                            <input type="radio" name="rating" value="0" checked>
-                            Todas las valoraciones
-                        </label>
-
-                        <label>
-                            <input type="radio" name="rating" value="4">
-                            ★★★★☆ y superior
-                        </label>
-
-                        <label>
-                            <input type="radio" name="rating" value="5">
-                            ★★★★★
-                        </label>
-                    </fieldset>
-
-                    <fieldset class="filter-group">
-                        <legend>Disponibilidad</legend>
-
-                        <label>
-                            <input type="checkbox" id="inStock">
-                            Solo productos disponibles
-                        </label>
-                    </fieldset>
-
-                </div>
-
-                <div class="filter-panel-footer">
-                    <button class="reset-filters" id="resetFilters">
-                        Limpiar filtros
-                    </button>
-
-                    <button class="apply-filters" id="applyFilters">
-                        Ver productos
-                    </button>
-                </div>
-            </aside>
-
-            <!-- Productos -->
-            <section class="product-section" aria-label="Catálogo de juguetes">
-                <div class="product-grid" id="productGrid">
-
-                    <!-- Los productos se generan con JavaScript -->
-
-                </div>
-
-                <div class="empty-products" id="emptyProducts" hidden>
-                    <span class="empty-icon">🐾</span>
-                    <h2>No encontramos productos</h2>
-                    <p>Prueba a cambiar los filtros para ver más accesorios.</p>
-                    <button class="reset-filters" id="resetEmpty">
-                        Quitar filtros
-                    </button>
-                </div>
-            </section>
-
+            </div>
+            <div class="product-grid featured-grid" id="featured-products"></div>
         </section>
 
-        <div class="modal" id="imageModal" aria-hidden="true">
-            <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
-            <img id="modalImage" src="" alt="">
-        </div>
+
+
+        <div id="category-sections"></div>
+        <p class="demo-note"></p>
     </section>
+
+    <aside class="cart-toast" id="cart-toast" role="status" aria-live="polite"></aside>
+
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -399,14 +238,14 @@
         </div>
     </div>
 
-     <!-- Conexión al WhatsApp -->
+    <!-- Conexión al WhatsApp -->
     <div class="whatsapp-container" id="whatsapp-container">
-        <a href="https://wa.me/34604834931" target="_blank" class="whatsapp-button">           
+        <a href="https://wa.me/34604834931" target="_blank" class="whatsapp-button">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
                 class="whatsapp-icon">
         </a>
     </div>
-    
+
     <!-- JS -->
     <script src="tienda.js"></script>
     </section>
