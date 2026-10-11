@@ -72,69 +72,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // MODAL DE BÚSQUEDA
-    const searchModal = document.getElementById("searchModal");
-    const searchBtn = document.getElementById("searchBtn");
-    const closeSearch = document.getElementById("closeSearch");
-    const searchInput = document.getElementById("searchInput");
-    const searchSubmit = document.getElementById("searchSubmit");
-    const searchResult = document.getElementById("searchResult");
 
-    function openSearch() {
-        searchModal.classList.add("show");
-        searchModal.setAttribute("aria-hidden", "false");
-        setTimeout(() => searchInput.focus(), 100);
-    }
+const searchForm = document.getElementById("searchForm");
+const searchInput = document.getElementById("searchInput");
 
-    function closeSearchModal() {
-        searchModal.classList.remove("show");
-        searchModal.setAttribute("aria-hidden", "true");
-        searchInput.value = "";
-        searchResult.textContent = "";
-    }
+// Buscador: por ahora muestra el término introducido
+searchForm.addEventListener("submit", event => {
+  event.preventDefault();
 
-    searchBtn.addEventListener("click", openSearch);
-    closeSearch.addEventListener("click", closeSearchModal);
+  const query = searchInput.value.trim();
 
-    searchModal.addEventListener("click", (event) => {
-        if (event.target === searchModal) {
-            closeSearchModal();
-        }
-    });
+  if (!query) {
+    showToast("Escribe qué producto estás buscando.");
+    searchInput.focus();
+    return;
+  }
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            closeSearchModal();
-        }
-    });
+  showToast(`Has buscado: ${query}`);
 
-    function doSearch() {
-        const value = searchInput.value.trim();
-
-        if (!value) {
-            searchResult.textContent = "Escribe algo para buscar.";
-            return;
-        }
-
-        searchResult.textContent =
-            `Buscando "${value}"... Próximamente conectaremos esta búsqueda con tu catálogo.`;
-    }
-
-    searchSubmit.addEventListener("click", doSearch);
-
-    searchInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            doSearch();
-        }
-    });
-
-    // BOTÓN "VER PRODUCTOS"
-    document.getElementById("viewProductsBtn").addEventListener("click", () => {
-        document.getElementById("products").scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-    });
+  // Aquí podrás conectar el buscador con tu catálogo.
 });
+
+
+
+
+// =====================================
+//NAVEGADOR
+// =====================================
+
+const navLinks = document.querySelectorAll(
+  "#navCategories .nav-link"
+);
+
+navLinks.forEach(link => {
+  link.addEventListener("click", function () {
+    navLinks.forEach(item => {
+      item.classList.remove("active");
+      item.removeAttribute("aria-current");
+    });
+
+    this.classList.add("active");
+    this.setAttribute("aria-current", "page");
+  });
+});
+
+
+
+
+
+
+
 
 // =====================================
 // CATÁLOGO DE PRODUCTOS

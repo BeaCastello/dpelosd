@@ -45,7 +45,8 @@ a {
 
 .container {
     width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
+    /* margin: 0 auto;*/
+    padding-left: 40px;
 }
 
 /* HEADER */
@@ -104,6 +105,47 @@ a {
     }
 }
 
+/* BUSCADOR */
+
+.search {
+    flex: 1;
+    max-width: 470px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dce3df;
+    border-radius: 30px;
+    overflow: hidden;
+    background: white;
+
+}
+
+.search input {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 18px;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.search:focus-within {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px #ffb91f25;
+}
+
+.search button {
+    width: 43px;
+    height: 43px;
+    margin: 3px;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    background: var(--green);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
 @media (max-width: 600px) {
     .promo-bar {
         height: 50px;
@@ -123,6 +165,7 @@ a {
 .nav-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
@@ -165,9 +208,11 @@ a {
 .nav {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    justify-content: left;
+    align-items: left;
+    gap: 50px;
+    padding-left: 40px;
+    margin-top: -15px;
 }
 
 .nav a {
@@ -231,7 +276,7 @@ a {
 
 .cart-count {
     position: absolute;
-    top: 1px;    
+    top: 1px;
     min-width: 19px;
     height: 19px;
     padding: 0 5px;
@@ -260,6 +305,106 @@ a {
     background: var(--green);
 }
 
+
+.nav-categories {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 45px;
+  padding: 0 25px;
+  background: var(--green);
+  border-top: 1px solid #f1f1ed;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 0;
+  color: #fafbfc;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+ 
+}
+
+/* Línea amarilla debajo de la opción activa */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #fdfcfc;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ffb91f;
+  border-radius: 4px 4px 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #d58d00;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: #d58d00;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-icon {
+  font-size: 19px;
+  line-height: 1;
+}
+
+/* Adaptación a tabletas */
+@media (max-width: 800px) {
+  .nav-categories {
+    gap: 22px;
+    padding: 0 15px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    gap: 5px;
+  }
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .nav-categories {
+    justify-content: flex-start;
+    gap: 25px;
+    padding: 0 18px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .nav-link {
+    padding: 14px 0;
+    font-size: 13px;
+  }
+}
+
+
 /* HERO 1*/
 
 .hero {
@@ -287,13 +432,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
 }
 
 .hero-copy {
     width: 55%;
-
 }
 
 .eyebrow {
@@ -370,70 +512,6 @@ a {
 .hero-message b {
     color: var(--yellow);
     font-size: 35px;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* BENEFITS */
-
-.benefits {
-    z-index: 5;
-    margin-top: -5px;
-    background-color: #F8F6F2;
-    border-radius: 0 0 55% 55% / 0 0 35px 35px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
-}
-
-.benefits-grid {
-    min-height: 150px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-}
-
-.benefit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    min-height: 72px;
-    padding: 10px 25px;
-    border-right: 1px solid var(--border);
-    text-align: center;
-}
-
-.benefit:last-child {
-    border-right: 0;
-}
-
-.benefit-icon {
-    width: 72px;
-    height: 52px;
-    flex: 0 0 52px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: #f7f2e6;
-    color: var(--green);
-    font-size: 25px;
-}
-
-.benefit h3 {
-    font-size: 16px;
-    margin-bottom: 3px;
-}
-
-.benefit p {
-    font-size: 13px;
-    color: var(--muted);
 }
 
 /* JUGUETES */
