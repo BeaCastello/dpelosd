@@ -118,7 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     type="button"
                     data-add="${product.id}"
                 >
-                    <span aria-hidden="true">🛒</span>
+                    <img src="img/carrito.png"
+                        style="width: 15px;">
                     Añadir al carrito
                 </button>
             </article>
