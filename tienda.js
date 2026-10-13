@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     data-add="${product.id}"
                 >
                     <img src="img/carrito.png"
-                        style="width: 15px;">
+                        style="width: 22px; margin-top: 19px;">
                     Añadir al carrito
                 </button>
             </article>

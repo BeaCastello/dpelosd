@@ -90,7 +90,6 @@
         </div>
     </section>
 
-
     <!-- BENEFICIOS -->
     <section class="benefits" id="nosotros">
         <div class="container benefits-grid">
@@ -132,111 +131,399 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CATEGORIAS -->
+    <!-- SECCIÓN TIENDA -->
 
-    <section class="shop-section">
-        <header class="shop-intro" style="text-align: left;">
-            <div style="display: flex; gap: 20px;">
-                <h1>Un mundo de cosas bonitas para tu peludo </h1> <img src="img/patas de perro.png"
-                    style="width: 60px; height: 40px;">
-            </div>
-            <p>Juega, disfruta de cada paseo y encuentra sus imprescindibles.</p>
-        </header>
-
-        <nav class="category-nav" aria-label="Categorías de productos">
-            <button class="category-chip active" data-category="Juegos"><span>Juguetes</span></button>
-            <button class="category-chip" data-category="Alimentos"><span>Alimentos</span></button>
-            <button class="category-chip" data-category="Paseos"><span>Paseos y Accesorios</span></button>
-            <button class="category-chip" data-category="Disfraces"><span>Disfraces</span></button>
-            <button class="view-all" type="button" data-view-all="destacados"
-                style="font-size: 16px; margin-left: 30em;">Ver todos
-                <span>→</span></button>
-        </nav>
-
-
-        <section class="product-section featured-section" aria-labelledby="featured-title">
-            <div class="section-heading">
-                <div class="heading-title"><span class="paw" aria-hidden="true"></span>
-                    <img src="img/patas de perro.png" style="width: 60px; height: 40px;">
-                    <h2 id="featured-title">Productos destacados</h2>
-                </div>
-
-            </div>
-            <div class="product-grid featured-grid" id="featured-products"></div>
-        </section>
-
-
-
-        <div id="category-sections"></div>
-        <p class="demo-note"></p>
+    <section>
+        <h1 style="margin-top: 20px; color: #e6ad36;; text-align: center;">Un mundo de cosas bonitas para tu peludo
+        </h1>
+        <p style="font-size: 16px; text-align: center;">Productos a tu gusto.</p>
     </section>
 
-    <aside class="cart-toast" id="cart-toast" role="status" aria-live="polite"></aside>
 
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer">
-            <div style="display: flex; flex-direction: column; line-height: 1.6; margin-left: 30px; margin-right: 7em;">
-                <div class="footer-logo"><img src="img/pataIzquierda.png" style="width: 20px;"> Dpelosd</div>
-                <p>Todo para que tu mejor amigo viva feliz.</p>
+    <section id="peludos-shop">
 
-                <div class="copyright">
-                    © <span id="year"></span> Dpelosd. Todos los derechos reservados.
+
+        <!-- PORTADA -->
+        <div class="ps-hero">
+            <div class="ps-hero-copy">
+                <span class="ps-pill"><img src="img/pataIzquierda.png" style="width: 20px;"> HECHO PARA
+                    CONSENTIRLOS</span>
+                <h2>Colitas felices,<br>compras geniales.</h2>
+                <p>Descubre juguetes, premios y accesorios para hacer feliz a tu mejor amigo cada día.</p>
+                <a href="#ps-categorias" class="ps-main-btn" style="margin-top: 20px;">Descubrir productos →</a>
+            </div>
+            <div class="ps-hero-art" aria-label="Perro feliz" role="img"><img src="img/imagenladoderecho.png"
+                    style="width: 470px; border-radius: 10px;"> </div>
+        </div>
+
+        <!-- DESTACADOS -->
+        <section class="ps-section">
+            <header class="ps-head">
+                <span class="ps-kicker" style="font-size: 14px;"> Los favoritos</span>
+                <h2>Productos destacados</h2>
+                <p>Los pequeños caprichos que hacen mover esas colitas.</p>
+            </header>
+            <div class="ps-grid" id="ps-featured"></div>
+        </section>
+
+        <!-- CATEGORÍAS -->
+        <section class="ps-section ps-category-area" id="ps-categorias">
+            <header class="ps-head">
+                <span class="ps-kicker" style="font-size: 14px"> Explora y encuentra</span>
+                <h2>¿Qué le apetece hoy?</h2>
+                <p>Elige una categoría y descubre sus favoritos.</p>
+            </header>
+
+            <nav class="ps-category-nav" aria-label="Categorías">
+                <button class="ps-tab" data-cat="Juguetes" aria-pressed="true"> Juguetes</button>
+                <button class="ps-tab" data-cat="Alimentación" aria-pressed="false"> Alimentación</button>
+                <button class="ps-tab" data-cat="Paseos y Accesorios" aria-pressed="false"> Paseos y
+                    accesorios</button>
+                <button class="ps-tab" data-cat="Disfraces" aria-pressed="false">Disfraces</button>
+            </nav>
+
+            <div class="ps-slider-head">
+                <h3 id="ps-category-title">🧸 Juguetes</h3>
+                <div class="ps-arrows">
+                    <button class="ps-arrow" id="ps-prev" aria-label="Productos anteriores">←</button>
+                    <button class="ps-arrow" id="ps-next" aria-label="Productos siguientes">→</button>
                 </div>
             </div>
+            <div class="ps-slider" id="ps-slider" aria-live="polite"></div>
+        </section>
 
-            <div style="display: flex; flex-direction: column; line-height: 1.6; margin-top: 10px;">
-                <h3>Menú</h3>
-                <a class="active" href="index.html">Inicio</a>
-                <a href="tienda.html">Tienda</a>
-                <a href="index.html#servicios">Servicios</a>
-                <a href="index.html#blog">Blog</a>
-                <a href="index.html#contacto">Contacto</a>
-            </div>
-
-            <div
-                style="display: flex; flex-direction: column;  margin-top: 10px; margin-left: 7em; width: 200px; margin-right: 5em;">
-                <h3>Contacto</h3>
-                <a href="mailto: dpelosdd@gmail.com" style="color: white; line-height: 2;"> info@dpelosd.com</a>
-                <a href="https://dpelosd.com" style="color: white"> https://dpelosd.com</a>
-                <a href="tel: +34 604 83 49 31" style="color: white"> <b>
-                        <p style="color: white;"> (+34)
-                    </b> 604 83 49 31 </p></a>
-                <a href="https://www.google.com/maps/search/?api=1&query=TU+DIRECCION+AQUI" target="_blank"
-                    rel="noopener noreferrer" style="color: white; line-height: 2;">
-                    Visítanos
-                </a>
-            </div>
-
-            <div>
-                <h3 style="margin-top: 10px; width: 200px;">Horario</h3>
-                <p style="color: white;"><b>Lunes - Viernes </b></p>
-                <p>09:00 am - 14.30 pm</p>
-                <p>17:00 pm - 19.30 pm</p>
-                <p style="color: white"> <b>Sábados </b></p>
-                <p>9:00 am - 15.00 pm</p>
-                <p style="color: white"><b>Domingo y Festivos </b></p>
-                <p>Cerrado</p>
-            </div>
-        </div>
-        <div style="display: flex; flex-direction: column;">
-            <img src="img/pataDerecha.png" style="width: 50px; margin-top: 20px; margin-left: 20px;">
-            <img src="img/pataDerecha.png" style="width: 50px; margin-top: 4em;">
+        <!-- ACCESO AL CARRITO  -->
+        <div class="ps-cart-trigger">
+            <button class="ps-cart-open" id="ps-open-cart">
+                🛒 Mi carrito (<span id="ps-cart-count">0</span>) ·
+                <span id="ps-cart-total-button">0,00 €</span>
+            </button>
         </div>
 
-    </footer>
-
-    <!-- MODAL DE BÚSQUEDA -->
-    <div class="modal" id="searchModal" aria-hidden="true">
-        <div class="modal-box">
-            <button class="modal-close" id="closeSearch">×</button>
-            <h2>¿Qué estás buscando?</h2>
-            <input type="search" id="searchInput" placeholder="Ej. juguetes, comida, correas...">
-            <button class="btn btn-primary search-submit" id="searchSubmit">Buscar</button>
-            <p id="searchResult"></p>
+        <!-- PANEL DEL CARRITO -->
+        <div class="ps-cart-panel" id="ps-cart-panel" role="dialog" aria-modal="true" aria-label="Tu carrito de compra">
+            <div class="ps-cart-box">
+                <div class="ps-cart-top">
+                    <h3>🛍️ Tu carrito</h3>
+                    <button class="ps-close" id="ps-close-cart" aria-label="Cerrar carrito">×</button>
+                </div>
+                <div id="ps-cart-items"></div>
+                <div class="ps-total">
+                    <span>Total</span><span id="ps-cart-total">0,00 €</span>
+                </div>
+                <button class="ps-checkout" id="ps-checkout">Finalizar pedido por WhatsApp</button>
+                <p class="ps-note">El coste de envío, los plazos y el pago se confirman al tramitar el pedido.</p>
+            </div>
         </div>
-    </div>
+
+        <script>
+            (() => {
+                const root = document.getElementById('peludos-shop');
+                if (root.dataset.initialized) return;
+                root.dataset.initialized = '1';
+
+                // CONFIGURACIÓN DE LA TIENDA
+                // Sustituye por el número de WhatsApp de tu negocio:
+                // código de país + número, solo cifras y sin el signo +.
+                const WHATSAPP = '34600000000';
+
+                const money = n => n.toLocaleString('es-ES', {
+                    style: 'currency', currency: 'EUR'
+                });
+
+                // EJEMPLOS: sustituye productos, precios, fotos y URL por tu catálogo.
+                // image: URL pública de la fotografía.
+                // url: enlace a la ficha de producto en tu tienda.
+
+                const products = [
+                    // JUGUETES
+                    {id: 1, name: 'Pelota saltarina', cat: 'Juguetes', price: 7.95, image: 'https://www.petcentar.com.mk/cdn/shop/collections/61MtFQ6jDvL._AC_SL1000_600x600_crop_center.jpg?v=1609188572', tag: 'Más vendido', bg: '#d9f0df'},
+                    {id: 2, name: 'Peluche achuchable', cat: 'Juguetes', price: 12.90, image: 'https://www.bowwowpetboutique.com/images/category-toys.jpg', tag: 'Favorito', bg: '#ffe0d6'},
+                    {id: 3, name: 'Cuerda de aventuras', cat: 'Juguetes', price: 6.50, image: 'https://www.petcentar.com.mk/cdn/shop/collections/61MtFQ6jDvL._AC_SL1000_600x600_crop_center.jpg?v=1609188572', bg: '#fff0b8'},
+                    {id: 4, name: 'Juguete interactivo', cat: 'Juguetes', price: 15.90, image: 'https://www.bowwowpetboutique.com/images/category-toys.jpg', bg: '#e6ddff'},
+                    {id: 5, name: 'Pelota saltarina', cat: 'Juguetes', price: 7.95, image: 'https://www.petcentar.com.mk/cdn/shop/collections/61MtFQ6jDvL._AC_SL1000_600x600_crop_center.jpg?v=1609188572', tag: 'Más vendido', bg: '#d9f0df'},
+                    {id: 6, name: 'Peluche achuchable', cat: 'Juguetes', price: 12.90, image: 'https://www.bowwowpetboutique.com/images/category-toys.jpg', tag: 'Favorito', bg: '#ffe0d6'},
+                    {id: 7, name: 'Cuerda de aventuras', cat: 'Juguetes', price: 6.50, image: 'https://www.petcentar.com.mk/cdn/shop/collections/61MtFQ6jDvL._AC_SL1000_600x600_crop_center.jpg?v=1609188572', bg: '#fff0b8'},
+                    {id: 8, name: 'Juguete interactivo', cat: 'Juguetes', price: 15.90, image: 'https://www.bowwowpetboutique.com/images/category-toys.jpg', bg: '#e6ddff'},
+
+                    // ALIMENTACIÓN
+                    {id: 9, name: 'Premios naturales', cat: 'Alimentación', price: 5.95, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', tag: 'Natural', bg: '#fff0b8'},
+                    {id: 10, name: 'Comedero bonito', cat: 'Alimentación', price: 13.90, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#d9f0df'},
+                    {id: 11, name: 'Galletitas caninas', cat: 'Alimentación', price: 4.50, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#ffe0d6'},
+                    {id: 12, name: 'Snack para premiar', cat: 'Alimentación', price: 8.90, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#e6ddff'},
+                    {id: 13, name: 'Premios Naturales', cat: 'Alimentación', price: 5.95, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#fff0b8'},
+                    {id: 14, name: 'Comedero bonito', cat: 'Alimentación', price: 13.90, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#d9f0df'},
+                    {id: 15, name: 'Galletitas caninas', cat: 'Alimentación', price: 4.50, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#ffe0d6'},
+                    {id: 16, name: 'Snack para premiar', cat: 'Alimentación', price: 8.90, image: 'https://auwaldbio.de/cdn/shop/collections/Hundefutter_900x900_4e7ab087-c041-4021-9039-e2b2dd32fe1e_1024x1024.jpg?v=1677849771', bg: '#e6ddff'},
+
+                    // PASEOS Y ACCESORIOS
+                    {id: 17, name: 'Arnés aventurero', cat: 'Paseos y Accesorios', price: 19.90, image: 'https://thebeachpets.com/cdn/shop/files/Bundle_Save_22.png?v=1767909369', tag: 'Favorito', bg: '#d9f0df'},
+                    {id: 18, name: 'Correa de paseo', cat: 'Paseos y Accesorios', price: 12.90, image: 'https://cdn.leroymerlin.com.br/products/kit_passeio_madog_triangulo_p_peitoral_guia___garrafa_agua_1570430424_03f7_600x600.jpg', bg: '#ffe0d6'},
+                    {id: 19, name: 'Botella portátil', cat: 'Paseos y Accesorios', price: 10.50, image: 'https://a-static.mlcdn.com.br/800x800/coleira-peitoral-guia-retratil-cinto-de-segunraca-para-cachorros-e-bebedouro-pet-lojas-edri/lojasedri/15996676885/ac929514ddf09d12b3f6571f324545f7.jpeg', bg: '#dceaff'},
+                    {id: 20, name: 'Collar colorido', cat: 'Paseos y Accesorios', price: 11.90, image: 'https://thebeachpets.com/cdn/shop/files/Bundle_Save_22.png?v=1767909369', bg: '#e6ddff'},
+                    {id: 21, name: 'Arnés aventurero', cat: 'Paseos y Accesorios', price: 19.90, image: 'https://thebeachpets.com/cdn/shop/files/Bundle_Save_22.png?v=1767909369', tag: 'Favorito', bg: '#d9f0df'},
+                    {id: 22, name: 'Correa de paseo', cat: 'Paseos y Accesorios', price: 12.90, image: 'https://cdn.leroymerlin.com.br/products/kit_passeio_madog_triangulo_p_peitoral_guia___garrafa_agua_1570430424_03f7_600x600.jpg', bg: '#ffe0d6'},
+                    {id: 23, name: 'Botella portátil', cat: 'Paseos y Accesorios', price: 10.50, image: 'https://a-static.mlcdn.com.br/800x800/coleira-peitoral-guia-retratil-cinto-de-segunraca-para-cachorros-e-bebedouro-pet-lojas-edri/lojasedri/15996676885/ac929514ddf09d12b3f6571f324545f7.jpeg', bg: '#dceaff'},
+                    {id: 24, name: 'Collar colorido', cat: 'Paseos y Accesorios', price: 11.90, image: 'https://thebeachpets.com/cdn/shop/files/Bundle_Save_22.png?v=1767909369', bg: '#e6ddff'},
+
+                    // DISFRACES
+                    {id: 25, name: 'Disfraz dinosaurio', cat: 'Disfraces', price: 18.90, image: 'https://static.partyking.org/fit-in/440x0/products/original/dinosaurie-hund-maskeraddrakt-76355-1.jpg', tag: 'Divertido', bg: '#d9f0df'},
+                    {id: 26, name: 'Disfraz de abejita', cat: 'Disfraces', price: 16.90, image: 'https://www.spooktacularcreations.com/cdn/shop/products/1_c45dda51-32a9-44f6-81eb-9068ceb0bbfe_2000x.jpg?v=1599589178', bg: '#fff0b8'},
+                    {id: 27, name: 'Capa de superhéroe', cat: 'Disfraces', price: 14.50, image: 'https://megafancydress.co.uk/cdn/shop/files/Pets.jpg?v=1689255672&width=1080', bg: '#dceaff'},
+                    {id: 28, name: 'Disfraz de fiesta', cat: 'Disfraces', price: 21.90, image: 'https://megafancydress.co.uk/cdn/shop/files/Pets.jpg?v=1689255672&width=1080', bg: '#ffe0d6'},
+                    {id: 29, name: 'Disfraz dinosaurio', cat: 'Disfraces', price: 18.90, image: 'https://static.partyking.org/fit-in/440x0/products/original/dinosaurie-hund-maskeraddrakt-76355-1.jpg', tag: 'Divertido', bg: '#d9f0df'},
+                    {id: 30, name: 'Disfraz de abejita', cat: 'Disfraces', price: 16.90, image: 'https://www.spooktacularcreations.com/cdn/shop/products/1_c45dda51-32a9-44f6-81eb-9068ceb0bbfe_2000x.jpg?v=1599589178', bg: '#fff0b8'},
+                    {id: 31, name: 'Capa de superhéroe', cat: 'Disfraces', price: 14.50, image: 'https://megafancydress.co.uk/cdn/shop/files/Pets.jpg?v=1689255672&width=1080', bg: '#dceaff'},
+                    {id: 32, name: 'Disfraz de fiesta', cat: 'Disfraces', price: 21.90, image: 'https://megafancydress.co.uk/cdn/shop/files/Pets.jpg?v=1689255672&width=1080', bg: '#ffe0d6'}
+                ];
+
+
+                // Estos cuatro productos aparecen como destacados.
+                const featuredIds = [1, 5, 9, 13];
+                const featured = root.querySelector('#ps-featured');
+                const slider = root.querySelector('#ps-slider');
+                const tabs = [...root.querySelectorAll('.ps-tab')];
+                const cartPanel = root.querySelector('#ps-cart-panel');
+                const cart = new Map();
+
+                function createCard(p) {
+                    const card = document.createElement('article');
+                    card.className = 'ps-card';
+
+                    const image = document.createElement('div');
+                    image.className = 'ps-image';
+                    image.style.setProperty('--cardbg', p.bg || '#f8e7e0');
+
+                    if (p.image) {
+                        const img = document.createElement('img');
+                        img.src = p.image;
+                        img.alt = p.name;
+                        img.loading = 'lazy';
+                        image.appendChild(img);
+                    } else {
+                        const emoji = document.createElement('span');
+                        emoji.className = 'ps-emoji';
+                        emoji.textContent = p.emoji || '🐾';
+                        image.appendChild(emoji);
+                    }
+
+                    if (p.tag) {
+                        const tag = document.createElement('span');
+                        tag.className = 'ps-label';
+                        tag.textContent = p.tag;
+                        image.appendChild(tag);
+                    }
+
+                    const info = document.createElement('div');
+                    info.className = 'ps-info';
+
+                    const category = document.createElement('div');
+                    category.className = 'ps-cat-name';
+                    category.textContent = p.cat;
+
+                    const name = document.createElement('h3');
+                    name.textContent = p.name;
+
+                    const price = document.createElement('div');
+                    price.className = 'ps-price';
+                    price.textContent = money(p.price);
+
+                    const buy = document.createElement('button');
+                    buy.className = 'ps-add';
+                    buy.textContent = 'Añadir al carrito +';
+                    buy.addEventListener('click', () => addToCart(p.id));
+
+                    info.append(category, name, price, buy);
+                    card.append(image, info);
+                    return card;
+                }
+
+                function renderFeatured() {
+                    featured.replaceChildren(
+                        ...products.filter(p => featuredIds.includes(p.id)).map(createCard)
+                    );
+                }
+
+                function renderCategory(category) {
+                    const icons = {
+                        'Juguetes': '🧸',
+                        'Alimentación': '🦴',
+                        'Paseos y Accesorios': '🦮',
+                        'Disfraces': '🎭'
+                    };
+
+                    root.querySelector('#ps-category-title').textContent =
+                        icons[category] + ' ' + category;
+
+                    slider.replaceChildren(
+                        ...products.filter(p => p.cat === category).map(createCard)
+                    );
+                    slider.scrollLeft = 0;
+
+                    tabs.forEach(tab => {
+                        tab.setAttribute('aria-pressed', String(tab.dataset.cat === category));
+                    });
+                }
+
+                function addToCart(id) {
+                    const current = cart.get(id) || 0;
+                    cart.set(id, current + 1);
+                    renderCart();
+                    root.querySelector('#ps-open-cart').animate(
+                        [{transform: 'scale(1)'}, {transform: 'scale(1.05)'}, {transform: 'scale(1)'}],
+                        {duration: 220}
+                    );
+                }
+
+                function changeQuantity(id, delta) {
+                    const next = (cart.get(id) || 0) + delta;
+                    if (next <= 0) cart.delete(id);
+                    else cart.set(id, next);
+                    renderCart();
+                }
+
+                function removeItem(id) {
+                    cart.delete(id);
+                    renderCart();
+                }
+
+                function renderCart() {
+                    const container = root.querySelector('#ps-cart-items');
+                    container.replaceChildren();
+
+                    let count = 0;
+                    let total = 0;
+
+                    cart.forEach((qty, id) => {
+                        const p = products.find(item => item.id === id);
+                        if (!p) return;
+                        count += qty;
+                        total += p.price * qty;
+
+                        const line = document.createElement('div');
+                        line.className = 'ps-cart-line';
+
+                        const details = document.createElement('div');
+                        const name = document.createElement('strong');
+                        name.textContent = p.name;
+
+                        const quantity = document.createElement('div');
+                        quantity.className = 'ps-qty';
+
+                        const minus = document.createElement('button');
+                        minus.textContent = '−';
+                        minus.setAttribute('aria-label', 'Reducir cantidad');
+                        minus.addEventListener('click', () => changeQuantity(id, -1));
+
+                        const number = document.createElement('span');
+                        number.textContent = qty;
+
+                        const plus = document.createElement('button');
+                        plus.textContent = '+';
+                        plus.setAttribute('aria-label', 'Aumentar cantidad');
+                        plus.addEventListener('click', () => changeQuantity(id, 1));
+
+                        const remove = document.createElement('button');
+                        remove.className = 'ps-remove';
+                        remove.textContent = 'Eliminar';
+                        remove.addEventListener('click', () => removeItem(id));
+
+                        quantity.append(minus, number, plus);
+                        details.append(name, quantity, remove);
+
+                        const subtotal = document.createElement('strong');
+                        subtotal.textContent = money(p.price * qty);
+
+                        line.append(details, subtotal);
+                        container.appendChild(line);
+                    });
+
+                    if (count === 0) {
+                        const empty = document.createElement('div');
+                        empty.className = 'ps-empty';
+                        empty.textContent = '🐶 ¡Tu carrito está esperando sus primeros caprichos!';
+                        container.appendChild(empty);
+                    }
+
+                    root.querySelector('#ps-cart-count').textContent = count;
+                    root.querySelector('#ps-cart-total').textContent = money(total);
+                    root.querySelector('#ps-cart-total-button').textContent = money(total);
+                }
+
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => renderCategory(tab.dataset.cat));
+                });
+
+                root.querySelector('#ps-prev').addEventListener('click', () => {
+                    slider.scrollBy({left: -slider.clientWidth * .8, behavior: 'smooth'});
+                });
+
+                root.querySelector('#ps-next').addEventListener('click', () => {
+                    slider.scrollBy({left: slider.clientWidth * .8, behavior: 'smooth'});
+                });
+
+                root.querySelector('#ps-open-cart').addEventListener('click', () => {
+                    cartPanel.classList.add('ps-visible');
+                    root.querySelector('#ps-close-cart').focus();
+                });
+
+                root.querySelector('#ps-close-cart').addEventListener('click', () => {
+                    cartPanel.classList.remove('ps-visible');
+                });
+
+                cartPanel.addEventListener('click', event => {
+                    if (event.target === cartPanel) cartPanel.classList.remove('ps-visible');
+                });
+
+                document.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') cartPanel.classList.remove('ps-visible');
+                });
+
+                root.querySelector('#ps-checkout').addEventListener('click', () => {
+                    if (cart.size === 0) {
+                        alert('Añade algún producto antes de finalizar el pedido.');
+                        return;
+                    }
+
+                    if (!/^\d{8,15}$/.test(WHATSAPP) || WHATSAPP === '34600000000') {
+                        alert('Configura el número real de WhatsApp de tu tienda en la variable WHATSAPP.');
+                        return;
+                    }
+
+                    const lines = [];
+                    let total = 0;
+
+                    cart.forEach((qty, id) => {
+                        const p = products.find(item => item.id === id);
+                        if (!p) return;
+                        lines.push(`${qty} x ${p.name} — ${money(p.price * qty)}`);
+                        total += p.price * qty;
+                    });
+
+                    const message =
+                        '¡Hola! Quiero realizar este pedido:\n\n' +
+                        lines.join('\n') +
+                        '\n\nTotal de productos: ' + money(total) +
+                        '\n\n¿Podéis confirmarme disponibilidad, envío y forma de pago?';
+
+                    const url = 'https://wa.me/' + WHATSAPP +
+                        '?text=' + encodeURIComponent(message);
+
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                });
+
+                renderFeatured();
+                renderCategory('Juguetes');
+                renderCart();
+            })();
+        </script>
+    </section>
+
+
+
+
+   
 
     <!-- Conexión al WhatsApp -->
     <div class="whatsapp-container" id="whatsapp-container">
