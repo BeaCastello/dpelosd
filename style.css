@@ -28,7 +28,8 @@ body {
 }
 
 button,
-a, input {
+a,
+input {
     font: inherit;
 }
 
@@ -52,12 +53,12 @@ a {
 .header {
     position: sticky;
     top: 0;
-    z-index: 100;   
+    z-index: 100;
     border-bottom: 1px solid #eee;
     backdrop-filter: blur(12px);
 }
 
-.nav-container {    
+.nav-container {
     display: flex;
     align-items: center;
     gap: 35px;
@@ -191,10 +192,76 @@ a {
     background: var(--green);
 }
 
+.promo-bar {
+    width: 100%;
+    height: 35px;
+    background: #103329;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 5px;
+}
+
+.promo-text {
+    position: relative;
+    right: -100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    animation: moverTexto 20s linear infinite;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.promo-text img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+}
+
+.promo-text strong {
+    color: #ffd700;
+    font-weight: 800;
+}
+
+@keyframes moverTexto {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .promo-bar {
+        height: 50px;
+    }
+
+    .promo-text {
+        font-size: 15px;
+        gap: 10px;
+    }
+
+    .promo-text img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
 /* HERO */
 
 .hero {
-    position: relative;    
+    position: relative;
     height: 500px;
     overflow: hidden;
     color: var(--white);
@@ -218,13 +285,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
 }
 
 .hero-copy {
     width: 55%;
-
 }
 
 .eyebrow {
@@ -268,7 +332,6 @@ a {
     font-weight: 900;
     transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     margin-top: 90px;
-   
 }
 
 .btn:hover {
@@ -307,15 +370,14 @@ a {
     font-size: 35px;
 }
 
-
 /* BENEFITS */
 
-.benefits {   
+.benefits {
     z-index: 5;
     margin-top: -5px;
     background-color: #F8F6F2;
     border-radius: 0 0 55% 55% / 0 0 35px 35px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
 }
 
 .benefits-grid {
@@ -365,7 +427,7 @@ a {
 /* SERVICIOS */
 
 .grooming-section {
-    position: relative;   
+    position: relative;
     background: #fbf8f0;
     overflow: hidden;
     margin-bottom: 30px;
@@ -403,7 +465,6 @@ a {
     font-style: italic;
 }
 
-
 .grooming-header p {
     max-width: 580px;
     margin: 20px auto 0;
@@ -433,7 +494,6 @@ a {
     padding: 10px 10px 25px;
     scrollbar-width: none;
 }
-
 
 .grooming-slider::-webkit-scrollbar {
     display: none;
@@ -477,12 +537,10 @@ a {
     align-items: flex-end;
     padding: 30px;
     background:
-        linear-gradient(
-            to top,
+        linear-gradient(to top,
             rgba(9, 32, 27, .92) 0%,
             rgba(9, 32, 27, .55) 45%,
-            rgba(9, 32, 27, 0) 75%
-        );
+            rgba(9, 32, 27, 0) 75%);
 
     opacity: 0;
     transition: opacity .45s ease;
@@ -524,7 +582,7 @@ a {
 .service-content p {
     max-width: 290px;
     margin: 0 0 17px;
-    color: rgba(255,255,255,.85);
+    color: rgba(255, 255, 255, .85);
     font-size: 15px;
     line-height: 1.5;
 }
@@ -580,7 +638,7 @@ a {
     cursor: pointer;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.15);
+        0 8px 25px rgba(0, 0, 0, .15);
     transform: translateY(-50%);
 
     transition:
@@ -593,8 +651,7 @@ a {
     background: #f7bd45;
 
     transform:
-        translateY(-50%)
-        scale(1.08);
+        translateY(-50%) scale(1.08);
 }
 
 .slider-prev {
@@ -760,7 +817,7 @@ a {
 }
 
 
-.news-header > p {
+.news-header>p {
     max-width: 430px;
     margin-bottom: 5px;
     color: #697570;
@@ -889,7 +946,7 @@ a {
     font-size: 12px;
     font-weight: 900;
     box-shadow:
-        0 5px 15px rgba(0,0,0,.12);
+        0 5px 15px rgba(0, 0, 0, .12);
 }
 
 
@@ -907,7 +964,7 @@ a {
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 12px;
-    color: #9a9f9b; 
+    color: #9a9f9b;
     font-weight: 700;
 }
 
@@ -988,238 +1045,238 @@ a {
 ========================================== */
 
 /* Contacto */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 0;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border-radius: 6px;
+    background-image: url(img/banner-contacto.png);
+
+}
+
+/* Lado izquierdo */
+.contact-left {
+    background: var(--lavanda);
+    padding: 19px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-left h2 {
+    font-size: 36px;
+    color: #0b0b0b;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    font-size: 18px;
+    color: #0b0b0b;
+}
+
+.contact-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    opacity: 0.95;
+    color: #0b0b0b;
+}
+
+.contact-line a {
+    color: black;
+    text-decoration: none;
+}
+
+.redes-sociales a {
+    color: #0b0b0b;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.redes-sociales a:hover {
+    color: rgb(192, 57, 45);
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+/* Lado derecho (formulario) */
+.contact-right {
+    background: rgb(245, 203, 203);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-intro {
+    color: black;
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    opacity: 0.95;
+    text-align: justify;
+}
+
+form.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.contact-form label {
+    font-size: 13px;
+    color: black;
+    margin-bottom: 6px;
+    display: block;
+    font-weight: bolder;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 14px;
+    outline: none;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.privacy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.privacy input {
+    width: 16px;
+    height: 16px;
+}
+
+/* Botón centrado */
+.btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.submit {
+    background: var(--white);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.submit:active {
+    transform: translateY(0);
+}
+
+/* Pequeños ajustes visuales */
+.contact-left small {
+    color: rgba(255, 255, 255, 0.95);
+    display: block;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.privacy label {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 980px) {
     .contact-section {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 0;
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
-      border-radius: 6px;
-      background-image: url(img/banner-contacto.png);
-
-    }
-
-    /* Lado izquierdo */
-    .contact-left {
-      background: var(--lavanda);
-      padding: 19px 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .contact-left h2 {      
-      font-size: 36px;
-      color: #0b0b0b;
-      font-weight: 700;
-      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      color: #fff;
-      font-size: 18px;
-      color: #0b0b0b;
-    }
-
-    .contact-line {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #fff;
-      opacity: 0.95;
-      color: #0b0b0b;
-    }
-
-    .contact-line a {
-      color: black;
-      text-decoration: none;
-    }
-
-    .redes-sociales a {
-      color: #0b0b0b;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-
-    .redes-sociales a:hover {
-      color: rgb(192, 57, 45);
-      text-decoration: none;
-      margin-top: 20px;
-    }
-
-        /* Lado derecho (formulario) */
-    .contact-right {
-      background: rgb(245, 203, 203);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .right-intro {
-      color: black;
-      font-size: 17px;
-      margin-bottom: 12px;
-      line-height: 1.5;
-      opacity: 0.95;
-      text-align: justify;
-    }
-
-    form.contact-form {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .contact-form label {
-      font-size: 13px;
-      color: black;
-      margin-bottom: 6px;
-      display: block;
-      font-weight: bolder;
-    }
-
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form textarea,
-    .contact-form input[type="tel"] {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      font-size: 14px;
-      outline: none;
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .privacy {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      margin-top: 6px;
-    }
-
-    .privacy input {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Botón centrado */
-    .btn-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 8px;
-    }
-
-    .submit {
-      background: var(--white);
-      color: var(--text-dark);
-      border: none;
-      padding: 10px 22px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-
-    .submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    .submit:active {
-      transform: translateY(0);
-    }
-
-    /* Pequeños ajustes visuales */
-    .contact-left small {
-      color: rgba(255, 255, 255, 0.95);
-      display: block;
-      margin-top: 4px;
-      font-weight: 600;
-    }
-
-    .privacy label {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    /* Responsivo */
-    @media (max-width: 980px) {
-      .contact-section {
         grid-template-columns: 1fr;
-      }
+    }
 
-      .contact-right {
+    .contact-right {
         order: 2;
         padding: 24px;
-      }
+    }
 
-      .contact-left {
+    .contact-left {
         order: 1;
         padding: 28px;
-      }
+    }
 
-      .map-wrap iframe {
+    .map-wrap iframe {
         height: 200px;
-      }
+    }
 
-      .contact-right {
+    .contact-right {
         display: flex;
         flex-direction: column;
         justify-self: center;
         width: 550px;
-      }
     }
+}
 
-    @media (max-width: 480px) {
-      .contact-section {
+@media (max-width: 480px) {
+    .contact-section {
         display: flex;
         flex-direction: column;
-      }
+    }
 
-      .contact-left h2 {
+    .contact-left h2 {
         font-size: 28px;
         text-align: center;
-      }
+    }
 
-      .contact-line {
+    .contact-line {
         display: flex;
         flex-direction: column;
         font-size: 20px
-      }
+    }
 
-      .contact-right {
+    .contact-right {
         display: flex;
         flex-direction: column;
         justify-self: center;
         width: 350px;
         margin-left: 12px;
-      }
+    }
 
-      .contact-left {
+    .contact-left {
         order: 1;
         padding: 18px;
-      }
-
-      .fa-solid,
-      .fas {
-        font-size: 20px;
-      }
-
-      .contact-form label {
-        font-size: 15px;
-      }
     }
+
+    .fa-solid,
+    .fas {
+        font-size: 20px;
+    }
+
+    .contact-form label {
+        font-size: 15px;
+    }
+}
 
 
 /* ==========================================
@@ -1291,7 +1348,7 @@ a {
         display: block;
     }
 
-    .news-header > p {
+    .news-header>p {
         margin-top: 20px;
     }
 
@@ -1346,7 +1403,7 @@ a {
     letter-spacing: 2px;
     font-weight: 900;
     margin-bottom: 8px;
-    
+
 }
 
 .section-heading h2 {
@@ -1370,17 +1427,18 @@ a {
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-   }
+}
 
 .product-card {
     padding: 22px;
     background: white;
     border: 1px solid var(--border);
     border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(23,62,53,.05);
+    box-shadow: 0 8px 25px rgba(23, 62, 53, .05);
     transition: transform .2s ease, box-shadow .2s ease;
     width: 94%;
 }
+
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
@@ -1465,19 +1523,19 @@ a {
 
 .footer {
     background: var(--green);
-    color: white;    
+    color: white;
     display: flex;
-    margin-top: 20px;      
+    margin-top: 20px;
 }
 
 .footer-logo {
     font-size: 28px;
-    font-weight: 900; 
-    color: #e6a92f;  
+    font-weight: 900;
+    color: #e6a92f;
 }
 
 .footer p {
-    color: rgba(255,255,255,.72);
+    color: rgba(255, 255, 255, .72);
     line-height: 2;
     width: 300px;
 }
@@ -1487,9 +1545,9 @@ a {
 }
 
 .copyright {
-    text-align: center;   
-    border-top: 2px solid rgba(255,255,255,.12);
-    color: rgba(255,255,255,.55);
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, .12);
+    color: rgba(255, 255, 255, .55);
     font-size: 13px;
     margin-top: 10px;
     margin-left: -4px;
@@ -1518,7 +1576,7 @@ a {
     padding: 35px;
     border-radius: 25px;
     background: white;
-    box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .25);
 }
 
 .modal-box h2 {
@@ -1612,7 +1670,7 @@ a {
         gap: 0;
         padding: 15px 24px 20px;
         background: white;
-        box-shadow: 0 15px 25px rgba(0,0,0,.08);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .08);
     }
 
     .nav.open {
@@ -1691,11 +1749,9 @@ a {
     }
 
     .hero-overlay {
-        background: linear-gradient(
-            90deg,
-            rgba(11,31,26,.88),
-            rgba(11,31,26,.55)
-        );
+        background: linear-gradient(90deg,
+                rgba(11, 31, 26, .88),
+                rgba(11, 31, 26, .55));
     }
 
     .hero h1 {
@@ -1743,95 +1799,92 @@ a {
         grid-template-columns: 1fr 1fr;
     }
 
-   }
+}
 
-   /* Estilo Whatsapp */
+/* Estilo Whatsapp */
 
-    .whatsapp-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-      z-index: 1000;
-    }
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
 
-    /* Botón de WhatsApp */
-    .whatsapp-button {
-      display: flex;
-      align-items: center;
-      background-color: #25d366;
-      padding: 10px;
-      border-radius: 50px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      position: relative;
-      transition: background-color 0.3s;
-    }
+/* Botón de WhatsApp */
+.whatsapp-button {
+    display: flex;
+    align-items: center;
+    background-color: #25d366;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    position: relative;
+    transition: background-color 0.3s;
+}
 
-    /* Icono de WhatsApp */
-    .whatsapp-icon {
-      width: 30px;
-      height: 30px;
-    }
+/* Icono de WhatsApp */
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+}
 
-        /* Mostrar texto emergente al hacer hover */
-    .whatsapp-button:hover  {
-      opacity: 1;
-      transform: translateX(0);
-    }
+/* Mostrar texto emergente al hacer hover */
+.whatsapp-button:hover {
+    opacity: 1;
+    transform: translateX(0);
+}
 
-    /* Mostrar el botón cuando es visible */
-    .whatsapp-container.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-10px);
-      transition: opacity 0.3s, transform 0.5s;
-    }
+/* Mostrar el botón cuando es visible */
+.whatsapp-container.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-10px);
+    transition: opacity 0.3s, transform 0.5s;
+}
 
-    /* Cookies banner */
+/* Cookies banner */
 
-    #cookie-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #414040;
-      color: #fff;
-      text-align: center;
-      font-family: sans-serif;
-      display: none;
-      padding-bottom: 20px;
-      }
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #414040;
+    color: #fff;
+    text-align: center;
+    font-family: sans-serif;
+    display: none;
+    padding-bottom: 20px;
+}
 
-    #cookie-banner button {
-      margin-left: 10px;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: -10px;
+#cookie-banner button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: -10px;
 
-    }
+}
 
-    #acceptCookies {
-      background: #4CAF50;
-      color: #fff;
-    }
+#acceptCookies {
+    background: #4CAF50;
+    color: #fff;
+}
 
-    #rejectCookies {
-      background: #f44336;
-      color: #fff;
-    }
+#rejectCookies {
+    background: #f44336;
+    color: #fff;
+}
 
-    #cookie-banner a {
-      color: #4FC3F7;
-      text-decoration: underline;
-      margin-left: 10px;
-    }
-
-
-
+#cookie-banner a {
+    color: #4FC3F7;
+    text-decoration: underline;
+    margin-left: 10px;
+}

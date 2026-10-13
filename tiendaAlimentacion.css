@@ -60,26 +60,29 @@ a {
 
 .promo-bar {
     width: 100%;
-    height: 30px;
-    background: #111;
+    height: 35px;
+    background: #103329;
     color: white;
     overflow: hidden;
     display: flex;
     align-items: center;
     position: relative;
+    margin-top: 5px;
 }
 
 .promo-text {
-    position: absolute;
-    left: -100%;
+    position: relative;
+    right: -100%;
     white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 15px;
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     animation: moverTexto 20s linear infinite;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .promo-text img {
@@ -96,13 +99,14 @@ a {
 
 @keyframes moverTexto {
     from {
-        left: -100%;
+        right: -100%;
     }
 
     to {
-        left: 100%;
+        right: 100%;
     }
 }
+
 
 @media (max-width: 600px) {
     .promo-bar {
@@ -119,6 +123,298 @@ a {
         height: 25px;
     }
 }
+
+/* JUGUETES */
+
+.grooming-section {
+    position: relative;
+    background: #fbf8f0;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+
+.grooming-header h2 span {
+    color: #e6ad36;
+    font-style: italic;
+}
+
+
+.grooming-header p {
+    max-width: 580px;
+    margin: 20px auto 0;
+    color: #68746f;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+#peludos-shop{
+ --coral:#ff786b;
+ --yellow:#ffd166;
+ --mint:#b8e6cf;
+ --lilac:#d9c7ff;
+ --ink:#353445;
+ font-family:Arial,sans-serif;
+ color:var(--ink);
+ background:var(--cream);
+ padding:35px 5%;
+ border-radius:22px;
+}
+#peludos-shop *{box-sizing:border-box}
+#peludos-shop button
+{font:inherit;cursor:pointer
+}
+
+#peludos-shop .ps-head
+{text-align:center;margin:0 auto 30px
+}
+
+#peludos-shop .ps-kicker{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    color:#e96d60;
+    text-transform:uppercase
+}
+
+#peludos-shop h2{
+    font-size:clamp(27px,4vw,40px);
+    margin:12px 0;color:var(--ink)
+}
+
+#peludos-shop .ps-head p{
+    color:#777384;line-height:1.6
+}
+
+#peludos-shop .ps-hero{
+ display:grid;
+ grid-template-columns:1.15fr .85fr;
+ align-items:center;
+ background:var(--yellow);
+ border-radius:26px;
+ overflow:hidden; 
+ min-height:260px;
+}
+
+#peludos-shop .ps-hero-copy
+{padding:35px 8%
+}
+#peludos-shop .ps-hero h2{
+    font-size:clamp(30px,4vw,48px);
+    line-height:1.1
+}
+#peludos-shop .ps-hero p
+{line-height:1.7
+}
+
+#peludos-shop .ps-pill{
+ display:inline-block;background:white;padding:8px 13px;
+ border-radius:30px;font-size:12px;font-weight:bold;background-color: transparent;
+}
+
+#peludos-shop .ps-main-btn{
+ display:inline-block;background:#103329;color:white;
+ border:0;padding:13px 20px;border-radius:30px;
+ font-weight:bold;text-decoration:none;
+}
+
+#peludos-shop .ps-main-btn:hover{
+    filter:brightness(.94)
+}
+
+#peludos-shop .ps-section{
+    margin-bottom:58px
+}
+
+#peludos-shop .ps-grid{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:17px
+}
+
+#peludos-shop .ps-card{
+ background:white;
+ border:1px solid #f0e9e5;
+ border-radius:19px;
+ overflow:hidden;
+ min-width:0;
+ position:relative;
+ transition:transform .2s,box-shadow .2s;
+}
+
+#peludos-shop .ps-card:hover{
+ transform:translateY(-4px);box-shadow:0 10px 25px #51435a12
+}
+
+#peludos-shop .ps-image{
+ height:200px;background:var(--cardbg,#f8e7e0);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ position:relative;
+ overflow:hidden;
+}
+
+#peludos-shop .ps-image img{
+    width:200px;height:200px;
+}
+
+#peludos-shop .ps-emoji{
+    font-size:76px
+}
+
+#peludos-shop .ps-label{
+ position:absolute;
+ top:12px;
+ left:12px;
+ background:white;
+ border-radius:20px;
+ padding:6px 10px;
+ font-size:11px;
+ font-weight:bold;
+}
+
+#peludos-shop .ps-info{padding:15px}
+#peludos-shop .ps-info h3{font-size:15px;margin:0 0 8px;line-height:1.4}
+#peludos-shop .ps-cat-name{font-size:11px;color:#898596;margin-bottom:10px}
+#peludos-shop .ps-price{font-weight:800;font-size:19px;color:#4e785e}
+#peludos-shop .ps-old{font-size:12px;color:#999;text-decoration:line-through;margin-left:5px}
+#peludos-shop .ps-add{
+ width:100%;margin-top:13px;padding:11px 8px;border:0;
+ border-radius:10px;background:var(--coral);color:white;font-weight:bold
+}
+#peludos-shop .ps-add:hover{filter:brightness(.93)}
+#peludos-shop .ps-category-nav{
+ display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:25px 0
+}
+#peludos-shop .ps-tab{
+ border:2px solid transparent;background:white;border-radius:30px;
+ padding:12px 17px;font-weight:bold;color:var(--ink)
+}
+#peludos-shop .ps-tab[aria-pressed=true]{
+ background:var(--mint);border-color:#77bb96
+}
+#peludos-shop .ps-tab:focus-visible,
+#peludos-shop button:focus-visible{outline:3px solid #6355ad;outline-offset:3px}
+#peludos-shop .ps-slider-head{
+ display:flex;justify-content:space-between;align-items:center;gap:10px;
+ margin-bottom:12px
+}
+#peludos-shop .ps-slider-head h3{margin:0;font-size:21px}
+#peludos-shop .ps-arrows{display:flex;gap:8px}
+#peludos-shop .ps-arrow{
+ width:40px;height:40px;border-radius:50%;border:1px solid #e8e0d9;
+ background:white;font-size:20px
+}
+#peludos-shop .ps-slider{
+ display:grid;grid-auto-flow:column;
+ grid-auto-columns:calc((100% - 51px)/4);
+ gap:17px;overflow-x:auto;scroll-snap-type:x mandatory;
+ scroll-behavior:smooth;padding:4px 3px 16px;
+ scrollbar-width:thin
+}
+#peludos-shop .ps-slider .ps-card{scroll-snap-align:start}
+#peludos-shop .ps-category-area{
+ padding:30px 22px;background:#f0eaff;border-radius:25px
+}
+#peludos-shop .ps-cart-trigger{
+ position:sticky;bottom:12px;z-index:10;display:flex;
+ justify-content:center;margin:25px auto 0;pointer-events:none
+}
+#peludos-shop .ps-cart-open{
+ pointer-events:auto;border:0;border-radius:35px;background:var(--ink);
+ color:white;padding:15px 23px;font-weight:bold;
+ box-shadow:0 5px 20px #35344535
+}
+#peludos-shop .ps-cart-panel{
+ position:fixed;inset:0;z-index:99999;background:#24202c77;
+ display:none;justify-content:flex-end
+}
+#peludos-shop .ps-cart-panel.ps-visible{display:flex}
+#peludos-shop .ps-cart-box{
+ width:min(430px,100%);height:100%;overflow-y:auto;background:white;
+ padding:25px;box-shadow:-8px 0 35px #00000015
+}
+#peludos-shop .ps-cart-top{
+ display:flex;align-items:center;justify-content:space-between;gap:10px
+}
+#peludos-shop .ps-cart-top h3{font-size:24px}
+#peludos-shop .ps-close{
+ width:38px;height:38px;border:0;border-radius:50%;background:#f3f0f7;font-size:21px
+}
+#peludos-shop .ps-cart-line{
+ display:grid;grid-template-columns:1fr auto;gap:12px;
+ padding:15px 0;border-bottom:1px solid #eee
+}
+#peludos-shop .ps-cart-line strong{font-size:14px}
+#peludos-shop .ps-qty{display:flex;align-items:center;gap:10px;margin-top:9px}
+#peludos-shop .ps-qty button{
+ border:1px solid #ddd;background:white;border-radius:7px;
+ width:28px;height:28px
+}
+#peludos-shop .ps-remove{border:0;background:transparent;color:#c54c4c;font-size:12px;margin-top:7px}
+#peludos-shop .ps-total{
+ display:flex;justify-content:space-between;font-size:19px;
+ font-weight:bold;margin:22px 0
+}
+#peludos-shop .ps-checkout{
+ width:100%;padding:15px;background:#269b60;color:white;
+ border:0;border-radius:12px;font-weight:bold
+}
+#peludos-shop .ps-note{font-size:12px;line-height:1.6;color:#777;margin-top:12px}
+#peludos-shop .ps-empty{text-align:center;padding:35px 0;color:#777}
+@media(max-width:850px){
+ #peludos-shop .ps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #peludos-shop .ps-slider{grid-auto-columns:calc((100% - 17px)/2)}
+ #peludos-shop .ps-image{height:175px}
+ #peludos-shop .ps-hero{grid-template-columns:1fr 0.7fr}
+}
+@media(max-width:520px){
+ #peludos-shop{padding:25px 4%}
+ #peludos-shop .ps-hero{grid-template-columns:1fr}
+ #peludos-shop .ps-hero-copy{padding:27px}
+ #peludos-shop .ps-hero-art{min-height:140px;font-size:100px}
+ #peludos-shop .ps-category-area{padding:22px 12px}
+ #peludos-shop .ps-slider{grid-auto-columns:80%;gap:12px}
+ #peludos-shop .ps-grid{gap:11px}
+ #peludos-shop .ps-image{height:140px}
+ #peludos-shop .ps-info{padding:11px}
+ #peludos-shop .ps-info h3{font-size:14px}
+ #peludos-shop .ps-tab{padding:10px 12px;font-size:12px}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .nav-container {
     display: flex;
@@ -426,7 +722,7 @@ a {
     color: var(--muted);
 }
 
-/* JUGUETES */
+/* PORTADA */
 
 .grooming-section {
     position: relative;
@@ -435,33 +731,6 @@ a {
     margin-bottom: 30px;
 }
 
-/* CABECERA */
-
-.grooming-header {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto 45px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.grooming-kicker {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: #e5a52d;
-    font-size: 14px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.grooming-header h2 {
-    margin: 0;
-    color: #173e35;
-    font-size: clamp(30px, 5vw, 38px);
-    line-height: 1;
-    letter-spacing: -2px;
-    font-weight: 900;
-}
 
 .grooming-header h2 span {
     color: #e6ad36;
@@ -476,7 +745,6 @@ a {
     font-size: 17px;
     line-height: 1.6;
 }
-
 /* ===== TIENDA ===== */
 
 .shop-page {
