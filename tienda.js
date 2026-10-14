@@ -431,6 +431,22 @@ function updateCategoryBreadcrumb() {
     
 }
 
+
+/* DESPLAZARSE A LA SECCIÓN DE PRODUCTOS */
+function scrollToProducts() {
+    const productsSection = document.getElementById("products");
+
+    if (productsSection) {
+        setTimeout(() => {
+            productsSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }, 100);
+    }
+}
+
+
 function updateActiveCategory() {
     document.querySelectorAll(".category-card").forEach(button => {
         const selected =
@@ -867,6 +883,9 @@ cartButton.addEventListener("click", () => {
 
 // INICIALIZAR TIENDA
 
+
+/* INICIALIZAR TIENDA */
+
 readFilters();
 
 sortMenu.querySelector(
@@ -878,3 +897,8 @@ updateActiveCategory();
 
 renderProducts();
 updateCartCount();
+
+/* IR A PRODUCTOS SI SE HA ELEGIDO UNA CATEGORÍA EN EL MENÚ */
+if (requestedCategory) {
+    scrollToProducts();
+}
