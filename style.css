@@ -27,28 +27,13 @@ body {
     background: var(--cream);
 }
 
-button,
-a,
-input {
-    font: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.container {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
-}
-
 /* HEADER */
+
+.logo {
+    width: 80px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
 
 .header {
     position: sticky;
@@ -61,44 +46,6 @@ a {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 35px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    min-width: 265px;
-}
-
-.logo-paw {
-    font-size: 48px;
-    line-height: 1;
-    filter: saturate(1.2);
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo-text strong {
-    font-size: 29px;
-    line-height: 1;
-    letter-spacing: -1px;
-    color: var(--green);
-}
-
-.logo-text strong span,
-.footer-logo span {
-    color: var(--yellow);
-}
-
-.logo-text small {
-    margin-top: 5px;
-    color: #6e7672;
-    font-size: 13px;
-    font-weight: 700;
 }
 
 .nav {
@@ -115,6 +62,8 @@ a {
     font-weight: 700;
     padding: 36px 0 33px;
     transition: color .2s ease;
+    text-decoration: none;
+    color: #0b0b0b;
 }
 
 .nav a:hover,
@@ -137,6 +86,7 @@ a {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding-right: 60px;
 }
 
 .icon-btn,
@@ -153,6 +103,17 @@ a {
     width: 42px;
     height: 42px;
 }
+
+.imgPersona {
+    width: 15px;
+    margin-top: 1px;
+}
+
+.imgCarrito {
+    width: 22px;
+    margin-top: 10px;
+}
+
 
 .cart-btn {
     font-size: 25px;
@@ -192,6 +153,18 @@ a {
     background: var(--green);
 }
 
+@media (max-width: 480px){
+.logo {
+    width: 60px;}
+}
+
+
+
+
+
+
+/* PROMO */
+
 .promo-bar {
     width: 100%;
     height: 35px;
@@ -205,18 +178,20 @@ a {
 }
 
 .promo-text {
-    position: relative;
-    right: -100%;
-    white-space: nowrap;
+    position: absolute;
+    left: -100%;
     display: flex;
     align-items: center;
     gap: 15px;
     font-family: Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    animation: moverTexto 20s linear infinite;
+    animation: moverTexto 24s linear infinite;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    max-width: none;
+
 }
 
 .promo-text img {
@@ -233,23 +208,25 @@ a {
 
 @keyframes moverTexto {
     from {
-        right: -100%;
+        left: -100%;
     }
 
     to {
-        right: 100%;
+        left: 100%;
     }
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .promo-bar {
-        height: 50px;
+        height: 40px;
     }
 
     .promo-text {
         font-size: 15px;
         gap: 10px;
+        white-space: nowrap;
+        width: max-content;
+        flex-wrap: nowrap;
     }
 
     .promo-text img {
@@ -279,96 +256,88 @@ a {
     inset: 0;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.hero-copy {
-    width: 55%;
-}
-
-.eyebrow {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: clamp(50px, 5.4vw, 78px);
-    line-height: .94;
-    letter-spacing: -3px;
-    font-weight: 900;
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    color: var(--yellow);
-    font-size: 1.13em;
-    font-style: italic;
-}
-
-.hero-description {
-    max-width: 480px;
-    font-size: 18px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, .93);
-    margin-bottom: 32px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 13px;
-    min-height: 50px;
-    padding: 0 25px;
-    border: 0;
-    border-radius: 999px;
-    cursor: pointer;
-    font-weight: 900;
-    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-    margin-top: 90px;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary {
+.btnBanner {
     background: var(--yellow);
     color: var(--green);
-    box-shadow: 0 12px 25px rgba(247, 189, 69, .28);
-    margin-left: -2em;
-    margin-top: 320px;
+    margin-left: 35px;
 }
 
-.btn-primary:hover {
-    background: #ffc95d;
-}
-
-.btn-primary b {
-    font-size: 22px;
-}
-
-.hero-message {
-    align-self: center;
-    margin-right: 4%;
-    transform: rotate(-5deg);
-    text-align: center;
-    font-family: cursive;
-    font-size: 27px;
+a.btnBanner {
+    margin-top: 21em;
+    padding: 12px;
+    border-radius: 10px;
+    color: black;
+    text-decoration: none;
     font-weight: 700;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, .2);
 }
 
-.hero-message b {
-    color: var(--yellow);
-    font-size: 35px;
+.patasperro {
+    width: 20px;
 }
+
+.btn-hero {
+    margin-top: 11em;
+    ;
+
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        height: 300px;
+    }
+
+    .btn-primary {
+        width: 190px;
+        height: 30px;
+        font-size: 14px;
+        margin-top: 230px;
+    }
+
+    .patasperro {
+        width: 10px;
+    }
+
+    a.btnBanner {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .btn-hero {
+        margin-top: 6em;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* BENEFITS */
 
@@ -1694,11 +1663,6 @@ form.contact-form {
         display: none;
     }
 
-    .hero,
-    .hero-content {
-        min-height: 590px;
-    }
-
     .hero-copy {
         width: 100%;
         max-width: 650px;
@@ -1731,75 +1695,6 @@ form.contact-form {
     }
 }
 
-@media (max-width: 600px) {
-    .container {
-        width: min(100% - 30px, 1180px);
-    }
-
-    .logo-text small {
-        display: none;
-    }
-
-    .hero {
-        min-height: 600px;
-    }
-
-    .hero-content {
-        min-height: 600px;
-    }
-
-    .hero-overlay {
-        background: linear-gradient(90deg,
-                rgba(11, 31, 26, .88),
-                rgba(11, 31, 26, .55));
-    }
-
-    .hero h1 {
-        font-size: 49px;
-        letter-spacing: -2px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .benefit,
-    .benefit:nth-child(2),
-    .benefit:nth-child(3),
-    .benefit:nth-child(4) {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-        justify-content: flex-start;
-        text-align: left;
-        padding: 17px 10px;
-    }
-
-    .benefit:last-child {
-        border-bottom: 0;
-    }
-
-    .shop-section,
-    .categories {
-        padding: 70px 0;
-    }
-
-    .section-heading {
-        display: block;
-    }
-
-    .section-heading .btn {
-        margin-top: 20px;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
 
 /* Estilo Whatsapp */
 
@@ -1887,4 +1782,16 @@ form.contact-form {
     color: #4FC3F7;
     text-decoration: underline;
     margin-left: 10px;
+}
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    @media (max-width: 980px) {}
+
+    @media (max-width: 768px) {}
 }

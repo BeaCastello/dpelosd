@@ -19,7 +19,7 @@
 
     <header class="header" id="inicio">
         <div class="container nav-container">
-            <img src="img/Versión6.png" style="width: 80px;"> </img>
+            <img src="img/Versión6.png" class="logo"> </img>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
                 <span></span>
@@ -37,17 +37,14 @@
 
             <div class="nav-actions">
                 <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>
-                <button class="icon-btn" aria-label="Mi cuenta"><img src="img/persona.png"
-                        style="width: 15px; margin-top: 1px;"></button>
+                <button class="icon-btn" aria-label="Mi cuenta"><img src="img/persona.png" class="imgPersona"></button>
                 <button class="cart-btn" id="cartBtn" aria-label="Carrito"> <img src="img/carrito.png"
-                        style="width: 22px; margin-top: 19px;">
+                        class="imgCarrito">
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
             </div>
         </div>
     </header>
-
-    <!--PROMO -->
 
     <!-- PROMO -->
 
@@ -57,9 +54,7 @@
             <img src="img/pataDerecha.png" style="width: 20px;" alt="Pata de perro">
 
             <span>
-                NUEVOS CLIENTES:
-                <strong>20% DE DESCUENTO</strong>
-                EN TU PRIMERA COMPRA
+                NUEVOS CLIENTES: <strong>20% DE DESCUENTO</strong> EN TU PRIMERA COMPRA
             </span>
 
             <img src="img/pataIzquierda.png" style="width: 20px;" alt="Pata de perro">
@@ -68,24 +63,16 @@
         </div>
     </div>
 
-
-
+    <!-- BANNER -->
     <section class="hero">
-        <div class="hero-image"></div>
-        <div class="hero-overlay"></div>
-
-        <div class="container hero-content" style="margin-top: -8em;">
-            <div class="hero-copy">
-                <a href="#tienda" class="btn btn-primary">
-                    <img src="img/patas de perro.png" style="width: 40px;"> <span>Reservar cita</span> <b>→</b>
-                </a>
-            </div>
-
+        <div class="btn-hero">
+            <a href="#tienda" class="btnBanner"> <img class="patasperro" src="img/patas de perro.png"> Reservar cita →
+            </a>
         </div>
     </section>
 
 
-    <!-- BENEFICIOS -->
+    <!-- BENEFICIOS 
     <section class="benefits" id="nosotros">
         <div class="container benefits-grid">
 
@@ -126,7 +113,7 @@
         </div>
     </section>
 
-    <!-- TIENDA -->
+    <!-- TIENDA 
     <section class="shop-section" id="tienda">
         <div class="container">
             <div class="section-heading">
@@ -144,7 +131,7 @@
                     <h3>Juguetes </h3>
                     <p style="margin-bottom: 30px;"> Un juguete es una oportunidad para hacerlo feliz.</p>
                     <a class="add-btn" href="tienda.html">Ir a la tienda</a>
-                    <!--  <button class="add-btn" data-product="Juguete para perro">Añadir al carrito</button> -->
+                    <!--  <button class="add-btn" data-product="Juguete para perro">Añadir al carrito</button> 
                 </article>
 
                 <article class="product-card">
@@ -152,7 +139,7 @@
                     <h3>Alimentos</h3>
                     <p style="margin-bottom: 30px;">Opciones para cuidar su alimentación diaria.</p>
                     <a class="add-btn" href="tienda.html">Ir a la tienda</a>
-                    <!--  <button class="add-btn" data-product="Alimento premium">Ir a la tienda</button>  -->
+                    <!--  <button class="add-btn" data-product="Alimento premium">Ir a la tienda</button>  
                 </article>
 
                 <article class="product-card">
@@ -160,7 +147,7 @@
                     <h3>Paseo y accesorios</h3>
                     <p style="margin-bottom: 30px;">Collares, correas y accesorios para salir juntos.</p>
                     <a class="add-btn" href="tienda.html">Ir a la tienda</a>
-                    <!-- <button class="add-btn" data-product="Correa premium">Ir a la tienda</button>-->
+                    <!-- <button class="add-btn" data-product="Correa premium">Ir a la tienda</button>
                 </article>
 
                 <article class="product-card">
@@ -168,13 +155,13 @@
                     <h3>Disfraces</h3>
                     <p style="margin-bottom: 30px;">Collares, correas y accesorios para salir juntos.</p>
                     <a class="add-btn" href="tienda.html">Ir a la tienda</a>
-                    <!--  <button class="add-btn" data-product="Correa premium">Ir a la tienda</button> -->
+                    <!--  <button class="add-btn" data-product="Correa premium">Ir a la tienda</button> 
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- SERVICIOS -->
+    <!-- SERVICIOS 
 
     <section class="grooming-section" id="peluqueria">
 
@@ -189,7 +176,7 @@
         </div>
 
 
-        <!-- SLIDER -->
+        <!-- SLIDER 
         <div class="grooming-slider-wrapper">
 
             <button class="slider-btn slider-prev" id="prevBtn">
@@ -197,7 +184,7 @@
             </button>
             <div class="grooming-slider" id="groomingSlider">
 
-                <!-- SERVICIO 1 -->
+                <!-- SERVICIO 1 
                 <article class="grooming-card">
                     <img src="img/bañoparaperro.png" alt="Baño para perros">
 
@@ -220,7 +207,7 @@
                 </article>
 
 
-                <!-- SERVICIO 2 -->
+                <!-- SERVICIO 2 
                 <article class="grooming-card">
                     <img src="img/masaje canino.png" alt="Masaje canino">
 
@@ -243,7 +230,7 @@
                 </article>
 
 
-                <!-- SERVICIO 3 -->
+                <!-- SERVICIO 3 
                 <article class="grooming-card">
                     <img src="img/salud y nutrición.png" alt="Atención Integral">
 
@@ -266,7 +253,7 @@
                 </article>
 
 
-                <!-- SERVICIO 4 -->
+                <!-- SERVICIO 4 
                 <article class="grooming-card">
                     <img src="img/paseos de perros.png" alt="Paseos Premium">
 
@@ -289,7 +276,7 @@
                 </article>
 
 
-                <!-- SERVICIO 5 -->
+                <!-- SERVICIO 5 
                 <article class="grooming-card">
                     <img src="img/formacion.png" alt="Formación personalizada">
 
@@ -316,11 +303,11 @@
                 &#10095;
             </button>
         </div>
-        <!-- INDICADORES -->
+        <!-- INDICADORES 
         <div class="slider-dots" id="sliderDots"></div>
     </section>
 
-    <!-- CONSEJOS Y NOTICIAS -->
+    <!-- CONSEJOS Y NOTICIAS 
 
     <section class="news-section" id="consejos">
         <div class="news-container" id="blog">
@@ -346,7 +333,7 @@
 
             </div>
 
-            <!-- FILTROS -->
+            <!-- FILTROS 
 
             <div class="news-filters">
 
@@ -369,10 +356,10 @@
 
             <!-- NOTICIAS -->
 
-            <div class="news-grid" id="newsGrid">
+    <div class="news-grid" id="newsGrid">
 
 
-                <!-- NOTICIA 1 -->
+        <!-- NOTICIA 1 
 
                 <article class="news-card" data-category="cuidados">
                     <div class="news-image">
@@ -405,7 +392,7 @@
                 </article>
 
 
-                <!-- NOTICIA 2 -->
+                <!-- NOTICIA 2 
 
                 <article class="news-card" data-category="alimentacion">
 
@@ -447,7 +434,7 @@
                 </article>
 
 
-                <!-- NOTICIA 3 -->
+                <!-- NOTICIA 3 
 
                 <article class="news-card" data-category="bienestar">
 
@@ -483,7 +470,7 @@
 
                 </article>
 
-                <!-- NOTICIA 4 -->
+                <!-- NOTICIA 4 
 
                 <article class="news-card" data-category="cuidados">
 
@@ -522,7 +509,7 @@
 
                 </article>
 
-                <!-- NOTICIA 5 -->
+                <!-- NOTICIA 5 
 
                 <article class="news-card" data-category="alimentacion">
 
@@ -560,7 +547,7 @@
 
                 </article>
 
-                <!-- NOTICIA 6 -->
+                <!-- NOTICIA 6 
 
                 <article class="news-card" data-category="bienestar">
                     <div class="news-image">
@@ -596,7 +583,7 @@
                 </article>
 
 
-                <!-- NOTICIA 7 -->
+                <!-- NOTICIA 7 
 
                 <article class="news-card" data-category="cuidados">
 
@@ -635,7 +622,7 @@
 
                 </article>
 
-                <!-- NOTICIA 8 -->
+                <!-- NOTICIA 8 
 
                 <article class="news-card" data-category="alimentacion">
 
@@ -673,7 +660,7 @@
 
                 </article>
 
-                <!-- NOTICIA 9 -->
+                <!-- NOTICIA 9 
 
                 <article class="news-card" data-category="bienestar">
                     <div class="news-image">
@@ -710,10 +697,10 @@
             </div>
     </section>
 
-    <!-- Contacto -->
+    <!-- Contacto 
 
     <section class="contact-section" aria-label="Sección de contacto" id="contacto">
-        <!-- IZQUIERDA -->
+        <!-- IZQUIERDA 
         <div class="contact-left">
             <h2 style="margin-left: 10px;">Contacto</h2>
             <div class="contact-info" aria-hidden="false">
@@ -734,7 +721,7 @@
             </div>
         </div>
 
-        <!-- Formulario Contacto-->
+        <!-- Formulario Contacto
         <div class="contact-right" aria-label="Formulario de contacto">
             <div>
                 <p style="font-size: 25px; font-weight: bolder; margin-bottom: 10px;"> Cuenta con nosotros</p>
@@ -779,7 +766,7 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- FOOTER 
     <footer class="footer">
         <div class="footer">
             <div style="display: flex; flex-direction: column; line-height: 1.6; margin-left: 30px; margin-right: 7em;">
@@ -828,7 +815,7 @@
 
     </footer>
 
-    <!-- MODAL DE BÚSQUEDA -->
+    <!-- MODAL DE BÚSQUEDA 
     <div class="modal" id="searchModal" aria-hidden="true">
         <div class="modal-box">
             <button class="modal-close" id="closeSearch">×</button>
@@ -839,7 +826,7 @@
         </div>
     </div>
 
-    <!-- Conexión al WhatsApp -->
+    <!-- Conexión al WhatsApp 
     <div class="whatsapp-container" id="whatsapp-container">
         <a href="https://wa.me/34604834931" target="_blank" class="whatsapp-button">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
@@ -847,7 +834,7 @@
         </a>
     </div>
 
-    <!-- Cookies banner-->
+    <!-- Cookies banner
     <div id="cookie-banner">
         <p style="padding-top: 20px;"> Usamos cookies para mejorar tu experiencia. Puedes consultar más información
             en nuestra <a href="politicaPrivacidad.html" target="_blank">Política de Privacidad.</a></p>
@@ -856,7 +843,7 @@
         <button id="rejectCookies">Rechazar</button>
     </div>
 
-    <!-- JS -->
+    <!-- JS 
     <script src="script.js"></script>
 </body>
 
