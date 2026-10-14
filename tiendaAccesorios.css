@@ -372,16 +372,6 @@ a {
     font-size: 35px;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* BENEFITS */
 
 .benefits {
@@ -436,7 +426,7 @@ a {
     color: var(--muted);
 }
 
-/* JUGUETES */
+/* PORTADA */
 
 .grooming-section {
     position: relative;
@@ -487,7 +477,7 @@ a {
     line-height: 1.6;
 }
 
-/* ===== TIENDA ===== */
+/* TIENDA */
 
 .shop-page {
     max-width: 1400px;
@@ -619,7 +609,7 @@ a {
     text-align: right;
 }
 
-/* ===== CUADRÍCULA DE PRODUCTOS ===== */
+/* SELECTOR DE PRODUCTOS */
 
 .product-grid {
     display: grid;
@@ -870,7 +860,7 @@ a {
     border-color: #80583f;
 }
 
-/* ===== ESTADO SIN RESULTADOS ===== */
+/* ESTADO SIN RESULTADOS */
 
 .empty-products {
     padding: 65px 20px;
@@ -895,7 +885,7 @@ a {
     min-width: 150px;
 }
 
-/* ===== TABLET Y MÓVIL ===== */
+/*  TABLET Y MÓVIL */
 
 @media (max-width: 1000px) {
     .product-grid {
@@ -964,54 +954,6 @@ a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ---------------- MODAL ---------------- */
 
 .modal {
@@ -1045,7 +987,7 @@ a {
     cursor: pointer;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+/*  RESPONSIVE */
 
 @media (max-width: 1050px) {
     .product-page {
