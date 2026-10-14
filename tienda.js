@@ -393,6 +393,39 @@ let activeFilters = {
 
 let activeCategory = "todos";
 
+const categoryNames = {
+    todos: "Todos los productos",
+    alimentacion: "Alimentación",
+    juguetes: "Juguetes",
+    paseos: "Paseos y Accesorios",
+    disfraces: "Disfraces"
+};
+
+document.querySelectorAll(".category-card").forEach(button => {
+    button.addEventListener("click", () => {
+        activeCategory = button.dataset.category;
+
+         const categoryName =
+            categoryNames[activeCategory] || "Todos los productos";
+
+
+        // Actualizar el título
+        document.getElementById("category-title").textContent = categoryName;
+        document.getElementById("breadcrumb-category").textContent = categoryName;
+
+        // Marcar la categoría seleccionada
+        document.querySelectorAll(".category-card").forEach(item => {
+            const selected = item.dataset.category === activeCategory;
+
+            item.classList.toggle("is-active", selected);
+            item.setAttribute("aria-pressed", String(selected));
+        });
+
+        // Actualizar los productos
+        renderProducts();
+    });
+});
+
 // Identificar la categoría de cada producto
 function getProductCategory(product) {
     switch (product.type) {
