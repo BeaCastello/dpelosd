@@ -391,6 +391,11 @@ let activeFilters = {
    CATEGORÍAS DE LA TIENDA
 ===================================== */
 
+
+/* =====================================
+   CATEGORÍAS DE LA TIENDA
+===================================== */
+
 let activeCategory = "todos";
 
 const categoryNames = {
@@ -401,30 +406,23 @@ const categoryNames = {
     disfraces: "Disfraces"
 };
 
-document.querySelectorAll(".category-card").forEach(button => {
-    button.addEventListener("click", () => {
-        activeCategory = button.dataset.category;
+// Actualizar el título y la ruta de navegación
+function updateCategoryBreadcrumb() {
+    const categoryName =
+        categoryNames[activeCategory] || "Todos los productos";
 
-         const categoryName =
-            categoryNames[activeCategory] || "Todos los productos";
+    const categoryTitle = document.getElementById("category-title");
+    const breadcrumbCategory =
+        document.getElementById("breadcrumb-category");
 
+    if (categoryTitle) {
+        categoryTitle.textContent = categoryName;
+    }
 
-        // Actualizar el título
-        document.getElementById("category-title").textContent = categoryName;
-        document.getElementById("breadcrumb-category").textContent = categoryName;
-
-        // Marcar la categoría seleccionada
-        document.querySelectorAll(".category-card").forEach(item => {
-            const selected = item.dataset.category === activeCategory;
-
-            item.classList.toggle("is-active", selected);
-            item.setAttribute("aria-pressed", String(selected));
-        });
-
-        // Actualizar los productos
-        renderProducts();
-    });
-});
+    if (breadcrumbCategory) {
+        breadcrumbCategory.textContent = categoryName;
+    }
+}
 
 // Identificar la categoría de cada producto
 function getProductCategory(product) {
@@ -453,9 +451,13 @@ document.querySelectorAll(".category-card").forEach(button => {
     button.addEventListener("click", () => {
         activeCategory = button.dataset.category;
 
+        // Actualizar título y ruta
+        updateCategoryBreadcrumb();
+
         // Marcar la categoría seleccionada
         document.querySelectorAll(".category-card").forEach(item => {
-            const selected = item.dataset.category === activeCategory;
+            const selected =
+                item.dataset.category === activeCategory;
 
             item.classList.toggle("is-active", selected);
             item.setAttribute("aria-pressed", String(selected));
@@ -465,6 +467,9 @@ document.querySelectorAll(".category-card").forEach(button => {
         renderProducts();
     });
 });
+
+// Mostrar la categoría inicial
+updateCategoryBreadcrumb();
 
 
 // ABRIR Y CERRAR EL PANEL DE FILTROS
