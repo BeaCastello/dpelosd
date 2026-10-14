@@ -231,10 +231,11 @@ a {
   border-color: #9bd9ca;
   background: #e1f4ed;
 }
-
 .category-card.is-active {
-  background: #bce8dc;
-  border-color: #bce8dc;
+    background-color: #CBF1E4;
+    border: 2px solid #103329;
+    color: #103329;
+    font-weight: 700;
 }
 
 .category-emoji {

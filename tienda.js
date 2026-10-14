@@ -387,14 +387,7 @@ let activeFilters = {
 };
 
 
-/* =====================================
-   CATEGORÍAS DE LA TIENDA
-===================================== */
-
-
-/* =====================================
-   CATEGORÍAS DE LA TIENDA
-===================================== */
+/* CATEGORÍAS DE LA TIENDA */
 
 let activeCategory = "todos";
 
@@ -405,6 +398,19 @@ const categoryNames = {
     paseos: "Paseos y Accesorios",
     disfraces: "Disfraces"
 };
+
+/* LEER LA CATEGORÍA DE LA URL */
+
+const params = new URLSearchParams(window.location.search);
+const requestedCategory = params.get("categoria");
+
+if (
+    requestedCategory &&
+    Object.prototype.hasOwnProperty.call(categoryNames, requestedCategory)
+) {
+    activeCategory = requestedCategory;
+}
+
 
 // Actualizar el título y la ruta de navegación
 function updateCategoryBreadcrumb() {
@@ -422,6 +428,17 @@ function updateCategoryBreadcrumb() {
     if (breadcrumbCategory) {
         breadcrumbCategory.textContent = categoryName;
     }
+    
+}
+
+function updateActiveCategory() {
+    document.querySelectorAll(".category-card").forEach(button => {
+        const selected =
+            button.dataset.category === activeCategory;
+
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", String(selected));
+    });
 }
 
 // Identificar la categoría de cada producto
@@ -470,6 +487,7 @@ document.querySelectorAll(".category-card").forEach(button => {
 
 // Mostrar la categoría inicial
 updateCategoryBreadcrumb();
+updateActiveCategory();
 
 
 // ABRIR Y CERRAR EL PANEL DE FILTROS
@@ -854,6 +872,9 @@ readFilters();
 sortMenu.querySelector(
     '[data-sort="bestsellers"]'
 ).classList.add("active");
+
+updateCategoryBreadcrumb();
+updateActiveCategory();
 
 renderProducts();
 updateCartCount();
