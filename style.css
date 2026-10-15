@@ -1,16 +1,3 @@
-:root {
-    --green: #173e35;
-    --green-light: #28594b;
-    --yellow: #f7bd45;
-    --yellow-dark: #e6a92f;
-    --cream: #fbf8f0;
-    --white: #ffffff;
-    --text: #183b34;
-    --muted: #66736f;
-    --border: #e7e2d8;
-    --shadow: 0 14px 35px rgba(23, 62, 53, 0.12);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +29,7 @@ body {
     backdrop-filter: blur(12px);
 }
 
-.nav-container {
+.contenedorNav {
     display: flex;
     align-items: center;
     height: 70px;
@@ -60,35 +47,34 @@ body {
     position: relative;
     font-size: 16px;
     font-weight: 700;
-    padding: 36px 0 33px;
-    transition: color .2s ease;
+    text-align: center;
     text-decoration: none;
     color: #0b0b0b;
 }
 
-.nav a:hover,
-.nav a.active {
-    color: var(--green);
-}
-
-.nav a.active::after {
+.nav a::after {
     content: "";
     position: absolute;
+    bottom: -5px;
     left: 0;
-    right: 0;
-    bottom: 20px;
+    width: 0;
     height: 3px;
-    border-radius: 99px;
-    background: var(--yellow);
+    background-color: rgb(255, 123, 0);
+    transition: width 0.3s ease;
 }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-right: 60px;
+/* Cuando está activo */
+.nav a.active::after {
+    width: 100%;
 }
 
+/* Cuando pasas el ratón */
+.nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Iconos de los botones nav */
 .icon-btn,
 .cart-btn {
     position: relative;
@@ -106,14 +92,12 @@ body {
 
 .imgPersona {
     width: 15px;
-    margin-top: 1px;
 }
 
 .imgCarrito {
     width: 22px;
     margin-top: 10px;
 }
-
 
 .cart-btn {
     font-size: 25px;
@@ -131,27 +115,26 @@ body {
     border-radius: 50px;
     display: grid;
     place-items: center;
-    background: var(--yellow);
+    background-color: rgb(255, 123, 0);
     color: var(--green);
     font-size: 11px;
     font-weight: 900;
 }
 
-.menu-toggle {
-    display: none;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
+.nav-actions {
+    margin-right: 60px;
+    padding: 0px;
 }
 
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    border-radius: 3px;
-    background: var(--green);
-}
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 480px) {
     .logo {
@@ -263,15 +246,10 @@ a.btnBanner {
 }
 
 @media (max-width: 768px) {
-    .hero {
-        height: 315px;
-    }
-
     .patasperro {
         width: 10px;
         height: 5px;
     }
-
 
     .btnBanner {
         margin-top: 14em;
@@ -288,10 +266,176 @@ a.btnBanner {
 
 }
 
-@media (max-width: 468px) {
+
+/* BANNER ORDENADOR */
+.hero {
+    width: 100%;
+    height: 490px;
+    background-image: url("img/bannerDpelosd2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* BANNER TABLET */
+@media (max-width: 1024px) {
     .hero {
-        height: 120px;
-    }}
+        height: auto;
+        aspect-ratio: 16 / 7;
+        background-size: contain;
+        background-position: top center;
+    }
+}
+
+/* BANNER MÓVIL */
+@media (max-width: 768px) {
+    .hero {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 7;
+        background-size: contain;
+        background-position: top center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.hero {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fbf5ea;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        display: block;
+        padding: 14px 10px;
+        font-size: 16px;
+        text-decoration: none;
+        color: #173e35;
+        border-bottom: 1px solid #e7e2d8;
+    }
+
+    .nav a:hover {
+        color: #e6a92f;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* MENÚ HAMBURGUESA MÓVIL */
+
+@media (max-width: 768px) {
+
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fbf5ea;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        z-index: 1001;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        display: block;
+        padding: 14px 10px;
+        font-size: 16px;
+        color: #173e35;
+        text-decoration: none;
+        border-bottom: 1px solid #e7e2d8;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
 
 
 

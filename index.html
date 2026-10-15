@@ -12,23 +12,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dpelos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
 <body>
 
     <header class="header" id="inicio">
-        <div class="container nav-container">
-            <img src="img/Versión6.png" class="logo"> </img>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="contenedorNav">
+            <img src="img/Versión6.png" class="logo" alt="Logo Dpelos">
 
             <nav class="nav" id="mainNav">
-                <a class="active" href="#inicio">Inicio</a>
+                <a href="#inicio">Inicio</a>
                 <a href="tienda.html">Tienda</a>
                 <a href="#servicios">Servicios</a>
                 <a href="#blog">Blog</a>
@@ -36,35 +38,39 @@
             </nav>
 
             <div class="nav-actions">
-                <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>
-                <button class="icon-btn" aria-label="Mi cuenta"><img src="img/persona.png" class="imgPersona"></button>
-                <button class="cart-btn" id="cartBtn" aria-label="Carrito"> <img src="img/carrito.png"
-                        class="imgCarrito">
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
+                <button class="icon-btn" id="searchBtn" aria-label="Buscar"> ⌕ </button>
+                <button class="icon-btn" aria-label="Mi cuenta"> <img src="img/persona.png" class="imgPersona" alt=""> </button>
+                <button class="cart-btn" id="cartBtn" aria-label="Carrito"> <img src="img/carrito.png" class="imgCarrito" alt=""> <span class="cart-count" id="cartCount">0</span> </button>
             </div>
+
         </div>
     </header>
 
     <!-- PROMO -->
-
     <div class="promo-bar">
         <div class="promo-text" id="promoText">
-            <img src="img/pataIzquierda.png" style="width: 20px;" alt="Pata de perro">
-            <img src="img/pataDerecha.png" style="width: 20px;" alt="Pata de perro">
+
+            <img src="img/pataIzquierda.png" alt="">
+            <img src="img/pataDerecha.png" alt="">
 
             <span>
-                NUEVOS CLIENTES: <strong>20% DE DESCUENTO</strong> EN TU PRIMERA COMPRA
+                NUEVOS CLIENTES:
+                <strong>20% DE DESCUENTO</strong>
+                EN TU PRIMERA COMPRA
             </span>
 
-            <img src="img/pataIzquierda.png" style="width: 20px;" alt="Pata de perro">
-            <img src="img/pataDerecha.png" style="width: 20px;" alt="Pata de perro">
+            <img src="img/pataIzquierda.png" alt="">
+            <img src="img/pataDerecha.png" alt="">
 
         </div>
     </div>
 
     <!-- BANNER -->
-    <section class="hero"> </section>
+    <section class="hero" aria-label="Promociones Dpelos"></section>
+
+
+
+
 
     <!-- BENEFICIOS 
     <section class="benefits" id="nosotros">

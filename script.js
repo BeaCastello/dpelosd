@@ -1,53 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
+
   const banner = document.getElementById("cookie-banner");
   const overlay = document.getElementById("page-overlay");
   const acceptBtn = document.getElementById("acceptCookies");
   const rejectBtn = document.getElementById("rejectCookies");
 
+  // Link activado menú
+  document.addEventListener("DOMContentLoaded", function () {
+    const paginaActual = window.location.pathname.split("/").pop() || "index.html";
+    const enlaces = document.querySelectorAll(".nav a");
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    // Año automático del footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // MENÚ MÓVIL
-    const menuToggle = document.getElementById("menuToggle");
-    const mainNav = document.getElementById("mainNav");
-
-    menuToggle.addEventListener("click", () => {
-        mainNav.classList.toggle("open");
+    enlaces.forEach(enlace => {
+        const paginaEnlace = new URL(enlace.href).pathname.split("/").pop();
+        if (paginaEnlace === paginaActual) {
+            enlace.classList.add("active");
+        }
     });
+});
 
-    // Cerrar menú al pulsar un enlace
-    document.querySelectorAll("#mainNav a").forEach(link => {
-        link.addEventListener("click", () => {
-            mainNav.classList.remove("open");
-        });
-    });
 
-    // ENLACE ACTIVO AL HACER SCROLL
-    const sections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll(".nav a");
-
-    window.addEventListener("scroll", () => {
-        let current = "inicio";
-
-        sections.forEach(section => {
-            const top = section.offsetTop - 130;
-
-            if (window.scrollY >= top) {
-                current = section.id;
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === `#${current}`) {
-                link.classList.add("active");
-            }
-        });
-    });
 
     // CARRITO
      // let cart = 0;
@@ -526,7 +496,7 @@ newsFilters.forEach(filter => {
 
   acceptBtn.addEventListener("click", () => hideBanner("accepted"));
   rejectBtn.addEventListener("click", () => hideBanner("rejected"));
-});
+
 
  // Conectando con el whatsapp
 const whatsappContainer = document.getElementById('whatsapp-container');
