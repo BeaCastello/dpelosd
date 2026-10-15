@@ -30,7 +30,7 @@ body {
 /* HEADER */
 
 .logo {
-    width: 80px;
+    width: 60px;
     margin-left: 20px;
     margin-top: 5px;
 }
@@ -39,13 +39,13 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #eee;
     backdrop-filter: blur(12px);
 }
 
 .nav-container {
     display: flex;
     align-items: center;
+    height: 70px;
 }
 
 .nav {
@@ -214,7 +214,7 @@ body {
 
 @media (max-width: 768px) {
     .promo-bar {
-        height: 40px;
+        height: 30px;
     }
 
     .promo-text {
@@ -235,11 +235,11 @@ body {
 
 .hero {
     position: relative;
-    height: 500px;
-    background-image: url("img/banner-home1.png");
+    height: 490px;
+    background-image: url("img/bannerDpelosd2.png");
     background-size: cover;
     background-position: center;
-
+    margin-top: 1px;
 }
 
 .btnBanner {
@@ -263,10 +263,8 @@ a.btnBanner {
 }
 
 @media (max-width: 768px) {
-
     .hero {
-        height: 285px;
-        background-image: url("img/banner-home2.png");
+        height: 315px;
     }
 
     .patasperro {
@@ -290,8 +288,10 @@ a.btnBanner {
 
 }
 
-
-
+@media (max-width: 468px) {
+    .hero {
+        height: 130px;
+    }}
 
 
 
@@ -1566,116 +1566,6 @@ form.contact-form {
     cursor: pointer;
     color: var(--green);
 }
-
-/* RESPONSIVE */
-
-@media (max-width: 1050px) {
-    .nav-container {
-        gap: 18px;
-    }
-
-    .logo {
-        min-width: auto;
-    }
-
-    .nav {
-        gap: 20px;
-    }
-
-    .hero-copy {
-        width: 65%;
-    }
-
-    .hero-message {
-        display: none;
-    }
-}
-
-@media (max-width: 850px) {
-    .nav-container {
-        min-height: 78px;
-        justify-content: space-between;
-    }
-
-    .logo-text strong {
-        font-size: 24px;
-    }
-
-    .logo-paw {
-        font-size: 38px;
-    }
-
-    .menu-toggle {
-        display: block;
-        margin-left: auto;
-    }
-
-    .nav {
-        position: absolute;
-        top: 78px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        padding: 15px 24px 20px;
-        background: white;
-        box-shadow: 0 15px 25px rgba(0, 0, 0, .08);
-    }
-
-    .nav.open {
-        display: flex;
-    }
-
-    .nav a {
-        width: 100%;
-        padding: 14px 0;
-    }
-
-    .nav a.active::after {
-        display: none;
-    }
-
-    .nav-actions {
-        gap: 0;
-    }
-
-    .icon-btn {
-        display: none;
-    }
-
-    .hero-copy {
-        width: 100%;
-        max-width: 650px;
-    }
-
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 25px 0;
-    }
-
-    .benefit {
-        border-bottom: 1px solid var(--border);
-    }
-
-    .benefit:nth-child(2) {
-        border-right: 0;
-    }
-
-    .benefit:nth-child(3),
-    .benefit:nth-child(4) {
-        border-bottom: 0;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 
 /* Estilo Whatsapp */
 
