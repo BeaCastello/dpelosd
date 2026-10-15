@@ -24,7 +24,7 @@ html {
 body {
     font-family: "Nunito", sans-serif;
     color: var(--text);
-    background: var(--cream);
+    background: rgb(251, 245, 234);
 }
 
 /* HEADER */
@@ -153,14 +153,11 @@ body {
     background: var(--green);
 }
 
-@media (max-width: 480px){
-.logo {
-    width: 60px;}
+@media (max-width: 480px) {
+    .logo {
+        width: 60px;
+    }
 }
-
-
-
-
 
 
 /* PROMO */
@@ -191,7 +188,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
     max-width: none;
-
 }
 
 .promo-text img {
@@ -240,30 +236,21 @@ body {
 .hero {
     position: relative;
     height: 500px;
-    overflow: hidden;
-    color: var(--white);
-    display: flex;
-    align-items: center;
     background-image: url("img/banner-home1.png");
     background-size: cover;
     background-position: center;
-    transform: scale(1.01);
-    width: 99.5%;
-}
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
 }
 
 .btnBanner {
     background: var(--yellow);
     color: var(--green);
     margin-left: 35px;
+    display: inline-flex;
+    margin-top: 19.9em;
 }
 
 a.btnBanner {
-    margin-top: 21em;
     padding: 12px;
     border-radius: 10px;
     color: black;
@@ -275,27 +262,21 @@ a.btnBanner {
     width: 20px;
 }
 
-.btn-hero {
-    margin-top: 11em;
-    ;
-
-}
-
 @media (max-width: 768px) {
 
     .hero {
-        height: 300px;
-    }
-
-    .btn-primary {
-        width: 190px;
-        height: 30px;
-        font-size: 14px;
-        margin-top: 230px;
+        height: 285px;
+        background-image: url("img/banner-home2.png");
     }
 
     .patasperro {
         width: 10px;
+        height: 5px;
+    }
+
+
+    .btnBanner {
+        margin-top: 14em;
     }
 
     a.btnBanner {
