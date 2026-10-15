@@ -43,30 +43,32 @@ body {
     gap: 40px;
 }
 
+/* Enlaces del menú */
 .nav a {
     position: relative;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
     text-decoration: none;
-    color: #0b0b0b;
+    color: black;
 }
 
+/* Raya oculta por defecto */
 .nav a::after {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 3px;
-    background-color: rgb(255, 123, 0);
+    background-color: orange;
     transition: width 0.3s ease;
+   
 }
 
-/* Cuando está activo */
+/* Solo el enlace activo */
 .nav a.active::after {
     width: 100%;
+    
 }
+
 
 /* Cuando pasas el ratón */
 .nav a:hover::after {
@@ -127,14 +129,84 @@ body {
 }
 
 
+/* Menú hamburgesa para ordenador */
 
+.menu-toggle {
+    display: none;
+}
 
+/* TABLET Y MÓVIL */
 
+@media (max-width: 1024px) {
 
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+    }
 
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
 
+    /* Oculto inicialmente */
 
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 250px;
+        background-color: white;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        z-index: 1000;
+    }
 
+    /* Menú abierto */
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav a:hover {
+        background-color: #fff5cc;
+    }
+
+    /* Animación */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(10.5px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-10.5px) rotate(-45deg);
+    }
+    
+}
 
 @media (max-width: 480px) {
     .logo {

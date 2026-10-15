@@ -4,18 +4,71 @@
   const acceptBtn = document.getElementById("acceptCookies");
   const rejectBtn = document.getElementById("rejectCookies");
 
-  // Link activado menú
-  document.addEventListener("DOMContentLoaded", function () {
-    const paginaActual = window.location.pathname.split("/").pop() || "index.html";
-    const enlaces = document.querySelectorAll(".nav a");
+  // LINK ACTIVADO MENU
+ document.addEventListener("DOMContentLoaded", function () {
+
+    const boton = document.getElementById("menuToggle");
+    const menu = document.getElementById("mainNav");
+
+    if (!menu) return;
+
+    // ABRIR Y CERRAR MENÚ HAMBURGUESA
+    if (boton) {
+        boton.addEventListener("click", function () {
+
+            const abierto = menu.classList.toggle("open");
+
+            boton.classList.toggle("active", abierto);
+            boton.setAttribute("aria-expanded", abierto);
+
+        });
+    }
+
+    // ENLACE ACTIVO
+   
+    const paginaActual =
+        window.location.pathname.split("/").pop() || "index.html";
 
     enlaces.forEach(enlace => {
-        const paginaEnlace = new URL(enlace.href).pathname.split("/").pop();
-        if (paginaEnlace === paginaActual) {
+
+        enlace.classList.remove("active");
+
+        const href = enlace.getAttribute("href");
+
+        if (paginaActual === "tienda.html" && href === "tienda.html") {
             enlace.classList.add("active");
         }
+
+        if (paginaActual === "index.html" && href === "#inicio") {
+            enlace.classList.add("active");
+        }
+
+        // CERRAR MENÚ AL PULSAR UN ENLACE
+        enlace.addEventListener("click", function () {
+
+            if (boton) {
+                menu.classList.remove("open");
+                boton.classList.remove("active");
+                boton.setAttribute("aria-expanded", "false");
+            }
+
+        });
+
     });
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -108,7 +161,7 @@
             block: "center"
         });
     });
-});
+
 
 /* ==========================================
    SLIDER PELUQUERÍA CANINA
