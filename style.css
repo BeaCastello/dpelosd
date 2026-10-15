@@ -294,9 +294,13 @@ body {
         width: 25px;
         height: 25px;
     }
+
     .nav-actions {
-        margin-right: 30px;
         gap: 7px;
+    }
+
+    .menu-toggle {
+        margin-left: 40px;
     }
 }
 
@@ -306,11 +310,13 @@ body {
         margin-bottom: 4px;
     }
 
-    .nav-actions {
-        margin-right: 30px;
-        gap: 7px;
+    .menu-toggle {
+        margin-left: 40px;
     }
 
+    .nav-actions {
+        gap: 7px;
+    }
 
 }
 
