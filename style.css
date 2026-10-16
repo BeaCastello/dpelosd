@@ -255,17 +255,13 @@ body {
     object-fit: contain;
     display: block;
 }
-
 .promo-text strong {
     color: #ffd700;
     font-weight: 800;
 }
-
 .imgpatafeliz {
     width: 30px;
 }
-
-
 
 @keyframes moverTexto {
     from {
@@ -317,20 +313,23 @@ body {
     .nav-actions {
         gap: 7px;
     }
-
 }
 
 /* HERO */
 
 .hero {
     position: relative;
+    width: 100%;
     height: 490px;
     background-image: url("img/bannerDpelosd2.png");
-    background-size: cover;
     background-position: center;
-    margin-top: 1px;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 7;
+    background-size: cover;
+    background-position: center top;
 }
-
 .btnBanner {
     background: var(--yellow);
     color: var(--green);
@@ -369,20 +368,6 @@ a.btnBanner {
     .btn-hero {
         margin-top: 6em;
     }
-
-}
-
-
-/* BANNER ORDENADOR */
-.hero {
-    width: 100%;
-    height: 490px;
-    background-image: url("img/bannerDpelosd2.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
 }
 
 /* BANNER TABLET */
@@ -391,7 +376,7 @@ a.btnBanner {
         height: auto;
         aspect-ratio: 16 / 7;
         background-size: contain;
-        background-position: top center;
+        background-position: center top;
     }
 }
 
@@ -402,17 +387,8 @@ a.btnBanner {
         height: auto;
         aspect-ratio: 16 / 7;
         background-size: contain;
-        background-position: top center;
-        margin: 0;
-        padding: 0;
+        background-position: center top;
     }
-}
-
-.hero {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
 }
 
 .hero-img {
@@ -542,33 +518,6 @@ a.btnBanner {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* BENEFITS */
 
