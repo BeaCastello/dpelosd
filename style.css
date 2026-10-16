@@ -11,7 +11,7 @@ html {
 body {
     font-family: "Nunito", sans-serif;
     color: var(--text);
-    background: rgb(251, 245, 234);
+    background: rgb(247, 244, 240);
 }
 
 /* HEADER */
@@ -255,10 +255,12 @@ body {
     object-fit: contain;
     display: block;
 }
+
 .promo-text strong {
     color: #ffd700;
     font-weight: 800;
 }
+
 .imgpatafeliz {
     width: 30px;
 }
@@ -330,6 +332,7 @@ body {
     background-size: cover;
     background-position: center top;
 }
+
 .btnBanner {
     background: var(--yellow);
     color: var(--green);
@@ -523,10 +526,9 @@ a.btnBanner {
 
 .benefits {
     z-index: 5;
-    margin-top: -5px;
-    background-color: #F8F6F2;
+    margin-top: -20px;
+    background: rgb(247, 244, 240);
     border-radius: 0 0 55% 55% / 0 0 35px 35px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
 }
 
 .benefits-grid {
@@ -543,7 +545,6 @@ a.btnBanner {
     gap: 10px;
     min-height: 72px;
     padding: 10px 25px;
-    border-right: 1px solid var(--border);
     text-align: center;
 }
 
@@ -572,6 +573,72 @@ a.btnBanner {
     font-size: 13px;
     color: var(--muted);
 }
+
+/* BANNER TABLET */
+@media (max-width: 1024px) {
+
+    .benefit {
+        gap: 0px;
+        padding: 0px;
+    }
+
+    .benefit h3 {
+        font-size: 12px;
+        margin-bottom: 3px;
+    }
+
+    .benefits-grid {
+        min-height: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .benefits-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;       
+        width: 100%;
+        margin: 15px auto 0;
+    }
+
+    .benefit {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        width: 280px;
+        max-width: 100%;
+        min-height: 65px;
+        margin: 0;
+        padding: 5px 10px;
+        border-right: none;
+        text-align: left;
+    }
+
+    .benefit-icon {
+        width: 55px;
+        height: 55px;
+        flex: 0 0 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .benefit h3 {
+        font-size: 15px;
+        margin-bottom: 3px;
+    }
+
+    .benefit p {
+        font-size: 13px;
+        margin: 0;
+    }
+}
+
+
 
 /* SERVICIOS */
 
