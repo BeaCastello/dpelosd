@@ -542,9 +542,15 @@ a.btnBanner {
 
 /* FAVORITOS */
 
-.shop-section {
-    padding: 0px 30PX;
-    margin-top: -50px;
+.subtituloFavoritos {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.grooming-header h2 {
+    line-height: 1.5;
+    font-weight: 800;
+    font-size: 25;
 }
 
 .section-heading {
@@ -579,6 +585,7 @@ a.btnBanner {
     font-weight: 900;
     animation: parpadeoColor 1.5s ease-in-out infinite;
     cursor: pointer;
+    font-size: 18px;
 }
 
 @keyframes parpadeoColor {
@@ -698,6 +705,7 @@ a.btnBanner {
 
     .subtituloFavoritos {
         font-size: 25px;
+        font-weight: 800;
     }
 
     .section-heading {
@@ -970,10 +978,14 @@ a.btnBanner {
 
 .grooming-header h2 {
     line-height: 1.4;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.grooming-section{
+.grooming-section {
     margin-bottom: 10px;
+    
 }
 
 /*  TABLET */
@@ -1015,14 +1027,15 @@ a.btnBanner {
     .service-content h3 {
         font-size: 20px;
     }
-.service-number{
-    width: 25px;
-    height: 25px;
-}
 
-.service-content p{
-    margin: 0 0 10px;
-}
+    .service-number {
+        width: 25px;
+        height: 25px;
+    }
+
+    .service-content p {
+        margin: 0 0 10px;
+    }
 
 }
 
@@ -1030,14 +1043,14 @@ a.btnBanner {
 
     .grooming-section {
         padding: 30px 0;
-            margin-bottom: 0px;
+        margin-bottom: 0px;
     }
 
     .product-card {
         width: 80%;
     }
 
-        .grooming-header {
+    .grooming-header {
         width: calc(100% - 30px);
         padding: 30px 30px;
         margin-top: -6em;
@@ -1316,6 +1329,7 @@ a.btnBanner {
     color: #173e35;
     font-size: 14px;
     font-weight: 900;
+    text-decoration: none;
 }
 
 

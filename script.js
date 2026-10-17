@@ -111,7 +111,6 @@ enlace.classList.toggle(
         updateDots();
       }
 
-
       // BOTÓN ANTERIOR
       prevBtn.addEventListener("click", () => {
 
@@ -207,6 +206,84 @@ enlace.classList.toggle(
   }
 
 
+
+
+    // BOTONES DE FILTROS
+    const filtros = document.querySelectorAll(".news-filter");
+
+    // TARJETAS DE NOTICIAS
+    const noticias = document.querySelectorAll(".news-card");
+
+    filtros.forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            const categoria = boton.dataset.filter;
+
+            // QUITAR ACTIVE DE TODOS LOS BOTONES
+            filtros.forEach(filtro => {
+                filtro.classList.remove("active");
+            });
+
+            // ACTIVAR EL BOTÓN SELECCIONADO
+            boton.classList.add("active");
+
+            // FILTRAR LAS NOTICIAS
+            noticias.forEach(noticia => {
+
+                const categoriaNoticia = noticia.dataset.category;
+
+                if (categoria === "todos" ||
+                    categoria === categoriaNoticia) {
+
+                    noticia.style.display = "";
+
+                } else {
+
+                    noticia.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // MODAL DE BÚSQUEDA
   const searchModal = document.getElementById("searchModal");
   const searchBtn = document.getElementById("searchBtn");
@@ -272,7 +349,6 @@ enlace.classList.toggle(
     });
   }
 
-
   // COOKIES
   const banner = document.getElementById("cookie-banner");
   const overlay = document.getElementById("page-overlay");
@@ -299,7 +375,6 @@ enlace.classList.toggle(
       ?.addEventListener("click", () => hideBanner("rejected"));
   }
 
-
   // WHATSAPP
   const whatsappContainer =
     document.getElementById("whatsapp-container");
@@ -318,3 +393,4 @@ enlace.classList.toggle(
   }
 
 });
+
