@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   enlaces.forEach(enlace => {
     const href = enlace.getAttribute("href");
-
-    enlace.classList.toggle(
+enlace.classList.toggle(
   "active",
   paginaActual === "tienda.html" && href === "tienda.html"
 );
