@@ -463,9 +463,9 @@ a.btnBanner {
     }
 
     .benefits {
-        margin-top: -3px;
         display: flex;
         justify-content: center;
+        margin-top: -50px;
     }
 
     .benefit h3 {
@@ -475,7 +475,7 @@ a.btnBanner {
 
     .benefits-grid {
         min-height: 0px;
-        
+        gap: 10px;
     }
 }
 
@@ -489,12 +489,12 @@ a.btnBanner {
         margin: 15px auto 0;
         display: flex;
         flex-direction: column;
-            }
+    }
 
     .benefits-grid {
         display: flex;
         flex-direction: column;
-        
+
     }
 
     .benefit {
@@ -529,19 +529,25 @@ a.btnBanner {
         font-size: 14px;
         margin: 0;
     }
+
+    .benefits {
+        margin-top: -20px;
     }
+}
 
 /* FAVORITOS */
 
 .shop-section {
-    padding: 15px 30PX;
+    padding: 0px 30PX;
+    margin-top: -50px;
 }
 
 .section-heading {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .shop-section-text {
@@ -552,6 +558,7 @@ a.btnBanner {
     letter-spacing: 2px;
     font-weight: 900;
     margin-bottom: 8px;
+    margin-top: 2px;
 }
 
 .btn-outline {
@@ -643,18 +650,16 @@ a.btnBanner {
     background: #4c9141;
 }
 
-.subtituloFavoritos {
+.Favoritos {
     font-size: 35px;
     font-weight: 800;
 }
-
-
 
 /* BANNER TABLET */
 @media (max-width: 1024px) {
 
     .shop-section {
-        padding: 40px 20PX;
+        padding: 80px 30px;
     }
 
     .btnTienda {
@@ -706,20 +711,22 @@ a.btnBanner {
 
 @media (max-width: 768px) {
     .shop-section {
-        padding: 30px 20PX;
+        padding: 70px 20PX;
     }
+
+    .product-card {
+        width: 94%;
+    }
+
 }
 
 /* TIENDA */
 
 .grooming-header {
     width: min(1180px, calc(100% - 48px));
-    margin: 0 auto 45px;
-    text-align: center;
-    padding: 40px 20PX;
+    text-align: left;
+    padding: 40px 30px;
 }
-
-
 
 .grooming-kicker {
     display: inline-block;
@@ -762,7 +769,6 @@ a.btnBanner {
     margin: auto;
 }
 
-
 /* SLIDER */
 
 .grooming-slider {
@@ -779,7 +785,6 @@ a.btnBanner {
     display: none;
 }
 
-
 /* TARJETA */
 
 .grooming-card {
@@ -794,7 +799,6 @@ a.btnBanner {
     cursor: pointer;
 }
 
-
 /* IMAGEN */
 
 .grooming-card img {
@@ -806,7 +810,6 @@ a.btnBanner {
         transform .7s ease,
         filter .7s ease;
 }
-
 
 /* OSCURECER IMAGEN */
 
@@ -826,7 +829,6 @@ a.btnBanner {
     transition: opacity .45s ease;
 }
 
-
 /* CONTENIDO */
 
 .service-content {
@@ -834,7 +836,6 @@ a.btnBanner {
     transform: translateY(25px);
     transition: transform .45s ease;
 }
-
 
 .service-number {
     display: inline-flex;
@@ -850,14 +851,12 @@ a.btnBanner {
     font-weight: 900;
 }
 
-
 .service-content h3 {
     margin: 0 0 8px;
     font-size: 30px;
     line-height: 1.1;
     font-weight: 900;
 }
-
 
 .service-content p {
     max-width: 290px;
@@ -867,7 +866,6 @@ a.btnBanner {
     line-height: 1.5;
 }
 
-
 .service-link {
     display: inline-block;
     color: #f7bd45;
@@ -876,11 +874,9 @@ a.btnBanner {
     transition: transform .2s ease;
 }
 
-
 .service-link:hover {
     transform: translateX(5px);
 }
-
 
 /* HOVER */
 
@@ -889,16 +885,13 @@ a.btnBanner {
     filter: brightness(.78);
 }
 
-
 .grooming-card:hover .grooming-overlay {
     opacity: 1;
 }
 
-
 .grooming-card:hover .service-content {
     transform: translateY(0);
 }
-
 
 /* BOTONES */
 
@@ -926,7 +919,6 @@ a.btnBanner {
         transform .2s ease;
 }
 
-
 .slider-btn:hover {
     background: #f7bd45;
 
@@ -942,7 +934,6 @@ a.btnBanner {
     right: -12px;
 }
 
-
 /* PUNTOS */
 
 .slider-dots {
@@ -951,7 +942,6 @@ a.btnBanner {
     gap: 8px;
     margin-top: 15px;
 }
-
 
 .slider-dot {
     width: 8px;
@@ -966,23 +956,22 @@ a.btnBanner {
         background .3s ease;
 }
 
-
 .slider-dot.active {
     width: 25px;
     border-radius: 20px;
     background: #f7bd45;
 }
 
+ .grooming-header h2{
+    line-height: 1.4;
+ }
 
-/* ==========================================
-   TABLET
-========================================== */
+/*  TABLET */
 
 @media (max-width: 1024px) {
-
     .grooming-header {
-        padding: 5px 20PX;
-        text-align: center;
+        padding: 30px 30px;
+        margin-top: -60px;
     }
 
     .grooming-card {
@@ -995,6 +984,13 @@ a.btnBanner {
     }
 }
 
+@media (max-width: 768px) {
+    .grooming-header h2 {
+        font-weight: 800;
+        text-align: justify;
+        line-height: 1.2;
+    }
+}
 
 @media (max-width: 600px) {
 
@@ -1004,6 +1000,8 @@ a.btnBanner {
 
     .grooming-header {
         width: calc(100% - 30px);
+        padding: 30px 30px;
+        margin-top: -8em;
     }
 
     .grooming-header h2 {
@@ -1020,12 +1018,6 @@ a.btnBanner {
         border-radius: 22px;
     }
 
-    /*
-       En móvil no dependemos del hover.
-       El texto queda visible para que
-       también funcione en pantallas táctiles.
-    */
-
     .grooming-overlay {
         opacity: 1;
     }
@@ -1033,9 +1025,10 @@ a.btnBanner {
     .service-content {
         transform: translateY(0);
     }
-}
 
-/* ==========================================
+    }
+
+    /* ==========================================
    CONSEJOS Y NOTICIAS
 ========================================== */
 
@@ -1886,3 +1879,8 @@ form.contact-form {
 
     @media (max-width: 768px) {}
 }
+/* Ajustes de navegación del slider */
+.grooming-slider { scroll-padding-left: 10px; }
+.slider-dots { position: relative; z-index: 12; min-height: 18px; align-items: center; }
+.slider-dot { flex-shrink: 0; min-width: 8px; min-height: 8px; }
+.slider-dot:focus-visible, .slider-btn:focus-visible { outline: 3px solid #173e35; outline-offset: 3px; }

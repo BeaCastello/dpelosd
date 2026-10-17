@@ -1,571 +1,321 @@
 
-  const banner = document.getElementById("cookie-banner");
-  const overlay = document.getElementById("page-overlay");
-  const acceptBtn = document.getElementById("acceptCookies");
-  const rejectBtn = document.getElementById("rejectCookies");
+document.addEventListener("DOMContentLoaded", () => {
 
-  // LINK ACTIVADO MENU
- document.addEventListener("DOMContentLoaded", function () {
+  // MENÚ DE NAVEGACIÓN
+  const boton = document.getElementById("menuToggle");
+  const menu = document.getElementById("mainNav");
+  const enlaces = menu?.querySelectorAll("a") || [];
 
-    const boton = document.getElementById("menuToggle");
-    const menu = document.getElementById("mainNav");
+  boton?.addEventListener("click", () => {
+    const abierto = menu.classList.toggle("open");
+    boton.classList.toggle("active", abierto);
+    boton.setAttribute("aria-expanded", String(abierto));
+  });
 
-    if (!menu) return;
+  const paginaActual =
+    location.pathname.split("/").pop() || "index.html";
 
-    // ABRIR Y CERRAR MENÚ HAMBURGUESA
-    if (boton) {
-        boton.addEventListener("click", function () {
+  enlaces.forEach(enlace => {
+    const href = enlace.getAttribute("href");
 
-            const abierto = menu.classList.toggle("open");
+    enlace.classList.toggle(
+  "active",
+  paginaActual === "tienda.html" && href === "tienda.html"
+);
 
-            boton.classList.toggle("active", abierto);
-            boton.setAttribute("aria-expanded", abierto);
+    enlace.addEventListener("click", () => {
+      menu.classList.remove("open");
+      boton?.classList.remove("active");
+      boton?.setAttribute("aria-expanded", "false");
+    });
+  });
+
+
+  // SLIDER PELUQUERÍA CANINA
+
+  const slider = document.getElementById("groomingSlider");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const dotsContainer = document.getElementById("sliderDots");
+
+  if (slider && prevBtn && nextBtn && dotsContainer) {
+
+    const cards = [...slider.querySelectorAll(".grooming-card")];
+
+    if (cards.length) {
+
+      let currentSlide = 0;
+      let autoplay;
+      let scrollTimer;
+
+      dotsContainer.replaceChildren();
+
+      // CREAR INDICADORES
+      const dots = cards.map((card, index) => {
+
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "slider-dot";
+
+        dot.setAttribute(
+          "aria-label",
+          `Ir al servicio ${index + 1}`
+        );
+
+        dot.addEventListener("click", () => {
+          goToSlide(index);
+          restartAutoplay();
+        });
+
+        dotsContainer.appendChild(dot);
+
+        return dot;
+      });
+
+
+      // ACTUALIZAR INDICADORES
+      function updateDots() {
+
+        dots.forEach((dot, index) => {
+
+          const active = index === currentSlide;
+
+          dot.classList.toggle("active", active);
+
+          dot.setAttribute(
+            "aria-current",
+            active ? "true" : "false"
+          );
 
         });
-    }
+      }
 
-    // ENLACE ACTIVO
-   
-    const paginaActual =
-        window.location.pathname.split("/").pop() || "index.html";
 
-    enlaces.forEach(enlace => {
+      // DESPLAZAR SLIDER
+      function goToSlide(index) {
 
-        enlace.classList.remove("active");
+        currentSlide =
+          (index + cards.length) % cards.length;
 
-        const href = enlace.getAttribute("href");
+        const card = cards[currentSlide];
 
-        if (paginaActual === "tienda.html" && href === "tienda.html") {
-            enlace.classList.add("active");
-        }
+        const left =
+          card.getBoundingClientRect().left -
+          slider.getBoundingClientRect().left +
+          slider.scrollLeft - 10;
 
-        if (paginaActual === "index.html" && href === "#inicio") {
-            enlace.classList.add("active");
-        }
+        slider.scrollTo({
+          left: left,
+          behavior: "smooth"
+        });
 
-        // CERRAR MENÚ AL PULSAR UN ENLACE
-        enlace.addEventListener("click", function () {
+        updateDots();
+      }
 
-            if (boton) {
-                menu.classList.remove("open");
-                boton.classList.remove("active");
-                boton.setAttribute("aria-expanded", "false");
+
+      // BOTÓN ANTERIOR
+      prevBtn.addEventListener("click", () => {
+
+        goToSlide(currentSlide - 1);
+        restartAutoplay();
+
+      });
+
+
+      // BOTÓN SIGUIENTE
+      nextBtn.addEventListener("click", () => {
+
+        goToSlide(currentSlide + 1);
+        restartAutoplay();
+
+      });
+
+
+      // DETECTAR DESPLAZAMIENTO MANUAL
+      slider.addEventListener("scroll", () => {
+
+        clearTimeout(scrollTimer);
+
+        scrollTimer = setTimeout(() => {
+
+          const sliderLeft =
+            slider.getBoundingClientRect().left;
+
+          let closestIndex = 0;
+          let smallestDistance = Infinity;
+
+          cards.forEach((card, index) => {
+
+            const distance = Math.abs(
+              card.getBoundingClientRect().left -
+              sliderLeft - 10
+            );
+
+            if (distance < smallestDistance) {
+
+              smallestDistance = distance;
+              closestIndex = index;
+
             }
 
-        });
+          });
 
-    });
+          currentSlide = closestIndex;
+          updateDots();
 
-});
+        }, 120);
 
-
-
-
-
+      }, { passive: true });
 
 
+      // AUTOPLAY
+      function restartAutoplay() {
+
+        clearInterval(autoplay);
+
+        autoplay = setInterval(() => {
+          goToSlide(currentSlide + 1);
+        }, 5000);
+
+      }
 
 
+      // PAUSAR AL PASAR EL RATÓN
+      slider.addEventListener("mouseenter", () => {
+        clearInterval(autoplay);
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        restartAutoplay();
+      });
 
 
+      // CONTROL TÁCTIL
+      slider.addEventListener("touchstart", () => {
+        clearInterval(autoplay);
+      }, { passive: true });
+
+      slider.addEventListener("touchend", () => {
+        restartAutoplay();
+      }, { passive: true });
 
 
+      // INICIALIZAR
+      updateDots();
+      restartAutoplay();
 
-
-    // CARRITO
-     // let cart = 0;
-     // const cartCount = document.getElementById("cartCount");
-
-      // document.querySelectorAll(".add-btn").forEach(button => {
-        //  button.addEventListener("click", () => {
-           //  cart++;
-           //  cartCount.textContent = cart;
-
-           //  const originalText = button.textContent;
-           //  button.textContent = "✓ Añadido al carrito";
-
-           //  setTimeout(() => {
-            //     button.textContent = originalText;
-           //  }, 1400);
-       //  });
-    // });
-
-    // document.getElementById("cartBtn").addEventListener("click", () => {
-       //  if (cart === 0) {
-            //  alert("Tu carrito está vacío 🐾");
-      //   } else {
-        //     alert(`Tienes ${cart} producto${cart > 1 ? "s" : ""} en el carrito 🛒`);
-      //   }
-   //  });
-
-    // MODAL DE BÚSQUEDA
-    const searchModal = document.getElementById("searchModal");
-    const searchBtn = document.getElementById("searchBtn");
-    const closeSearch = document.getElementById("closeSearch");
-    const searchInput = document.getElementById("searchInput");
-    const searchSubmit = document.getElementById("searchSubmit");
-    const searchResult = document.getElementById("searchResult");
-
-    function openSearch() {
-        searchModal.classList.add("show");
-        searchModal.setAttribute("aria-hidden", "false");
-        setTimeout(() => searchInput.focus(), 100);
     }
+  }
+
+
+  // MODAL DE BÚSQUEDA
+  const searchModal = document.getElementById("searchModal");
+  const searchBtn = document.getElementById("searchBtn");
+  const closeSearch = document.getElementById("closeSearch");
+  const searchInput = document.getElementById("searchInput");
+  const searchSubmit = document.getElementById("searchSubmit");
+  const searchResult = document.getElementById("searchResult");
+
+  if (searchModal && searchInput) {
 
     function closeSearchModal() {
-        searchModal.classList.remove("show");
-        searchModal.setAttribute("aria-hidden", "true");
-        searchInput.value = "";
-        searchResult.textContent = "";
+
+      searchModal.classList.remove("show");
+      searchModal.setAttribute("aria-hidden", "true");
+      searchInput.value = "";
+
+      if (searchResult) searchResult.textContent = "";
     }
 
-    searchBtn.addEventListener("click", openSearch);
-    closeSearch.addEventListener("click", closeSearchModal);
+    searchBtn?.addEventListener("click", () => {
 
-    searchModal.addEventListener("click", (event) => {
-        if (event.target === searchModal) {
-            closeSearchModal();
-        }
+      searchModal.classList.add("show");
+      searchModal.setAttribute("aria-hidden", "false");
+      searchInput.focus();
+
     });
 
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-            closeSearchModal();
-        }
+    closeSearch?.addEventListener("click", closeSearchModal);
+
+    searchModal.addEventListener("click", event => {
+
+      if (event.target === searchModal) {
+        closeSearchModal();
+      }
+
+    });
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        closeSearchModal();
+      }
+
     });
 
     function doSearch() {
-        const value = searchInput.value.trim();
 
-        if (!value) {
-            searchResult.textContent = "Escribe algo para buscar.";
-            return;
-        }
+      if (!searchResult) return;
 
-        searchResult.textContent =
-            `Buscando "${value}"... Próximamente conectaremos esta búsqueda con tu catálogo.`;
+      const value = searchInput.value.trim();
+
+      searchResult.textContent = value
+        ? `Buscando "${value}"... Próximamente conectaremos esta búsqueda con tu catálogo.`
+        : "Escribe algo para buscar.";
     }
 
-    searchSubmit.addEventListener("click", doSearch);
+    searchSubmit?.addEventListener("click", doSearch);
 
-    searchInput.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            doSearch();
-        }
-    });
+    searchInput.addEventListener("keydown", event => {
 
-    // BOTÓN "VER PRODUCTOS"
-    document.getElementById("viewProductsBtn").addEventListener("click", () => {
-        document.getElementById("products").scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-    });
-
-
-/* ==========================================
-   SLIDER PELUQUERÍA CANINA
-========================================== */
-
-const groomingSlider =
-    document.getElementById("groomingSlider");
-
-const prevBtn =
-    document.getElementById("prevBtn");
-
-const nextBtn =
-    document.getElementById("nextBtn");
-
-const sliderDots =
-    document.getElementById("sliderDots");
-
-const groomingCards =
-    document.querySelectorAll(".grooming-card");
-
-
-/* ==========================================
-   CONFIGURACIÓN
-========================================== */
-
-let currentSlide = 0;
-
-const totalSlides = groomingCards.length;
-
-
-/* ==========================================
-   CREAR PUNTOS
-========================================== */
-
-groomingCards.forEach((card, index) => {
-
-    const dot = document.createElement("button");
-
-    dot.classList.add("slider-dot");
-
-    dot.setAttribute(
-        "aria-label",
-        `Ir al servicio ${index + 1}`
-    );
-
-    dot.addEventListener("click", () => {
-
-        currentSlide = index;
-
-        scrollToSlide(currentSlide);
+      if (event.key === "Enter") doSearch();
 
     });
-
-    sliderDots.appendChild(dot);
-});
-
-
-const dots =
-    document.querySelectorAll(".slider-dot");
-
-
-/* ==========================================
-   ACTUALIZAR PUNTO ACTIVO
-========================================== */
-
-function updateDots() {
-
-    dots.forEach((dot, index) => {
-
-        dot.classList.toggle(
-            "active",
-            index === currentSlide
-        );
-
-    });
-}
-
-
-/* ==========================================
-   MOVER SLIDER
-========================================== */
-
-function scrollToSlide(index) {
-
-    const card =
-        groomingCards[index];
-
-    if (!card) return;
-
-    groomingSlider.scrollTo({
-
-        left: card.offsetLeft - 10,
-
-        behavior: "smooth"
-
-    });
-
-    updateDots();
-}
-
-
-/* ==========================================
-   BOTÓN ANTERIOR
-========================================== */
-
-prevBtn.addEventListener("click", () => {
-
-    currentSlide--;
-
-    if (currentSlide < 0) {
-
-        currentSlide =
-            totalSlides - 1;
-
-    }
-
-    scrollToSlide(currentSlide);
-
-});
-
-
-/* ==========================================
-   BOTÓN SIGUIENTE
-========================================== */
-
-nextBtn.addEventListener("click", () => {
-
-    currentSlide++;
-
-    if (currentSlide >= totalSlides) {
-
-        currentSlide = 0;
-
-    }
-
-    scrollToSlide(currentSlide);
-
-});
-
-
-/* ==========================================
-   DETECTAR SCROLL MANUAL
-========================================== */
-
-groomingSlider.addEventListener(
-    "scroll",
-    () => {
-
-        const sliderLeft =
-            groomingSlider.scrollLeft;
-
-        let closestIndex = 0;
-
-        let smallestDistance = Infinity;
-
-
-        groomingCards.forEach(
-            (card, index) => {
-
-                const distance =
-                    Math.abs(
-                        card.offsetLeft -
-                        sliderLeft -
-                        10
-                    );
-
-                if (
-                    distance <
-                    smallestDistance
-                ) {
-
-                    smallestDistance =
-                        distance;
-
-                    closestIndex =
-                        index;
-
-                }
-
-            }
-        );
-
-
-        currentSlide =
-            closestIndex;
-
-        updateDots();
-
-    }
-);
-
-
-/* ==========================================
-   INICIALIZAR
-========================================== */
-
-updateDots();
-
-
-/* ==========================================
-   AUTOPLAY
-========================================== */
-
-let autoplay =
-    setInterval(() => {
-
-        currentSlide++;
-
-        if (
-            currentSlide >= totalSlides
-        ) {
-
-            currentSlide = 0;
-
-        }
-
-        scrollToSlide(currentSlide);
-
-    }, 5000);
-
-
-/*
-   Cuando el usuario interactúa,
-   pausamos temporalmente el autoplay.
-*/
-
-groomingSlider.addEventListener(
-    "mouseenter",
-    () => {
-        clearInterval(autoplay);
-    }
-);
-
-
-groomingSlider.addEventListener(
-    "mouseleave",
-    () => {
-
-        autoplay =
-            setInterval(() => {
-
-                currentSlide++;
-
-                if (
-                    currentSlide >= totalSlides
-                ) {
-
-                    currentSlide = 0;
-
-                }
-
-                scrollToSlide(currentSlide);
-
-            }, 5000);
-
-    }
-);
-
-/* ==========================================
-   CONSEJOS Y NOTICIAS
-========================================== */
-
-const newsFilters =
-    document.querySelectorAll(".news-filter");
-
-const newsCards =
-    document.querySelectorAll(".news-card");
-
-const newsMore =
-    document.getElementById("newsMore");
-
-
-/* ==========================================
-   FILTROS
-========================================== */
-
-newsFilters.forEach(filter => {
-
-    filter.addEventListener("click", () => {
-
-        /* Cambiar botón activo */
-
-        newsFilters.forEach(button => {
-            button.classList.remove("active");
-        });
-
-        filter.classList.add("active");
-
-
-        /* Categoría seleccionada */
-
-        const selectedCategory =
-            filter.dataset.filter;
-
-
-        /* Mostrar / ocultar artículos */
-
-        newsCards.forEach((card, index) => {
-
-            const cardCategory =
-                card.dataset.category;
-
-
-            if (
-                selectedCategory === "todos" ||
-                cardCategory === selectedCategory
-            ) {
-
-                card.style.display = "block";
-
-                /* Reiniciar animación */
-
-                card.style.animation = "none";
-
-                void card.offsetWidth;
-
-                card.style.animation =
-                    `newsAppear .45s ease ${index * .05}s both`;
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-});
-
-
-/* ==========================================
-   BOTÓN VER TODOS
-========================================== */
-
-
-
-    /* Activar "Todos" */
-
-    newsFilters.forEach(button => {
-        button.classList.remove("active");
-    });
-
-    const allButton =
-        document.querySelector(
-            '.news-filter[data-filter="todos"]'
-        );
-
-    allButton.classList.add("active");
-
-
-    /* Mostrar todas las noticias */
-
-    newsCards.forEach((card, index) => {
-
-        card.style.display = "block";
-
-        card.style.animation = "none";
-
-        void card.offsetWidth;
-
-        card.style.animation =
-            `newsAppear .45s ease ${index * .05}s both`;
-
-    });
-
-
-  // Verifica si el usuario ya ha tomado una decisión
-  const cookiesDecision = localStorage.getItem("cookiesDecision");
-
-  if (!cookiesDecision) {
-    banner.style.display = "block";
-   
-  } else {
-    banner.style.display = "none";
-      }
-
-  function hideBanner(decision) {
-    localStorage.setItem("cookiesDecision", decision);
-    banner.style.display = "none";
-    overlay.style.opacity = "0";
-    setTimeout(() => overlay.style.display = "none", 300);
   }
 
-  acceptBtn.addEventListener("click", () => hideBanner("accepted"));
-  rejectBtn.addEventListener("click", () => hideBanner("rejected"));
 
+  // COOKIES
+  const banner = document.getElementById("cookie-banner");
+  const overlay = document.getElementById("page-overlay");
 
- // Conectando con el whatsapp
-const whatsappContainer = document.getElementById('whatsapp-container');
+  if (banner) {
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        whatsappContainer.classList.add('visible');
-    } else {
-        whatsappContainer.classList.remove('visible');
+    banner.style.display =
+      localStorage.getItem("cookiesDecision")
+        ? "none"
+        : "block";
+
+    function hideBanner(decision) {
+
+      localStorage.setItem("cookiesDecision", decision);
+      banner.style.display = "none";
+
+      if (overlay) overlay.style.display = "none";
     }
+
+    document.getElementById("acceptCookies")
+      ?.addEventListener("click", () => hideBanner("accepted"));
+
+    document.getElementById("rejectCookies")
+      ?.addEventListener("click", () => hideBanner("rejected"));
+  }
+
+
+  // WHATSAPP
+  const whatsappContainer =
+    document.getElementById("whatsapp-container");
+
+  if (whatsappContainer) {
+
+    window.addEventListener("scroll", () => {
+
+      whatsappContainer.classList.toggle(
+        "visible",
+        window.scrollY > 50
+      );
+
+    }, { passive: true });
+
+  }
+
 });
-
-
-
-
-
-
-    
-
