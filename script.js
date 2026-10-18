@@ -394,3 +394,95 @@ enlace.classList.toggle(
 
 });
 
+// RESERVAR CITA
+const modal = document.getElementById("reservaModal");
+    const cerrar = document.getElementById("cerrarReserva");
+    const formulario = document.getElementById("formReserva");
+    const servicio = document.getElementById("reservaServicio");
+    const fecha = document.getElementById("reservaFecha");
+    const botones = document.querySelectorAll(".service-link");
+
+    let ultimoBoton = null;
+
+    function abrirModal(boton) {
+        ultimoBoton = boton;
+
+        const servicioElegido = boton.dataset.servicio;
+
+        if (servicioElegido) {
+            servicio.value = servicioElegido;
+        }
+
+        modal.classList.add("activo");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-abierto");
+
+        cerrar.focus();
+    }
+
+    function cerrarModal() {
+        modal.classList.remove("activo");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-abierto");
+
+        if (ultimoBoton) {
+            ultimoBoton.focus();
+        }
+    }
+
+    // Abrir desde cualquiera de los servicios
+    botones.forEach(boton => {
+        boton.addEventListener("click", (e) => {
+            e.preventDefault();
+            abrirModal(boton);
+        });
+    });
+
+    // Cerrar con la X
+    cerrar.addEventListener("click", cerrarModal);
+
+    // Cerrar haciendo clic fuera
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            cerrarModal();
+        }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" &&
+            modal.classList.contains("activo")) {
+            cerrarModal();
+        }
+    });
+
+    // Evitar fechas anteriores a hoy
+    function actualizarFechaMinima() {
+        const hoy = new Date();
+        const anio = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, "0");
+        const dia = String(hoy.getDate()).padStart(2, "0");
+
+        fecha.min = `${anio}-${mes}-${dia}`;
+    }
+
+    actualizarFechaMinima();
+
+    // Demostración del formulario
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (!formulario.reportValidity()) return;
+
+        alert(
+            "Datos de la solicitud:\n\n" +
+            "Servicio: " + servicio.value + "\n" +
+            "Fecha: " + fecha.value + "\n" +
+            "Hora: " + document.getElementById("reservaHora").value + "\n\n" +
+            "Este formulario es una demostración. " +
+            "La solicitud todavía no se ha enviado."
+        );
+    });
+
+
+
