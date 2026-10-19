@@ -868,53 +868,103 @@
 
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer">
-            <div style="display: flex; flex-direction: column; line-height: 1.6; margin-left: 30px; margin-right: 7em;">
-                <div class="footer-logo"><img src="img/pataIzquierda.png" style="width: 20px;"> Dpelosd</div>
-                <p>Todo para que tu mejor amigo viva feliz.</p>
+    
+<!-- FOOTER -->
+<footer class="footer">
 
-                <div class="copyright">
-                    © <span id="year"></span> Dpelosd. Todos los derechos reservados.
-                </div>
+    <div class="footer-container">
+
+        <!-- LOGO Y DESCRIPCIÓN -->
+        <div class="footer-col footer-brand">
+
+            <div class="footer-logo">
+                <img src="img/pataIzquierda.png"
+                     alt="Huella Dpelosd">
+                <span>Dpelosd</span>
             </div>
 
-            <div style="display: flex; flex-direction: column; line-height: 1.6; margin-top: 10px;">
-                <h3 style=" color: #e6a92f;">Menú</h3>
-                <a class="fotterlink" href="#inicio">Inicio</a>
-                <a class="fotterlink" href="tienda.html">Tienda</a>
-                <a class="fotterlink" href="#servicios">Servicios</a>
-                <a class="fotterlink" href="#blog">Blog</a>
-                <a class="fotterlink" href="#contacto">Contacto</a>
+            <p>
+                Todo para que tu mejor amigo viva feliz.
+            </p>
+
+            <div class="copyright">
+                © <span id="year"></span> Dpelosd.
+                Todos los derechos reservados.
             </div>
 
-            <div
-                style="display: flex; flex-direction: column;  margin-top: 10px; margin-left: 7em; width: 200px; margin-right: 5em;">
-                <h3 style=" color: #e6a92f;">Contacto</h3>
-                <a href="mailto: dpelosd@gmail.com" class="fotterlink1"> info@dpelosd.com</a>
-                <a href="https://dpelosd.com" class="fotterlink1"> https://dpelosd.com</a>
-                <a href="tel: +34604834931" class="fotterlink1"> <b>
-                        <p class="fotterlink1"> (+34)
-                    </b> 604 83 49 31 </p></a>
+        </div>
+
+        <!-- MENÚ -->
+        <div class="footer-col">
+
+            <h3>Menú</h3>
+
+            <nav class="footer-links"
+                 aria-label="Enlaces del pie de página">
+                <a href="#inicio">Inicio</a>
+                <a href="tienda.html">Tienda</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#blog">Blog</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-col">
+
+            <h3>Contacto</h3>
+
+            <div class="footer-links">
+
+                <a href="mailto:info@dpelosd.com">
+                    info@dpelosd.com
+                </a>
+
+                <a href="https://dpelosd.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    www.dpelosd.com
+                </a>
+
+                <a href="tel:+34604834931">
+                    (+34) 604 83 49 31
+                </a>
+
             </div>
 
-            <div>
-                <h3 style="margin-top: 10px; width: 200px; color: #e6a92f;">Horario</h3>
-                <p style="color: white;"><b>Lunes - Viernes </b></p>
-                <p>09:00 am - 13.30 pm</p>
-                <p>14:30 pm - 17.00 pm</p>
-                <p style="color: white"> <b>Sábados </b></p>
-                <p>9:00 am - 15.00 pm</p>
-                <p style="color: white"><b>Domingo y Festivos </b></p>
+        </div>
+
+        <!-- HORARIO -->
+        <div class="footer-col">
+
+            <h3>Horario</h3>
+
+            <div class="footer-horario">
+
+                <strong>Lunes - Viernes</strong>
+                <p>09:00 - 13:30</p>
+                <p>14:30 - 17:00</p>
+
+                <strong>Sábados</strong>
+                <p>09:00 - 15:00</p>
+
+                <strong>Domingos y festivos</strong>
                 <p>Cerrado</p>
+
             </div>
-        </div>
-        <div style="display: flex; flex-direction: column;">
-            <img src="img/pataDerecha.png" style="width: 50px; margin-top: 20px; margin-left: 20px;">
-            <img src="img/pataDerecha.png" style="width: 50px; margin-top: 4em;">
+
         </div>
 
+    </div>
+
+    <!-- DECORACIÓN DE HUELLAS -->
+    <div class="footer-patas" aria-hidden="true">
+        <img src="img/pataDerecha.png" alt="">
+        <img src="img/pataDerecha.png" alt="">
+    </div>
+
+</footer>
 
         <!-- MODAL DE BÚSQUEDA 
     <div class="modal" id="searchModal" aria-hidden="true">
