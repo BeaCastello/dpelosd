@@ -61,9 +61,9 @@
             <img src="img/pataDerecha.png" class="imgpatafeliz" style="margin-left: 10px; margin-right: 10px" alt="">
 
             <span>
-            ¡Bienvenidos a nuestra peluquería canina!, disfruta de un 
-                <strong style="margin-right: 10px;">¡20% de descuento en tu primera compra!                   
-                </strong>               
+                ¡Bienvenidos a nuestra peluquería canina!, disfruta de un
+                <strong style="margin-right: 10px;">¡20% de descuento en tu primera compra!
+                </strong>
             </span>
 
             <img src="img/pataIzquierda.png" class="imgpatafeliz" style="margin-left: 10px;" alt="">
@@ -74,7 +74,7 @@
 
     <!-- BANNER -->
     <section class=" hero" aria-label="Promociones Dpelos">
-   
+
 
     </section>
 
@@ -162,8 +162,7 @@
                     <div class="product-emoji"><img src="img/disfrasperro.png" style="width: 2em;"></div>
                     <h3>Disfraces</h3>
                     <p style="margin-bottom: 30px;">Un disfraz, mil sonrisas y un amor infinito.</p>
-                    <a href="" class="btnTienda" id="viewProductsBtn" style="margin-right: 0px;"
-                        target="_blank">Ir a la
+                    <a href="" class="btnTienda" id="viewProductsBtn" style="margin-right: 0px;" target="_blank">Ir a la
                         tienda</a>
                     <!--  <button class="add-btn" data-product="Correa premium">Ir a la tienda</button> -->
                 </article>
@@ -867,39 +866,44 @@
 
     </section>
 
-    
-<!-- FOOTER -->
-<footer class="footer">
 
-    <div class="footer-container">
+    <!-- FOOTER -->
+    <footer class="footer">
 
-        <!-- LOGO Y DESCRIPCIÓN -->
-        <div class="footer-col footer-brand">
+        <!-- VÍDEO DE FONDO -->
+        <video class="footer-video" autoplay muted loop playsinline>
+            <source src="img/footer.mp4" type="video/mp4">
+        </video>
 
+        <!-- CAPA OSCURA -->
+        <div class="footer-overlay"></div>
+
+        <!-- CONTENIDO DEL FOOTER -->
+        <div class="primerColumna">
+
+            <!-- LOGO Y DESCRIPCIÓN -->
             <div class="footer-logo">
-                <img src="img/pataIzquierda.png"
-                     alt="Huella Dpelosd">
-                <span>Dpelosd</span>
+                <img src="img/pataIzquierda.png" class="huellaDpelosd" alt="Huella Dpelosd">
+                <span style=" width: 40px; color: #f7bd45; font-size: 26px; font-weight: 900;">Dpelosd</span>
             </div>
-
-            <p>
-                Todo para que tu mejor amigo viva feliz.
-            </p>
-
-            <div class="copyright">
-                © <span id="year"></span> Dpelosd.
-                Todos los derechos reservados.
+            <div class="slogan-logo">
+                <p style="margin-bottom: 15px;">
+                    Todo para que tu mejor amigo viva feliz.
+                </p>
+                <div class="copyright">
+                    © <span id="year"></span> Dpelosd.
+                    Todos los derechos reservados.
+                </div>
             </div>
-
         </div>
+
 
         <!-- MENÚ -->
         <div class="footer-col">
 
             <h3>Menú</h3>
 
-            <nav class="footer-links"
-                 aria-label="Enlaces del pie de página">
+            <nav class="footer-links" aria-label="Enlaces del pie de página">
                 <a href="#inicio">Inicio</a>
                 <a href="tienda.html">Tienda</a>
                 <a href="#servicios">Servicios</a>
@@ -920,9 +924,7 @@
                     info@dpelosd.com
                 </a>
 
-                <a href="https://dpelosd.com"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <a href="https://dpelosd.com" target="_blank" rel="noopener noreferrer">
                     www.dpelosd.com
                 </a>
 
@@ -955,17 +957,12 @@
 
         </div>
 
-    </div>
 
-    <!-- DECORACIÓN DE HUELLAS -->
-    <div class="footer-patas" aria-hidden="true">
-        <img src="img/pataDerecha.png" alt="">
-        <img src="img/pataDerecha.png" alt="">
-    </div>
 
-</footer>
 
-        <!-- MODAL DE BÚSQUEDA 
+    </footer>
+
+    <!-- MODAL DE BÚSQUEDA 
     <div class="modal" id="searchModal" aria-hidden="true">
         <div class="modal-box">
             <button class="modal-close" id="closeSearch">×</button>
@@ -976,174 +973,174 @@
         </div>
     </div>-->
 
-        <!-- Conexión al WhatsApp -->
-        <div class="whatsapp-container" id="whatsapp-container">
-            <a href="https://wa.me/34604834931" target="_blank" class="whatsapp-button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
-                    class="whatsapp-icon">
-            </a>
-        </div>
+    <!-- Conexión al WhatsApp -->
+    <div class="whatsapp-container" id="whatsapp-container">
+        <a href="https://wa.me/34604834931" target="_blank" class="whatsapp-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                class="whatsapp-icon">
+        </a>
+    </div>
 
-        <!-- Cookies banner-->
-        <div id="cookie-banner">
-            <p style="padding-top: 20px;"> Usamos cookies para mejorar tu experiencia. Puedes consultar más
-                información
-                en nuestra <a href="politicaPrivacidad.html" target="_blank">Política de Privacidad.</a></p>
-            <br>
-            <button id="acceptCookies">Aceptar</button>
-            <button id="rejectCookies">Rechazar</button>
-        </div>
+    <!-- Cookies banner-->
+    <div id="cookie-banner">
+        <p style="padding-top: 20px;"> Usamos cookies para mejorar tu experiencia. Puedes consultar más
+            información
+            en nuestra <a href="politicaPrivacidad.html" target="_blank">Política de Privacidad.</a></p>
+        <br>
+        <button id="acceptCookies">Aceptar</button>
+        <button id="rejectCookies">Rechazar</button>
+    </div>
 
 
-        <!-- MODAL RESERVAR CITA -->
-        <div class="reserva-modal" id="reservaModal" role="dialog" aria-modal="true" aria-labelledby="reservaTitulo"
-            aria-hidden="true">
+    <!-- MODAL RESERVAR CITA -->
+    <div class="reserva-modal" id="reservaModal" role="dialog" aria-modal="true" aria-labelledby="reservaTitulo"
+        aria-hidden="true">
 
-            <div class="reserva-contenedor">
+        <div class="reserva-contenedor">
 
-                <button type="button" class="reserva-cerrar" id="cerrarReserva" aria-label="Cerrar reserva">
-                    &times;
-                </button>
+            <button type="button" class="reserva-cerrar" id="cerrarReserva" aria-label="Cerrar reserva">
+                &times;
+            </button>
 
-                <!-- COLUMNA IZQUIERDA -->
-                <div class="reserva-izquierda">
-                    <div class="reserva-presentacion">
-                        <span class="reserva-etiqueta">
-                            <img src="img/patas de perro.png" style="width: 20px;"> RESERVA TU CITA
-                        </span>
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="reserva-izquierda">
+                <div class="reserva-presentacion">
+                    <span class="reserva-etiqueta">
+                        <img src="img/patas de perro.png" style="width: 20px;"> RESERVA TU CITA
+                    </span>
 
-                        <h2 id="reservaTitulo">
-                            Tu mascota
-                            <span>en las mejores manos</span>
-                        </h2>
+                    <h2 id="reservaTitulo">
+                        Tu mascota
+                        <span>en las mejores manos</span>
+                    </h2>
 
-                        <p>
-                            Reserva tu cita de forma rápida y sencilla.
-                            Nos encargaremos de que tu peludo reciba
-                            todo el cariño y cuidado que merece.
-                        </p>
+                    <p>
+                        Reserva tu cita de forma rápida y sencilla.
+                        Nos encargaremos de que tu peludo reciba
+                        todo el cariño y cuidado que merece.
+                    </p>
 
-                        <div class="reserva-ventajas">
-                            <span>✓ Atención personalizada</span>
-                            <span>✓ Cuidado de confianza</span>
-                        </div>
+                    <div class="reserva-ventajas">
+                        <span>✓ Atención personalizada</span>
+                        <span>✓ Cuidado de confianza</span>
                     </div>
-                </div>
-
-                <!-- COLUMNA DERECHA -->
-                <div class="reserva-derecha">
-
-                    <div class="reserva-cabecera">
-                        <span><img src="img/patas de perro.png" style="width: 20px;"> TU RESERVA</span>
-                        <h2>Reserva una cita</h2>
-                        <p>
-                            Completa los siguientes datos para
-                            solicitar tu cita.
-                        </p>
-                    </div>
-
-                    <form id="formReserva">
-
-                        <div class="reserva-grupo">
-                            <label for="reservaServicio">
-                                1. Selecciona el servicio
-                            </label>
-
-                            <select id="reservaServicio" required>
-                                <option value="">
-                                    Selecciona un servicio
-                                </option>
-                                <option>Peluquería canina</option>
-                                <option>Bienestar y Masaje</option>
-                                <option>Atención Integral</option>
-                                <option>Paseos Premium</option>
-                                <option>Formación personalizada</option>
-                            </select>
-                        </div>
-
-                        <div class="reserva-grupo">
-                            <label>2. Elige fecha y hora</label>
-
-                            <div class="reserva-dos-columnas">
-                                <div>
-                                    <label for="reservaFecha" class="reserva-subtitulo">
-                                        Fecha
-                                    </label>
-                                    <input type="date" id="reservaFecha" required>
-                                </div>
-
-                                <div>
-                                    <label for="reservaHora" class="reserva-subtitulo">
-                                        Hora
-                                    </label>
-                                    <select id="reservaHora" required>
-                                        <option value="">
-                                            Selecciona hora
-                                        </option>
-                                        <option value="09:00">09:00</option>
-                                        <option value="09:30">09:30</option>
-                                        <option value="10:00">10:00</option>
-                                        <option value="10:30">10:30</option>
-                                        <option value="11:00">11:00</option>
-                                        <option value="11:30">11:30</option>
-                                        <option value="12:00">12:00</option>
-                                        <option value="16:00">16:00</option>
-                                        <option value="16:30">16:30</option>
-                                        <option value="17:00">17:00</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="reserva-grupo">
-                            <label>3. Tus datos</label>
-
-                            <div class="reserva-dos-columnas">
-                                <input type="text" id="reservaNombre" placeholder="Nombre completo" autocomplete="name"
-                                    aria-label="Nombre completo" required>
-
-                                <input type="tel" id="reservaTelefono" placeholder="Teléfono" autocomplete="tel"
-                                    aria-label="Teléfono" required>
-                            </div>
-                        </div>
-
-                        <div class="reserva-grupo">
-                            <input type="email" id="reservaEmail" placeholder="Correo electrónico" autocomplete="email"
-                                aria-label="Correo electrónico" required>
-                        </div>
-
-                        <div class="reserva-grupo">
-                            <textarea id="reservaNotas" placeholder="Cuéntanos algo sobre tu mascota (opcional)"
-                                aria-label="Notas adicionales" rows="3"></textarea>
-                        </div>
-
-                        <div class="reserva-privacidad">
-                            <input type="checkbox" id="reservaPrivacidad" required>
-                            <label for="reservaPrivacidad">
-                                He leído y acepto la
-                                <a href="politicaPrivacidad.html" target="_blank" rel="noopener noreferrer">
-                                    política de privacidad
-                                </a>.
-                            </label>
-                        </div>
-
-                        <button type="submit" class="reserva-confirmar">
-                           <img src="img/patas de perro.png" style="width: 20px;">Solicitar cita
-                        </button>
-
-                        <p class="reserva-aviso">
-                          <img src="img/patas de perro.png" style="width: 20px;">Tu solicitud estará pendiente
-                            de confirmación.
-                        </p>
-
-                    </form>
                 </div>
             </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="reserva-derecha">
+
+                <div class="reserva-cabecera">
+                    <span><img src="img/patas de perro.png" style="width: 20px;"> TU RESERVA</span>
+                    <h2>Reserva una cita</h2>
+                    <p>
+                        Completa los siguientes datos para
+                        solicitar tu cita.
+                    </p>
+                </div>
+
+                <form id="formReserva">
+
+                    <div class="reserva-grupo">
+                        <label for="reservaServicio">
+                            1. Selecciona el servicio
+                        </label>
+
+                        <select id="reservaServicio" required>
+                            <option value="">
+                                Selecciona un servicio
+                            </option>
+                            <option>Peluquería canina</option>
+                            <option>Bienestar y Masaje</option>
+                            <option>Atención Integral</option>
+                            <option>Paseos Premium</option>
+                            <option>Formación personalizada</option>
+                        </select>
+                    </div>
+
+                    <div class="reserva-grupo">
+                        <label>2. Elige fecha y hora</label>
+
+                        <div class="reserva-dos-columnas">
+                            <div>
+                                <label for="reservaFecha" class="reserva-subtitulo">
+                                    Fecha
+                                </label>
+                                <input type="date" id="reservaFecha" required>
+                            </div>
+
+                            <div>
+                                <label for="reservaHora" class="reserva-subtitulo">
+                                    Hora
+                                </label>
+                                <select id="reservaHora" required>
+                                    <option value="">
+                                        Selecciona hora
+                                    </option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reserva-grupo">
+                        <label>3. Tus datos</label>
+
+                        <div class="reserva-dos-columnas">
+                            <input type="text" id="reservaNombre" placeholder="Nombre completo" autocomplete="name"
+                                aria-label="Nombre completo" required>
+
+                            <input type="tel" id="reservaTelefono" placeholder="Teléfono" autocomplete="tel"
+                                aria-label="Teléfono" required>
+                        </div>
+                    </div>
+
+                    <div class="reserva-grupo">
+                        <input type="email" id="reservaEmail" placeholder="Correo electrónico" autocomplete="email"
+                            aria-label="Correo electrónico" required>
+                    </div>
+
+                    <div class="reserva-grupo">
+                        <textarea id="reservaNotas" placeholder="Cuéntanos algo sobre tu mascota (opcional)"
+                            aria-label="Notas adicionales" rows="3"></textarea>
+                    </div>
+
+                    <div class="reserva-privacidad">
+                        <input type="checkbox" id="reservaPrivacidad" required>
+                        <label for="reservaPrivacidad">
+                            He leído y acepto la
+                            <a href="politicaPrivacidad.html" target="_blank" rel="noopener noreferrer">
+                                política de privacidad
+                            </a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="reserva-confirmar">
+                        <img src="img/patas de perro.png" style="width: 20px;">Solicitar cita
+                    </button>
+
+                    <p class="reserva-aviso">
+                        <img src="img/patas de perro.png" style="width: 20px;">Tu solicitud estará pendiente
+                        de confirmación.
+                    </p>
+
+                </form>
+            </div>
         </div>
+    </div>
 
 
-        <!-- JS -->
-        <script src="script.js"></script>
+    <!-- JS -->
+    <script src="script.js"></script>
 </body>
 
 </html>
