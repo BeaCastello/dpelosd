@@ -407,10 +407,7 @@ a.btnBanner {
         background-size: contain;
         background-position: center top;
     }
-    #service-link1 {
-        margin-top: 219px;
-        margin-left: 50px;
-    }
+
 
 }
 
@@ -546,7 +543,7 @@ a.btnBanner {
 
 @media (max-width: 768px) {
     .benefits {
-        margin-top: -16em;
+        margin-top: -12em;
     }
 }
 
@@ -946,16 +943,31 @@ a.btnBanner {
     font-weight: 900;
     transition: transform .2s ease;
     text-decoration: none;
-    background-color: #f7bd45 ;
+    background-color: #f7bd45;
     padding: 10px 10px;
-   margin-top: 297px;
+    margin-top: 297px;
     margin-left: 70px;
     border-radius: 10px;
 }
 
+@media (max-width: 1024px) {
+    #service-link1 {
+        padding: 5px 5px;
+        margin-top: 222px;
+        margin-left: 50px;
+        border-radius: 3px;
+    }
+}
 
-
-
+@media (max-width: 768px) {
+    #service-link1 {
+        font-size: 11px;
+        padding: 0.2px 0.2px;
+        margin-top: 80px;
+        margin-left: 20px;
+        border-radius: 3px;
+    }
+}
 
 
 /* HOVER */
@@ -2045,7 +2057,7 @@ a.btnBanner {
     min-height: 300px;
     box-sizing: border-box;
     display: flex;
-    
+
 }
 
 /* VÍDEO DE FONDO */
@@ -2057,7 +2069,7 @@ a.btnBanner {
     width: 100%;
     height: 500px;
     object-fit: cover;
-    object-position: center;  
+    object-position: center;
 }
 
 /* ELIMINA LA CAPA OSCURA */
@@ -2083,9 +2095,9 @@ a.btnBanner {
     font-weight: 900;
 }
 
-.footer-col h3{
- color: #f7bd45;
- font-weight: 900;
+.footer-col h3 {
+    color: #f7bd45;
+    font-weight: 900;
 }
 
 
@@ -2101,7 +2113,7 @@ a.btnBanner {
     color: #f7bd45;
 }
 
-.footer-links{
+.footer-links {
     display: flex;
     flex-direction: column;
 }
@@ -2362,7 +2374,7 @@ body.modal-abierto {
     background-image: url("img/imgPerro.png");
     background-size: cover;
     background-position: 16% center;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
 }
 
 .reserva-presentacion {
