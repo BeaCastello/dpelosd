@@ -2138,9 +2138,13 @@ a.btnBanner {
     }
 
     .footer> :not(.footer-video):not(.footer-overlay) {
-        margin-left: 30px;
+        margin-left: 20px;
         margin-top: 15px;
         margin-right: 30px;
+        font-size: 14px;
+    }
+    .footer-horario{
+        font-size: 14px;
     }
 }
 
