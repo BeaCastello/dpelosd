@@ -934,6 +934,25 @@ a.btnBanner {
     transform: translateX(5px);
 }
 
+#service-link1 {
+    display: inline-block;
+    color: #0e0d0d;
+    font-size: 14px;
+    font-weight: 900;
+    transition: transform .2s ease;
+    text-decoration: none;
+    background-color: #f7bd45 ;
+    padding: 10px 10px;
+   margin-top: 297px;
+    margin-left: 70px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
 /* HOVER */
 
 .grooming-card:hover img {
@@ -2335,25 +2354,23 @@ body.modal-abierto {
 ============================ */
 
 .reserva-izquierda {
-    background-image: url("img/perrofeliz3.png");
+    background-image: url("img/imgPerro.png");
     background-size: cover;
-    background-position: 36% center;
-    background-repeat: no-repeat;
-    min-height: 650px;
-    position: relative;
+    background-position: 16% center;
+    background-repeat: no-repeat;  
 }
 
 .reserva-presentacion {
-    padding: 55px 35px;
+    padding: 45px 25px;
     position: relative;
     z-index: 2;
 }
 
 .reserva-etiqueta {
-    color: #ef6a27;
+    color: #fcf8f7;
     font-weight: 700;
     letter-spacing: 2px;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .reserva-presentacion h2 {

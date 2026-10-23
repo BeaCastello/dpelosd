@@ -401,7 +401,7 @@ const modal = document.getElementById("reservaModal");
     const servicio = document.getElementById("reservaServicio");
     const fecha = document.getElementById("reservaFecha");
     const botones = document.querySelectorAll(".service-link");
-    
+       
 
     let ultimoBoton = null;
 
