@@ -2376,7 +2376,7 @@ body.modal-abierto {
 .reserva-presentacion h2 {
     font-size: clamp(30px, 3vw, 43px);
     line-height: 1.2;
-    color: #123c30;
+    color: #e57f2f;
     margin: 20px 0;
     font-weight: 800;
 }
@@ -2388,7 +2388,7 @@ body.modal-abierto {
 }
 
 .reserva-presentacion p {
-    color: #69716f;
+    color: #f8fbfb;
     font-size: 14px;
     line-height: 1.8;
     max-width: 390px;
