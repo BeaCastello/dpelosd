@@ -965,16 +965,6 @@
 
     </footer>
 
-    <!-- MODAL DE BÚSQUEDA 
-    <div class="modal" id="searchModal" aria-hidden="true">
-        <div class="modal-box">
-            <button class="modal-close" id="closeSearch">×</button>
-            <h2>¿Qué estás buscando?</h2>
-            <input type="search" id="searchInput" placeholder="Ej. juguetes, comida, correas...">
-            <button class="btn btn-primary search-submit" id="searchSubmit">Buscar</button>
-            <p id="searchResult"></p>
-        </div>
-    </div>-->
 
     <!-- Conexión al WhatsApp -->
     <div class="whatsapp-container" id="whatsapp-container">
@@ -995,113 +985,64 @@
     </div>
 
 
-    
 
+   
+<!-- VENTANA EMERGENTE DE RESERVAS -->
+<div class="reserva-modal" id="reservaModal">
 
-                <!--       <form id="formReserva">
+    <div class="reserva-contenido">
 
-                    <div class="reserva-grupo">
-                        <label for="reservaServicio">
-                            1. Selecciona el servicio
-                        </label>
+        <button class="reserva-cerrar"
+                id="cerrarReserva"
+                type="button">
+            &times;
+        </button>
 
-                        <select id="reservaServicio" required>
-                            <option value="">
-                                Selecciona un servicio
-                            </option>
-                            <option>Peluquería canina</option>
-                            <option>Bienestar y Masaje</option>
-                            <option>Atención Integral</option>
-                            <option>Paseos Premium</option>
-                            <option>Formación personalizada</option>
-                        </select>
-                    </div>
+        <!-- IZQUIERDA -->
+        <div class="reserva-izquierda">
 
-                    <div class="reserva-grupo">
-                        <label>2. Elige fecha y hora</label>
+            <div class="reserva-textos">
 
-                        <div class="reserva-dos-columnas">
-                            <div>
-                                <label for="reservaFecha" class="reserva-subtitulo">
-                                    Fecha
-                                </label>
-                                <input type="date" id="reservaFecha" required>
-                            </div>
+                <div class="reserva-etiqueta">
+                    <img src="img/patas de perro.png"
+                         alt="Pata de perro">
 
-                            <div>
-                                <label for="reservaHora" class="reserva-subtitulo">
-                                    Hora
-                                </label>
-                                <select id="reservaHora" required>
-                                    <option value="">
-                                        Selecciona hora
-                                    </option>
-                                    <option value="09:00">09:00</option>
-                                    <option value="09:30">09:30</option>
-                                    <option value="10:00">10:00</option>
-                                    <option value="10:30">10:30</option>
-                                    <option value="11:00">11:00</option>
-                                    <option value="11:30">11:30</option>
-                                    <option value="12:00">12:00</option>
-                                    <option value="16:00">16:00</option>
-                                    <option value="16:30">16:30</option>
-                                    <option value="17:00">17:00</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
+                    <span>RESERVA TU CITA</span>
+                </div>
 
-                    <div class="reserva-grupo">
-                        <label>3. Tus datos</label>
+                <h2>
+                    Tu mascota en las mejores manos.
+                </h2>
 
-                        <div class="reserva-dos-columnas">
-                            <input type="text" id="reservaNombre" placeholder="Nombre completo" autocomplete="name"
-                                aria-label="Nombre completo" required>
-
-                            <input type="tel" id="reservaTelefono" placeholder="Teléfono" autocomplete="tel"
-                                aria-label="Teléfono" required>
-                        </div>
-                    </div>
-
-                    <div class="reserva-grupo">
-                        <input type="email" id="reservaEmail" placeholder="Correo electrónico" autocomplete="email"
-                            aria-label="Correo electrónico" required>
-                    </div>
-
-                    <div class="reserva-grupo">
-                        <textarea id="reservaNotas" placeholder="Cuéntanos algo sobre tu mascota (opcional)"
-                            aria-label="Notas adicionales" rows="3"></textarea>
-                    </div>
-
-                    <div class="reserva-privacidad">
-                        <input type="checkbox" id="reservaPrivacidad" required>
-                        <label for="reservaPrivacidad">
-                            He leído y acepto la
-                            <a href="politicaPrivacidad.html" target="_blank" rel="noopener noreferrer">
-                                política de privacidad
-                            </a>.
-                        </label>
-                    </div>
-
-                    <button type="submit" class="reserva-confirmar">
-                        <img src="img/patas de perro.png" style="width: 20px;">Solicitar cita
-                    </button>
-
-                    <p class="reserva-aviso">
-                        <img src="img/patas de perro.png" style="width: 20px;">Tu solicitud estará pendiente
-                        de confirmación.
-                    </p>
-
-                </form>
             </div>
+
         </div>
-    </div>-->
+
+        <!-- DERECHA -->
+        <div class="reserva-derecha">
+
+            <h2>Reserva tu cita</h2>
+
+            <p>
+                Completa el formulario y nos pondremos
+                en contacto contigo.
+            </p>
+
+            <div class="hs-form-frame"
+                 data-region="eu1"
+                 data-form-id="a76a7e5f-641b-4719-aca9-5c98c201dd78"
+                 data-portal-id="149514983">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
-                <!-- JS -->
-                <script src="script.js"></script>
-                <script src="https://js-eu1.hsforms.net/forms/embed/149514983.js" defer></script>
-<div class="hs-form-frame" data-region="eu1" data-form-id="a76a7e5f-641b-4719-aca9-5c98c201dd78" data-portal-id="149514983"></div>
-</body>
+<script src="https://js-eu1.hsforms.net/forms/embed/149514983.js" defer></script>
+<script src="script.js" defer></script>
 
-</html>
+
+    

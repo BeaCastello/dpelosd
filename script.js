@@ -248,7 +248,6 @@ enlace.classList.toggle(
     });
 
 
-
   // COOKIES
   const banner = document.getElementById("cookie-banner");
   const overlay = document.getElementById("page-overlay");
@@ -295,3 +294,57 @@ enlace.classList.toggle(
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal = document.getElementById("reservaModal");
+    const cerrar = document.getElementById("cerrarReserva");
+
+    if (!modal) {
+        console.error("No existe el modal reservaModal");
+        return;
+    }
+
+    // ABRIR AL HACER CLIC EN RESERVAR CITA
+    document.addEventListener("click", function (e) {
+
+        const boton = e.target.closest(".service-link");
+
+        if (!boton) return;
+
+        e.preventDefault();
+
+        modal.classList.add("activo");
+        document.body.style.overflow = "hidden";
+
+        console.log("Modal de reserva abierto");
+
+    });
+
+    // CERRAR CON LA X
+    if (cerrar) {
+        cerrar.addEventListener("click", cerrarModal);
+    }
+
+    // CERRAR AL HACER CLIC FUERA
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            cerrarModal();
+        }
+    });
+
+    // CERRAR CON ESCAPE
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            cerrarModal();
+        }
+    });
+
+    function cerrarModal() {
+        modal.classList.remove("activo");
+        document.body.style.overflow = "";
+    }
+
+});
+
+
+    
