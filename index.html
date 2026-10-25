@@ -808,64 +808,17 @@
                 </div>
             </div>
 
-            <!-- FORMULARIO -->
-            <form class="contact-form" id="contact-form" action="#" method="post">
+            <!-- FORMULARIO DE CONTACTO HUBSPOT -->
+            <div class="contact-form-container">
 
-                <div class="form-group">
-                    <label for="name">Nombre <span>*</span></label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" id="name" name="name" placeholder="Nombre" autocomplete="name" required>
-                    </div>
+                <div class="hs-form-frame" data-region="eu1" data-form-id="0e8fd09f-7b7c-47e2-a26b-c361d038faf3"
+                    data-portal-id="149514983">
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email <span>*</span></label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" id="email" name="email" placeholder="Correo electrónico"
-                            autocomplete="email" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Número de teléfono</label>
-                    <div class="input-wrapper">
-                        <i class="fa-solid fa-phone"></i>
-                        <input type="tel" id="phone" name="phone" placeholder="Número de teléfono" autocomplete="tel">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="mensaje">Mensaje <span>*</span></label>
-                    <div class="input-wrapper textarea-wrapper">
-                        <i class="fa-solid fa-message"></i>
-                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." rows="5"
-                            required></textarea>
-                    </div>
-                </div>
-
-                <!-- PRIVACIDAD -->
-                <div class="privacy">
-                    <input type="checkbox" id="priv" name="priv" required>
-
-                    <label for="priv">
-                        He leído y acepto la
-                        <a href="politicaPrivacidad.html">
-                            política de privacidad
-                        </a>.
-                    </label>
-                </div>
-
-                <!-- BOTÓN -->
-                <button type="submit" class="contact-submit">
-                    Enviar
-                    <i class="fa-regular fa-paper-plane"></i>
-                </button>
-
-            </form>
+            </div>
 
         </div>
+
 
     </section>
 
@@ -985,64 +938,54 @@
     </div>
 
 
+    <!-- VENTANA EMERGENTE DE RESERVAS -->
+    <div class="reserva-modal" id="reservaModal">
 
-   
-<!-- VENTANA EMERGENTE DE RESERVAS -->
-<div class="reserva-modal" id="reservaModal">
+        <div class="reserva-contenido">
 
-    <div class="reserva-contenido">
+            <button class="reserva-cerrar" id="cerrarReserva" type="button">
+                &times;
+            </button>
 
-        <button class="reserva-cerrar"
-                id="cerrarReserva"
-                type="button">
-            &times;
-        </button>
+            <!-- IZQUIERDA -->
+            <div class="reserva-izquierda">
 
-        <!-- IZQUIERDA -->
-        <div class="reserva-izquierda">
+                <div class="reserva-textos">
 
-            <div class="reserva-textos">
+                    <div class="reserva-etiqueta">
+                        <img src="img/patas de perro.png" alt="Pata de perro">
 
-                <div class="reserva-etiqueta">
-                    <img src="img/patas de perro.png"
-                         alt="Pata de perro">
+                        <span>RESERVA TU CITA</span>
+                    </div>
 
-                    <span>RESERVA TU CITA</span>
+                    <h2>
+                        Tu mascota en las mejores manos.
+                    </h2>
+
                 </div>
-
-                <h2>
-                    Tu mascota en las mejores manos.
-                </h2>
 
             </div>
 
-        </div>
+            <!-- DERECHA -->
+            <div class="reserva-derecha">
 
-        <!-- DERECHA -->
-        <div class="reserva-derecha">
+                <h2>Reserva tu cita</h2>
 
-            <h2>Reserva tu cita</h2>
+                <p style="margin-bottom: 10px;">
+                    Completa el formulario y nos pondremos
+                    en contacto contigo.
+                </p>
 
-            <p>
-                Completa el formulario y nos pondremos
-                en contacto contigo.
-            </p>
+                <div class="hs-form-frame" data-region="eu1" data-form-id="a76a7e5f-641b-4719-aca9-5c98c201dd78"
+                    data-portal-id="149514983">
+                </div>
 
-            <div class="hs-form-frame"
-                 data-region="eu1"
-                 data-form-id="a76a7e5f-641b-4719-aca9-5c98c201dd78"
-                 data-portal-id="149514983">
             </div>
 
         </div>
 
     </div>
 
-</div>
 
-
-<script src="https://js-eu1.hsforms.net/forms/embed/149514983.js" defer></script>
-<script src="script.js" defer></script>
-
-
-    
+    <script src="https://js-eu1.hsforms.net/forms/embed/149514983.js" defer></script>
+    <script src="script.js" defer></script>
