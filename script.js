@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.classList.add("activo");
         document.body.style.overflow = "hidden";
 
-        console.log("Modal de reserva abierto");
+        
 
     });
 
