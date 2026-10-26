@@ -347,4 +347,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("footerVideo");
+
+    if (video) {
+        video.playbackRate = 0.65;
+    }
+});
+
+
+
     
