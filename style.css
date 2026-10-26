@@ -560,8 +560,8 @@ a.btnBanner {
 
 .beneficios-section {
     width: 100%;
-    padding: 35px 20px 50px;
-    background: #eaf1e8;
+    padding: 35px 20px 30px;
+  /*  background: #eaf1e8; */
     box-sizing: border-box;
 }
 
