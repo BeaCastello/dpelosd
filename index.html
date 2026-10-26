@@ -28,18 +28,23 @@
 
             <nav class="nav" id="mainNav">
                 <a href="#inicio">Inicio</a>
-                <a href="">Tienda</a>
+                <!-- <a href="">Tienda</a>-->
                 <a href="#servicios">Servicios</a>
                 <a href="#blog">Blog</a>
                 <a href="#contacto">Contacto</a>
+                <a href="#" class="service-link" data-servicio="Peluquería canina"
+                    style="font-size: 16px; font-weight: normal; animation: parpadeoColor 1.5s ease-in-out infinite;">Reservar
+                    cita</a>
             </nav>
 
             <div class="nav-actions" style="display: flex;">
-                <button class="icon-btn" id="searchBtn" aria-label="Buscar"> ⌕ </button>
-                <button class="icon-btn" aria-label="Mi cuenta"> <img src="img/persona.png" class="imgPersona" alt="">
-                </button>
-                <a href="" class="cart-btn" id="cartBtn" aria-label="Carrito"> <img src="img/bolsaTienda.png"
-                        class="imgCarrito" alt=""> <span class="cart-count" id="cartCount">0</span> </a>
+
+                <div style="display: flex; gap: 10px;">
+                    <img src="img/iconoinstagran1.png" style="width: 23px; height: 23px;">
+                    <img src="img/iconofacebook.png" style="width: 12px; height: 23px;">
+                    <img src="img/icono linkedin.png" style="width: 22px; height: 23px;">
+                    <img src="img/iconoYoutube.png" style="width: 25px; height: 21px; margin-top: 2px;">
+                </div>
 
                 <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-controls="mainNav"
                     aria-expanded="false">
@@ -62,7 +67,7 @@
 
             <span>
                 ¡Bienvenidos a nuestra peluquería canina!, disfruta de un
-                <strong style="margin-right: 10px;">¡20% de descuento en tu primera compra!
+                <strong style="margin-right: 10px;">¡20% de descuento en nuestra tienda!
                 </strong>
             </span>
 
@@ -86,42 +91,180 @@
         <div class="container benefits-grid">
 
             <div class="benefit">
-                <div class="benefit-icon"><img src="img/carro.png" style="width:40px" ;></div>
-                <div>
-                    <h3>Envíos a todo el país</h3>
-                    <p>Rápidos y seguros</p>
-                </div>
-            </div>
-
-            <div class="benefit">
-                <div class="benefit-icon"><img src="img/calidad.png" style="width:30px" ;></div>
-                <div>
-                    <h3>Productos de calidad</h3>
-                    <p>Para su bienestar</p>
-                </div>
-            </div>
-
-            <div class="benefit">
-                <div class="benefit-icon"><img src="img/variedadMarca.png" style="width:30px" ;></div>
-                <div>
-                    <h3>Variedad de marcas</h3>
-                    <p>Las mejores opciones</p>
-                </div>
-            </div>
-
-            <div class="benefit">
-                <div class="benefit-icon"><img src="img/atencionpersonalizada.png" style="width:27px" ;>
-                </div>
+                <div class="benefit-icon"><img src="img/atención personalizada.png" style="width:60px" ;></div>
                 <div>
                     <h3>Atención personalizada</h3>
-                    <p>¡Siempre a vuestro lado!</p>
+                    <p>Adaptamos nuestros cuidados a sus necesidades</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon"><img src="img/calidad.png" style="width:40px" ;></div>
+                <div>
+                    <h3>Confianza</h3>
+                    <p>Construimos una relación cercana y transparente con cada familia</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon"><img src="img/iconobombillo.png" style="width:37px" ;></div>
+                <div>
+                    <h3>Asesoramiento</h3>
+                    <p>Te acompañamos con consejos y orientación personalizada</p>
+                </div>
+            </div>
+
+            <div class="benefit">
+                <div class="benefit-icon"><img src="img/iconoBienestar.png" style="width:34px" ;>
+                </div>
+                <div>
+                    <h3>Bienestar</h3>
+                    <p>Priorizamos la comodidad, la salud y la felicidad de tu mascota</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- TIENDA -->
+    
+<!-- SECCIÓN POR QUÉ ESCOGER A DPELOSD -->
+<section class="beneficios-section" id="beneficios">
+
+    <div class="beneficios-container">
+
+        <!-- ENCABEZADO -->
+        <div class="beneficios-header">
+
+            <h2>
+                Beneficios para la mascota,
+                la familia y la sociedad
+            </h2>
+
+            <span class="beneficios-linea"></span>
+
+            <p>
+                En Dpelosd creemos en el valor de
+                cuidar hoy para un mejor mañana.
+            </p>
+
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="beneficios-grid">
+
+            <!-- BENEFICIO 1 -->
+            <article class="beneficio-card">
+
+                <div class="beneficio-info">
+
+                    <div class="beneficio-etiqueta">
+                        <i class="fa-solid fa-paw"></i>
+                        <span>Para la mascota</span>
+                    </div>
+
+                    <ul class="beneficio-lista">
+                        <li>Mayor higiene y cuidado.</li>
+                        <li>Mayor comodidad y bienestar.</li>
+                        <li>Cuidado del pelo, piel y uñas.</li>
+                        <li>
+                            Reducción de molestias causadas
+                            por nudos o exceso de pelo.
+                        </li>
+                        <li>
+                            Favorecer una buena convivencia
+                            y socialización.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <img
+                    src="img/beneficioMascota.png"
+                    alt="Perro feliz"
+                    class="beneficio-imagen"
+                    loading="lazy"
+                >
+
+            </article>
+
+            <!-- BENEFICIO 2 -->
+            <article class="beneficio-card">
+
+                <div class="beneficio-info">
+
+                    <div class="beneficio-etiqueta">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Para la familia</span>
+                    </div>
+
+                    <ul class="beneficio-lista">
+                        <li>
+                            Mayor tranquilidad en el
+                            cuidado de la mascota.
+                        </li>
+                        <li>
+                            Información y consejos prácticos.
+                        </li>
+                        <li>
+                            Ayuda para establecer rutinas
+                            de cuidado.
+                        </li>
+                        <li>
+                            Orientación sobre servicios
+                            relacionados con el mundo canino.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <img
+                    src="img/beneficioMascota1.png"
+                    alt="Familia feliz con su perro"
+                    class="beneficio-imagen"
+                    loading="lazy"
+                >
+
+            </article>
+
+            <!-- BENEFICIO 3 -->
+            <article class="beneficio-card">
+
+                <div class="beneficio-info">
+
+                    <div class="beneficio-etiqueta">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>Para la sociedad</span>
+                    </div>
+
+                    <p class="beneficio-descripcion">
+                        Dpelosd también busca fomentar
+                        una convivencia más responsable
+                        entre personas y animales mediante
+                        la educación, la socialización y
+                        la creación de espacios donde los
+                        propietarios puedan compartir
+                        experiencias.
+                    </p>
+
+                </div>
+
+                <img
+                    src="img/beneficioMascota2.png"
+                    alt="Persona disfrutando con su perro"
+                    class="beneficio-imagen"
+                    loading="lazy"
+                >
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- TIENDA 
     <section class="shop-section" id="tienda">
         <div class="container">
             <div class="section-heading">
@@ -148,8 +291,8 @@
                     <h3>Alimentos</h3>
                     <p style="margin-bottom: 30px;">Opciones para cuidar su alimentación diaria.</p>
                     <a href="" class="btnTienda" id="viewProductsBtn" target="_blank">Ir a la
-                        tienda</a>
-                    <!--  <button class="add-btn" data-product="Alimento premium">Ir a la tienda</button>  -->
+                        tienda</a>-->
+                    <!--  <button class="add-btn" data-product="Alimento premium">Ir a la tienda</button>  
                 </article>
 
                 <article class="product-card">
@@ -157,8 +300,8 @@
                     <h3>Paseo y accesorios</h3>
                     <p style="margin-bottom: 30px;">Collares, correas y accesorios para salir juntos.</p>
                     <a href="" class="btnTienda" id="viewProductsBtn" target="_blank">Ir a la
-                        tienda</a>
-                    <!-- <button class="add-btn" data-product="Correa premium">Ir a la tienda</button>-->
+                        tienda</a>-->
+                    <!-- <button class="add-btn" data-product="Correa premium">Ir a la tienda</button>
                 </article>
 
                 <article class="product-card">
@@ -166,12 +309,12 @@
                     <h3>Disfraces</h3>
                     <p style="margin-bottom: 30px;">Un disfraz, mil sonrisas y un amor infinito.</p>
                     <a href="" class="btnTienda" id="viewProductsBtn" style="margin-right: 0px;" target="_blank">Ir a la
-                        tienda</a>
-                    <!--  <button class="add-btn" data-product="Correa premium">Ir a la tienda</button> -->
+                        tienda</a>-->
+                    <!--  <button class="add-btn" data-product="Correa premium">Ir a la tienda</button> 
                 </article>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- SERVICIOS -->
 
