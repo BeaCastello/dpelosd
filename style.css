@@ -2399,10 +2399,7 @@ a.btnBanner {
         margin-top: 27px;
     }
 
-    .footer-video {
-        height: 317px;
-    }
-
+    
     .footer> :not(.footer-video):not(.footer-overlay) {
         margin-left: 20px;
         margin-top: 15px;
