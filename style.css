@@ -1126,13 +1126,6 @@ width: 100%;
     }
 }
 
-
-
-
-
-
-
-
 /* CONTENEDOR DEL SLIDER */
 
 .grooming-slider-wrapper {
@@ -1766,6 +1759,23 @@ width: 100%;
     }
 
 }
+
+@media (max-width: 480px){
+
+.news-header>p {
+    font-weight: 18px;
+}
+.news-content p {
+        font-size: 18px;
+    }
+
+    
+}
+
+
+
+
+
 
 
 /* ==========================================
