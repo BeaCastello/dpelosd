@@ -480,9 +480,18 @@ a.btnBanner {
     }
 
     .benefits-grid {
-        min-height: 0px;
-        gap: 10px;
+        margin-right: 20px;
+        margin-left: 20px;
     }
+
+    .benefit-icon {
+        margin-right: 15px;
+    }
+
+    .beneficios-header p {
+        font-size: 18px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -561,7 +570,7 @@ a.btnBanner {
 .beneficios-section {
     width: 100%;
     padding: 35px 20px 30px;
-  /*  background: #eaf1e8; */
+    /*  background: #eaf1e8; */
     box-sizing: border-box;
 }
 
@@ -748,9 +757,6 @@ a.btnBanner {
 /* TABLET */
 
 @media (max-width: 1100px) {
-    .beneficios-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
     .beneficio-card {
         min-height: 320px;
@@ -803,6 +809,7 @@ a.btnBanner {
 }
 
 @media (max-width: 380px) {
+
     .beneficio-lista,
     .beneficio-descripcion {
         width: 100%;
@@ -818,7 +825,14 @@ a.btnBanner {
     }
 }
 
+@media (max-width: 1024px){
 
+.beneficio-descripcion{
+    width: 54%;
+    text-align: justify;
+}
+
+}
 
 /* FAVORITOS */
 
@@ -1345,7 +1359,7 @@ a.btnBanner {
 @media (max-width: 1024px) {
     .grooming-header {
 
-        margin-top: -60px;
+        margin-top: -20px;
     }
 
     .grooming-card {
@@ -2077,7 +2091,7 @@ a.btnBanner {
    TABLETS
 ========================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .contact-section {
         gap: 25px;
         padding: 50px 4%;
@@ -2160,6 +2174,10 @@ a.btnBanner {
 
     .form-header p {
         font-size: 13px;
+    }
+
+    .form-header h2 {
+        font-size: 22px;
     }
 }
 
@@ -2399,7 +2417,10 @@ a.btnBanner {
         margin-top: 27px;
     }
 
-    
+    .footer-video {
+        height: 317px;
+    }
+
     .footer> :not(.footer-video):not(.footer-overlay) {
         margin-left: 20px;
         margin-top: 15px;
@@ -2440,13 +2461,15 @@ a.btnBanner {
         display: flex;
         gap: 20px;
     }
-    .footer-video{
+
+    .footer-video {
         height: 550px;
         margin-top: -70px;
     }
-    .footer-links a {    
-    line-height: 1.5
-}
+
+    .footer-links a {
+        line-height: 1.5
+    }
 }
 
 
@@ -2636,12 +2659,10 @@ a.btnBanner {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(9, 32, 27, .92) 0%,
-        rgba(9, 32, 27, .45) 40%,
-        transparent 75%
-    );
+    background: linear-gradient(to top,
+            rgba(9, 32, 27, .92) 0%,
+            rgba(9, 32, 27, .45) 40%,
+            transparent 75%);
     z-index: 1;
 }
 
@@ -2697,13 +2718,13 @@ a.btnBanner {
     color: #173e35;
     font-size: 30px;
     font-weight: 800;
-   }
+}
 
-.reserva-derecha > p {
+.reserva-derecha>p {
     color: #777;
     font-size: 15px;
     line-height: 1.6;
-       }
+}
 
 /* BOTÓN CERRAR */
 .reserva-cerrar {
@@ -2730,7 +2751,8 @@ a.btnBanner {
     color: white;
     transform: rotate(90deg);
 }
-.hs-form-frame{
+
+.hs-form-frame {
     margin-top: -30px;
     margin-left: -30px;
 }
