@@ -196,6 +196,7 @@ body {
     .nav a:hover {
         background-color: #fff5cc;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -261,6 +262,10 @@ body {
 
     .nav a:hover {
         background-color: #fff5cc;
+    }
+
+    .redes-sociales {
+        margin-top: 11px;
     }
 }
 
@@ -407,8 +412,6 @@ a.btnBanner {
         background-size: contain;
         background-position: center top;
     }
-
-
 }
 
 /* BENEFITS */
@@ -509,6 +512,7 @@ a.btnBanner {
     .benefits-grid {
         display: flex;
         flex-direction: column;
+        gap: 20px;
 
     }
 
@@ -763,9 +767,16 @@ a.btnBanner {
     }
 }
 
+@media (max-width: 1024px) {
+    .beneficio-descripcion {
+        width: 54%;
+        text-align: justify;
+    }
+}
+
 /* MÓVIL */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .beneficios-section {
         padding: 50px 15px;
     }
@@ -799,16 +810,20 @@ a.btnBanner {
 
     .beneficio-lista li,
     .beneficio-descripcion {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .beneficio-imagen {
-        width: 39%;
-        height: 70%;
+        width: 40%;
+        height: 100%;
+    }
+
+    .beneficios-header p {
+        font-size: 18px;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
 
     .beneficio-lista,
     .beneficio-descripcion {
@@ -823,16 +838,26 @@ a.btnBanner {
         width: 52%;
         height: 175px;
     }
+
+    .beneficio-lista li,
+    .beneficio-descripcion {
+        font-size: 18px;
+    }
+
+    .beneficio-etiqueta span {
+        font-size: 18px;
+    }
+
+    .beneficio-descripcion {
+        width: 99%;
+    }
+    .beneficios-section {
+        padding: 30px 15px;
+    }
 }
 
-@media (max-width: 1024px){
 
-.beneficio-descripcion{
-    width: 54%;
-    text-align: justify;
-}
 
-}
 
 /* FAVORITOS */
 
@@ -1094,6 +1119,18 @@ a.btnBanner {
     font-size: 17px;
     line-height: 1.6;
 }
+
+@media (max-width: 480px) {
+    .grooming-header {
+width: 100%;
+    }
+}
+
+
+
+
+
+
 
 
 /* CONTENEDOR DEL SLIDER */
@@ -1699,6 +1736,22 @@ a.btnBanner {
 
     .news-content p {
         font-size: 15px;
+    }
+
+    #noticia3 {
+        margin-top: 20px;
+    }
+
+    #noticia4 {
+        margin-top: 20px;
+    }
+
+    #noticia5 {
+        margin-top: 40px;
+    }
+
+    #noticia8 {
+        margin-top: 18px;
     }
 }
 
