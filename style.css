@@ -851,6 +851,7 @@ a.btnBanner {
     .beneficio-descripcion {
         width: 99%;
     }
+
     .beneficios-section {
         padding: 30px 15px;
     }
@@ -1122,7 +1123,7 @@ a.btnBanner {
 
 @media (max-width: 480px) {
     .grooming-header {
-width: 100%;
+        width: 100%;
     }
 }
 
@@ -1279,11 +1280,14 @@ width: 100%;
 
 @media (max-width: 480px) {
     #service-link1 {
-        font-size: 11px;
-        padding: 0.2px 0.2px;
-        margin-top: 80px;
+        font-size: 10px;
+        padding: 0.05px;
+        margin-top: 82px;
         margin-left: 20px;
         border-radius: 3px;
+    }
+    .service-content p{
+        font-size: 18px;
     }
 }
 
@@ -1435,7 +1439,7 @@ width: 100%;
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
     .grooming-section {
         padding: 30px 0;
@@ -1451,7 +1455,7 @@ width: 100%;
     }
 
     .grooming-header h2 {
-        font-size: 25px;
+        font-size: 20px;
         line-height: 1.2;
         padding: 0px;
         margin: 0px;
@@ -1473,6 +1477,9 @@ width: 100%;
 
     .service-content {
         transform: translateY(0);
+    }
+    .grooming-kicker{
+        font-size: 18px;
     }
 
 }
@@ -1685,6 +1692,7 @@ width: 100%;
     font-size: 14px;
     font-weight: 900;
     text-decoration: none;
+
 }
 
 
@@ -1760,28 +1768,22 @@ width: 100%;
 
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
 
-.news-header>p {
-    font-weight: 18px;
-}
-.news-content p {
+    .news-header>p {
+        font-weight: 18px;
+    }
+
+    .news-content p {
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .news-link {
         font-size: 18px;
     }
 
-    
 }
-
-
-
-
-
-
-
-/* ==========================================
-   CONTACTO DE LA SECCIÓN
-========================================== */
-
 
 /* ==========================
    SECCIÓN CONTACTO
@@ -2244,7 +2246,7 @@ width: 100%;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
     .contact-section {
         padding: 30px 12px;
     }
@@ -2254,8 +2256,26 @@ width: 100%;
     }
 
     .contact-item strong {
-        font-size: 12px;
+        font-size: 18px;
     }
+
+    .contact-heading p {
+        font-size: 17px;
+        text-align: justify;
+    }
+
+    .contact-item a {
+        font-size: 14px;
+    }
+
+    .form-header p {
+        font-size: 15px;
+        text-align: justify;
+    }
+    .contact-form-container{
+        margin-top: -40px;
+    }
+
 }
 
 
@@ -2303,7 +2323,7 @@ width: 100%;
    MÓVIL
 ========================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .news-section {
         padding: 35px 0;
     }
@@ -2319,6 +2339,8 @@ width: 100%;
 
     .news-header>p {
         margin-top: 20px;
+        text-align: justify;
+        font-weight: 18px;
     }
 
     .news-grid {
@@ -2332,8 +2354,7 @@ width: 100%;
     }
 
     .news-filters {
-        display: flex;
-        flex-direction: column;
+        display: flex;       
         align-items: center;
         justify-content: center;
         gap: 8px;
