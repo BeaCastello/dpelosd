@@ -1096,6 +1096,8 @@ checkoutBtn.addEventListener("click", () => {
 renderCart();
 
 
+
+
 renderProducts();
 updateCartCount();
 
@@ -1103,3 +1105,10 @@ updateCartCount();
 if (requestedCategory) {
     scrollToProducts();
 }
+
+/* BOTÓN SEGUIR COMPRANDO */
+const continueShoppingBtn = document.getElementById("continueShoppingBtn");
+
+continueShoppingBtn.addEventListener("click", () => {
+    closeCart();
+});

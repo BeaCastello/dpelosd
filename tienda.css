@@ -49,6 +49,23 @@ a {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ICONO DEL CARRITO */
 .cart-icon-button {
     position: relative;
@@ -181,10 +198,9 @@ a {
 /* PRODUCTOS */
 .cart-items {
     padding: 16px;
-    max-height: 310px;
-    overflow-y: auto;
+    max-height: none;
+    overflow: visible;
 }
-
 .cart-item {
     display: flex;
     align-items: center;
@@ -307,6 +323,62 @@ a {
     opacity: .5;
     cursor: not-allowed;
 }
+
+.cart-dropdown {
+    position: fixed;
+    top: 75px;
+    right: 20px;
+
+    width: min(420px, calc(100vw - 30px));
+    max-height: calc(100dvh - 90px);
+
+    /* UNA SOLA BARRA DE DESPLAZAMIENTO */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px #10332930;
+    z-index: 200;
+    color: var(--green);
+
+    /* MANTENER ANIMACIÓN LATERAL */
+    transform: translateX(calc(100% + 40px));
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        visibility 0.4s;
+}
+
+/* BOTÓN SEGUIR COMPRANDO */
+.continue-shopping-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+
+    background: transparent;
+    color: #173e35;
+    border: 2px solid #173e35;
+    border-radius: 25px;
+
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* EFECTO HOVER */
+.continue-shopping-btn:hover {
+    background: #d8f1e9;
+    transform: translateY(-2px);
+}
+
 
 @media (max-width: 600px) {
     .cart-dropdown {
