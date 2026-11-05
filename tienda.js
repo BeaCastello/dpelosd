@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".add-btn").forEach(button => {
         button.addEventListener("click", () => {
             cart++;
-            cartCount.textContent = cart;
+            cartNumber.textContent = cart;
 
             const originalText = button.textContent;
             button.textContent = "✓ Añadido al carrito";
@@ -833,36 +833,247 @@ function renderProducts() {
 
 // CARRITO
 
+
+/* CARRITO DESPLEGABLE DPELOSD */
+
 const cartButton = document.getElementById("cartCount");
 const cartBadge = document.getElementById("addCartBtn");
+const cartDropdown = document.getElementById("cartDropdown");
+const cartOverlay = document.getElementById("cartOverlay");
+const closeCartButton = document.getElementById("closeCart");
+const cartItems = document.getElementById("cartItems");
+const cartSubtotal = document.getElementById("cartSubtotal");
+const cartTotal = document.getElementById("cartTotal");
+const checkoutBtn = document.getElementById("checkoutBtn");
 
-function updateCartCount() {
-    cartBadge.textContent = cart;
+const CART_KEY = "dpelosd_carrito";
+
+function loadCart() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(CART_KEY));
+        if (!Array.isArray(saved)) return [];
+
+        return saved.filter(item =>
+            products.some(p => p.id === item.id) &&
+            Number.isInteger(item.quantity) &&
+            item.quantity > 0
+        ).map(item => ({
+            id: item.id,
+            quantity: item.quantity
+        }));
+    } catch {
+        return [];
+    }
 }
 
-productGrid.addEventListener("click", event => {
-    const button = event.target.closest(".add-btn");
+let cartItemsData = loadCart();
 
-    if (!button || button.disabled) return;
+const euro = value => value.toLocaleString("es-ES", {
+    style: "currency",
+    currency: "EUR"
+});
 
-    const productId = Number(button.dataset.productId);
-    const product = products.find(
-        item => item.id === productId
+function saveCart() {
+    localStorage.setItem(
+        CART_KEY,
+        JSON.stringify(cartItemsData)
     );
+}
 
+function updateCartCount() {
+    const count = cartItemsData.reduce(
+        (sum, item) => sum + item.quantity, 0
+    );
+    cartBadge.textContent = count;
+}
+
+function renderCart() {
+    cartItems.replaceChildren();
+
+    let subtotal = 0;
+
+    if (cartItemsData.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "cart-empty";
+        empty.textContent = "🐾 Tu carrito está vacío";
+        cartItems.appendChild(empty);
+    }
+
+    cartItemsData.forEach(item => {
+        const product = products.find(p => p.id === item.id);
+        if (!product) return;
+
+        subtotal += product.price * item.quantity;
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        const image = document.createElement("img");
+        image.src = product.image;
+        image.alt = product.name;
+
+        const info = document.createElement("div");
+        info.className = "cart-item-info";
+
+        const name = document.createElement("h4");
+        name.textContent = product.name;
+
+        const price = document.createElement("p");
+        price.textContent = euro(product.price * item.quantity);
+
+        const quantity = document.createElement("div");
+        quantity.className = "cart-quantity";
+
+        const minus = document.createElement("button");
+        minus.type = "button";
+        minus.textContent = "−";
+        minus.setAttribute("aria-label", "Reducir cantidad");
+
+        const number = document.createElement("span");
+        number.textContent = item.quantity;
+
+        const plus = document.createElement("button");
+        plus.type = "button";
+        plus.textContent = "+";
+        plus.setAttribute("aria-label", "Aumentar cantidad");
+
+        minus.addEventListener("click", () =>
+            changeQuantity(item.id, -1)
+        );
+        plus.addEventListener("click", () =>
+            changeQuantity(item.id, 1)
+        );
+
+        quantity.append(minus, number, plus);
+        info.append(name, price, quantity);
+
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "cart-remove";
+        const iconoEliminar = document.createElement("img");
+        iconoEliminar.src = "img/icono_eliminar.png";
+        iconoEliminar.alt = "";
+       iconoEliminar.className = "delete-icon";
+
+remove.appendChild(iconoEliminar);
+        remove.addEventListener("click", () =>
+            removeFromCart(item.id)
+        );
+
+        row.append(image, info, remove);
+        cartItems.appendChild(row);
+    });
+
+    // Tarifa fija de envío
+const shippingCost = cartItemsData.length > 0 ? 4.99 : 0;
+
+// Calcular total con envío
+const total = subtotal + shippingCost;
+
+// Actualizar precios
+cartSubtotal.textContent = euro(subtotal);
+document.getElementById("cartShipping").textContent = euro(shippingCost);
+cartTotal.textContent = euro(total);
+    checkoutBtn.disabled = cartItemsData.length === 0;
+    updateCartCount();
+}
+
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
     if (!product || !product.stock) return;
 
-    cart++;
+    const existing = cartItemsData.find(item => item.id === id);
 
-    updateCartCount();
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cartItemsData.push({ id, quantity: 1 });
+    }
+
+    saveCart();
+    renderCart();
+}
+
+function changeQuantity(id, difference) {
+    const item = cartItemsData.find(p => p.id === id);
+    if (!item) return;
+
+    item.quantity += difference;
+
+    if (item.quantity <= 0) {
+        removeFromCart(id);
+        return;
+    }
+
+    saveCart();
+    renderCart();
+}
+
+function removeFromCart(id) {
+    cartItemsData = cartItemsData.filter(p => p.id !== id);
+    saveCart();
+    renderCart();
+}
+
+
+/* ABRIR CARRITO CON ANIMACIÓN */
+function openCart() {
+    renderCart();
+
+    cartDropdown.classList.add("is-open");
+    cartOverlay.classList.add("is-visible");
+
+    cartButton.setAttribute("aria-expanded", "true");
+    cartDropdown.setAttribute("aria-hidden", "false");
+
+    closeCartButton.focus();
+}
+
+/* CERRAR CARRITO CON ANIMACIÓN */
+function closeCart() {
+    cartDropdown.classList.remove("is-open");
+    cartOverlay.classList.remove("is-visible");
+
+    cartButton.setAttribute("aria-expanded", "false");
+    cartDropdown.setAttribute("aria-hidden", "true");
+
+    cartButton.focus();
+}
+
+
+cartButton.addEventListener("click", () => {
+    if (cartDropdown.classList.contains("is-open")) {
+        closeCart();
+    } else {
+        openCart();
+    }
+});
+
+closeCartButton.addEventListener("click", closeCart);
+cartOverlay.addEventListener("click", closeCart);
+
+document.addEventListener("keydown", event => {
+    if (
+        event.key === "Escape" &&
+        cartDropdown.classList.contains("is-open")
+    ) {
+        closeCart();
+    }
+});
+
+/* AÑADIR PRODUCTOS DESDE EL CATÁLOGO */
+productGrid.addEventListener("click", event => {
+    const button = event.target.closest(".add-btn");
+    if (!button || button.disabled) return;
+
+    const id = Number(button.dataset.productId);
+    addToCart(id);
 
     const originalText = button.textContent;
-
     button.textContent = "✓ Añadido al carrito";
     button.disabled = true;
 
     setTimeout(() => {
-        // Solo restaurar el botón si sigue en el catálogo
         if (button.isConnected) {
             button.textContent = originalText;
             button.disabled = false;
@@ -870,30 +1081,20 @@ productGrid.addEventListener("click", event => {
     }, 1400);
 });
 
-// Consultar el carrito
-cartButton.addEventListener("click", () => {
-    if (cart === 0) {
-        alert("Tu carrito está vacío 🐾");
-    } else {
-        alert(
-            `Tienes ${cart} producto${cart !== 1 ? "s" : ""} en el carrito 🛒`
-        );
-    }
+/* FINALIZAR COMPRA */
+checkoutBtn.addEventListener("click", () => {
+    const payment = document.querySelector(
+        'input[name="payment"]:checked'
+    ).value;
+
+    alert(
+        "Método seleccionado: " + payment +
+        "\nEl pago todavía no está conectado."
+    );
 });
 
-// INICIALIZAR TIENDA
+renderCart();
 
-
-/* INICIALIZAR TIENDA */
-
-readFilters();
-
-sortMenu.querySelector(
-    '[data-sort="bestsellers"]'
-).classList.add("active");
-
-updateCategoryBreadcrumb();
-updateActiveCategory();
 
 renderProducts();
 updateCartCount();

@@ -34,17 +34,90 @@
                 <a href="tienda.html?categoria=disfraces">Disfraces</a>
             </nav>
 
-            <div class="nav-actions">
-                <button class="icon-btn" id="searchBtn" aria-label="Buscar">⌕</button>
-                <button class="icon-btn" aria-label="Mi cuenta"><img src="img/persona.png"
-                        style="width: 15px; margin-top: 1px;"></button>
-                <img src="img/carrito.png" style="width: 22px; height: 22px; margin-top: 15px;"> <button
-                    class="cart-btn" id="cartCount" aria-label="Carrito">
-                    <span class="cart-count" id="addCartBtn">0</span>
-                </button>
-            </div>
+            <button class="cart-icon-button" id="cartCount" type="button" aria-label="Abrir carrito"
+                aria-expanded="false" aria-controls="cartDropdown">
+                <img src="img/carrito.png" alt="" width="22">
+                <span class="cart-count" id="addCartBtn">0</span>
+            </button>
         </div>
     </header>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-dropdown" id="cartDropdown"
+       aria-label="Carrito de compra"
+       aria-hidden="true">
+
+        <div class="cart-header">
+            <h2>🛒 Mi carrito</h2>
+            <button id="closeCart" type="button" aria-label="Cerrar carrito">×</button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        
+<div class="cart-footer">
+
+    <!-- SUBTOTAL -->
+    <div class="cart-total">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">0,00 €</strong>
+    </div>
+
+    <!-- GASTOS DE ENVÍO -->
+    <div class="cart-total">
+        <span>🚚 Gastos de envío</span>
+        <strong id="cartShipping">4,99 €</strong>
+    </div>
+
+    <hr class="cart-divider">
+
+    <!-- TOTAL -->
+    <div class="cart-total cart-final-total">
+        <span>Total</span>
+        <strong id="cartTotal">0,00 €</strong>
+    </div>
+
+    <hr class="cart-divider">
+
+    <!-- MÉTODOS DE PAGO -->
+    <h3>Método de pago</h3>
+
+    <div class="cart-payment">
+
+        <label>
+            <input type="radio" name="payment"
+                   value="tarjeta" checked>
+            💳 Tarjeta bancaria
+        </label>
+
+        <label>
+            <input type="radio" name="payment"
+                   value="paypal">
+            PayPal
+        </label>
+
+        <label>
+            <input type="radio" name="payment"
+                   value="transferencia">
+            🏦 Transferencia bancaria
+        </label>
+
+    </div>
+
+    <!-- FINALIZAR COMPRA -->
+    <button class="checkout-btn" id="checkoutBtn"
+            type="button">
+        Finalizar compra
+    </button>
+
+</div>
+
+    </aside>
+
+
+
+
 
     <!-- PROMO-->
 
