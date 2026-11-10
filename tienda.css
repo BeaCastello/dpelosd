@@ -1,14 +1,5 @@
 :root {
-    --green: #173e35;
-    --green-light: #28594b;
-    --yellow: #f7bd45;
-    --yellow-dark: #e6a92f;
-    --cream: #fbf8f0;
-    --white: #ffffff;
-    --text: #183b34;
-    --muted: #66736f;
-    --border: #e7e2d8;
-    --shadow: 0 14px 35px rgba(23, 62, 53, 0.12);
+    background-color: rgb(247, 244, 240);
 }
 
 * {
@@ -48,37 +39,9 @@ a {
     margin: 0 auto;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ICONO DEL CARRITO */
-.cart-icon-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-}
 
-.cart-icon-button .cart-count {
+.cart-icon-button  {
     position: absolute;
     top: -3px;
     right: -8px;
@@ -101,78 +64,6 @@ a {
     background: rgba(0, 0, 0, .35);
     z-index: 199;
 }
-
-
-/* PANEL DESPLEGABLE */
-/* CARRITO CON ANIMACIÓN LATERAL */
-.cart-dropdown {
-    position: fixed;
-    top: 75px;
-    right: 20px;
-
-    width: min(420px, calc(100vw - 30px));
-    max-height: calc(100dvh - 90px);
-    overflow-y: auto;
-
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 15px 45px #10332930;
-    z-index: 200;
-    color: var(--green);
-
-    /* Estado inicial: fuera de la pantalla */
-    transform: translateX(calc(100% + 40px));
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    /* Animación */
-    transition:
-        transform 0.4s ease,
-        opacity 0.4s ease,
-        visibility 0.4s;
-}
-
-/* CARRITO ABIERTO */
-.cart-dropdown.is-open {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-/* ANIMACIÓN DEL FONDO OSCURO */
-.cart-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 199;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s;
-}
-
-.cart-overlay.is-visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-/* ADAPTACIÓN A MÓVILES */
-@media (max-width: 600px) {
-    .cart-dropdown {
-        top: 10px;
-        right: 10px;
-        max-height: calc(100dvh - 20px);
-    }
-}
-
-
 
 /* CABECERA */
 .cart-header {
