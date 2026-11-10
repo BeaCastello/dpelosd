@@ -292,8 +292,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    animation: moverTexto 20s linear infinite;
-    overflow: hidden;
+    animation: moverTexto 25s linear infinite;    
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -322,7 +321,7 @@ body {
 
 @media (max-width: 600px) {
     .promo-bar {
-        height: 50px;
+        height: 30px;
     }
 
     .promo-text {
@@ -343,7 +342,7 @@ body {
     position: relative;
     width: 100%;
     height: 490px;
-    background-image: url("img/bannerDpelosd2.png");
+    background-image: url("img/bannerInicio.png");
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
@@ -1242,7 +1241,7 @@ a.btnBanner {
     text-decoration: none;
     background-color: #f7bd45;
     padding: 10px 10px;
-    margin-top: 297px;
+    margin-top: 275px;
     margin-left: 70px;
     border-radius: 10px;
 }
@@ -1268,9 +1267,9 @@ a.btnBanner {
 
 @media (max-width: 480px) {
     #service-link1 {
-        font-size: 10px;
-        padding: 0.05px;
-        margin-top: 82px;
+        font-size: 9.9px;
+        padding: 1.3px;
+        margin-top: 74.5px;
         margin-left: 20px;
         border-radius: 3px;
     }
