@@ -44,80 +44,81 @@
 
     <div class="cart-overlay" id="cartOverlay"></div>
 
-<aside class="cart-dropdown" id="cartDropdown"
-       aria-label="Carrito de compra"
-       aria-hidden="true">
+    <aside class="cart-dropdown" id="cartDropdown" aria-label="Carrito de compra" aria-hidden="true">
 
         <div class="cart-header">
-            <h2>🛒 Mi carrito</h2>
+            <h2> <img src="img/patas de perro.png" alt="" width="24"> Mi carrito</h2>
             <button id="closeCart" type="button" aria-label="Cerrar carrito">×</button>
         </div>
 
         <div class="cart-items" id="cartItems"></div>
 
-        
-<div class="cart-footer">
 
-    <!-- SUBTOTAL -->
-    <div class="cart-total">
-        <span>Subtotal</span>
-        <strong id="cartSubtotal">0,00 €</strong>
-    </div>
+        <div class="cart-footer">
 
-    <!-- GASTOS DE ENVÍO -->
-    <div class="cart-total">
-        <span>🚚 Gastos de envío</span>
-        <strong id="cartShipping">4,99 €</strong>
-    </div>
+            <!-- SUBTOTAL -->
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <strong id="cartSubtotal">0,00 €</strong>
+            </div>
 
-    <hr class="cart-divider">
+            <!-- GASTOS DE ENVÍO -->
+            <div class="cart-total">
+                <span><img src="img/carro.png" style="width:30px" ;> Gastos de envío</span>
+                <strong id="cartShipping">4,99 €</strong>
+            </div>
 
-    <!-- TOTAL -->
-    <div class="cart-total cart-final-total">
-        <span>Total</span>
-        <strong id="cartTotal">0,00 €</strong>
-    </div>
+            <hr class="cart-divider">
 
-    <hr class="cart-divider">
+            <!-- TOTAL -->
+            <div class="cart-total cart-final-total">
+                <span>Total</span>
+                <strong id="cartTotal">0,00 €</strong>
+            </div>
 
-    <!-- MÉTODOS DE PAGO -->
-    <h3>Método de pago</h3>
+            <hr class="cart-divider">
 
-    <div class="cart-payment">
+            <img src="img/bannerPago.png" style="width: 100%; margin-top: 10px;">
 
-        <label>
-            <input type="radio" name="payment"
-                   value="tarjeta" checked>
-            💳 Tarjeta bancaria
-        </label>
+            <!-- MÉTODOS DE PAGO -->
+            <h3 style="margin-top: 20px; font-weight: bolder;">Método de pago</h3>
 
-        <label>
-            <input type="radio" name="payment"
-                   value="paypal">
-            PayPal
-        </label>
+            <div class="cart-payment">
 
-        <label>
-            <input type="radio" name="payment"
-                   value="transferencia">
-            🏦 Transferencia bancaria
-        </label>
+                <label>
+                    <input type="radio" name="payment" value="tarjeta" checked>
+                    Tarjeta bancaria
+                </label>
 
-    </div>
+                <label>
+                    <input type="radio" name="payment" value="paypal">
+                    PayPal
+                </label>
 
-    <!-- FINALIZAR COMPRA -->
-    <button class="checkout-btn" id="checkoutBtn"
-            type="button">
-        Finalizar compra
-    </button>
+                <label>
+                    <input type="radio" name="payment" value="transferencia">
+                    Transferencia bancaria
+                </label>
 
-    <!-- BOTÓN SEGUIR COMPRANDO -->
-<button class="continue-shopping-btn" id="continueShoppingBtn"
-        type="button">
-    Seguir comprando
-</button>
+            </div>
+            <!-- FINALIZAR COMPRA -->
+            <button class="checkout-btn" id="checkoutBtn" type="button">
+                Finalizar compra
+            </button>
 
-</div>
+            <!-- BOTÓN SEGUIR COMPRANDO -->
+            <button class="continue-shopping-btn" id="continueShoppingBtn" type="button">
+                Seguir comprando
+            </button>
+
+            <div style="display: flex;"><img src="img/carro.png" style="width:40px" ;>
+            <div>
+                <h3>Envíos a todo el país</h3>
+                <p>Rápidos y seguros</p>
+            </div>
+            </div>
+
+        </div>
 
     </aside>
 
@@ -410,7 +411,8 @@
             </div>
 
             <div class="empty-products" id="emptyProducts" hidden>
-                <span class="empty-icon">🐾</span>
+                <span class="empty-icon"><img src="img/patas de perro.png" alt="Pata de perro"
+                        style="width: 26px; height: 20px; vertical-align: middle;"></span>
                 <h2>No encontramos productos</h2>
                 <p>Prueba a cambiar los filtros para ver más productos.</p>
                 <button class="reset-filters" id="resetEmpty">

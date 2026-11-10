@@ -292,7 +292,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    animation: moverTexto 24s linear infinite;
+    animation: moverTexto 20s linear infinite;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     white-space: nowrap;

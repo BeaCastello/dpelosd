@@ -179,12 +179,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background: #d8f1e9;
+    padding: 10px;
+    background: #103329;
 }
 
 .cart-header h2 {
-    font-size: 22px;
+    font-size: 18px;
+    color:white;
 }
 
 .cart-header button {
@@ -192,7 +193,7 @@ a {
     background: transparent;
     font-size: 30px;
     cursor: pointer;
-    color: var(--green);
+    color: white;
 }
 
 /* PRODUCTOS */
@@ -219,6 +220,7 @@ a {
 .cart-item-info {
     flex: 1;
     min-width: 0;
+    margin-left: 60px;
 }
 
 .cart-item-info h4 {
@@ -309,7 +311,7 @@ a {
     padding: 15px;
     border: none;
     border-radius: 25px;
-    background: var(--green);
+    background:#103329;
     color: white;
     font-weight: 800;
     cursor: pointer;
@@ -362,7 +364,7 @@ a {
 
     background: transparent;
     color: #173e35;
-    border: 2px solid #173e35;
+    border: 2px solid #103329;
     border-radius: 25px;
 
     font-family: "Nunito", sans-serif;
@@ -578,9 +580,9 @@ a {
   background: #e1f4ed;
 }
 .category-card.is-active {
-    background-color: #CBF1E4;
+    background-color:#103329;
     border: 2px solid #103329;
-    color: #103329;
+    color: #f8faf9;
     font-weight: 700;
 }
 
@@ -1100,8 +1102,8 @@ a {
 
 /* IMAGEN DEL ICONO ELIMINAR */
 .cart-remove .delete-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 18px;
     object-fit: contain;
     transition: transform 0.2s ease;
 }
@@ -1522,7 +1524,7 @@ a {
     padding: 12px 10px;
     border: 1px solid #292929;
     border-radius: 4px;
-    background: #292929;
+    background: #103329;
     color: #fff;
     font: inherit;
     font-size: 13px;
@@ -1530,9 +1532,8 @@ a {
     transition: background .2s, color .2s, border-color .2s;
 }
 
-.add-btn:hover {
-    background: #80583f;
-    border-color: #80583f;
+.add-btn:hover {   
+    border-color: #2c6b59;
 }
 
 .add-btn:disabled {

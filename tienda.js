@@ -895,7 +895,12 @@ function renderCart() {
     if (cartItemsData.length === 0) {
         const empty = document.createElement("p");
         empty.className = "cart-empty";
-        empty.textContent = "🐾 Tu carrito está vacío";
+       empty.innerHTML = `
+    <img src="img/patas de perro.png"
+         alt="Pata de perro"
+         style="width: 26px; height: 20px; vertical-align: middle;">
+    Tu carrito está vacío
+`;
         cartItems.appendChild(empty);
     }
 
