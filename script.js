@@ -355,26 +355,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero");
 
-   const hero = document.querySelector(".hero");
+    if (!hero) return;
 
-if (hero) {
     const imagen = new Image();
 
-    const mostrarBanner = () => {
+    const mostrarBoton = () => {
         hero.classList.add("hero-loaded");
     };
 
-    imagen.onload = mostrarBanner;
-    imagen.onerror = mostrarBanner;
+    imagen.onload = mostrarBoton;
+    imagen.onerror = mostrarBoton;
 
+    // Debe coincidir con la URL del background-image
     imagen.src = "URL_REAL_DEL_BANNER";
 
     if (imagen.complete) {
-        mostrarBanner();
+        mostrarBoton();
     }
-}
 });
-
     
