@@ -2797,3 +2797,13 @@ body {
         right: 12px;
     }
 }
+
+/* Ocultar el banner hasta que la imagen esté lista */
+.hero {
+    visibility: hidden;
+}
+
+/* Mostrar imagen y botón juntos */
+.hero.hero-loaded {
+    visibility: visible;
+}
