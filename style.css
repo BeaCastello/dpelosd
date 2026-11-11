@@ -196,7 +196,7 @@ body {
     .nav a:hover {
         background-color: #fff5cc;
     }
-    
+
 }
 
 @media (max-width: 480px) {
@@ -225,11 +225,11 @@ body {
         transition: 0.3s;
     }
 
-       .menu-toggle.active {
+    .menu-toggle.active {
         visibility: hidden;
     }
 
-        .nav {
+    .nav {
         display: none;
         position: absolute;
         top: 100%;
@@ -263,7 +263,8 @@ body {
     .redes-sociales {
         margin-top: 11px;
     }
-    .nav-actions{
+
+    .nav-actions {
         margin-right: 20px;
     }
 }
@@ -293,7 +294,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    animation: moverTexto 25s linear infinite;    
+    animation: moverTexto 25s linear infinite;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -314,7 +315,12 @@ body {
     }
 }
 
-@media (max-width: 600px) {
+.spanPromo {
+    color: #ffd700;
+    margin-left: -10px
+}
+
+@media (max-width: 480px) {
     .promo-bar {
         height: 30px;
     }
@@ -327,6 +333,11 @@ body {
     .promo-text img {
         width: 25px;
         height: 25px;
+    }
+
+    .spanPromo {
+        color: #ffd700;
+        margin-left: -5px
     }
 }
 
@@ -1219,7 +1230,8 @@ body {
         margin-left: 20px;
         border-radius: 3px;
     }
-    .service-content p{
+
+    .service-content p {
         font-size: 18px;
     }
 }
@@ -1410,7 +1422,8 @@ body {
     .service-content {
         transform: translateY(0);
     }
-    .grooming-kicker{
+
+    .grooming-kicker {
         font-size: 18px;
     }
 
@@ -2166,7 +2179,8 @@ body {
         font-size: 15px;
         text-align: justify;
     }
-    .contact-form-container{
+
+    .contact-form-container {
         margin-top: -40px;
     }
 
@@ -2241,7 +2255,7 @@ body {
     }
 
     .news-filters {
-        display: flex;       
+        display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
@@ -2260,6 +2274,7 @@ body {
         flex-shrink: 0;
     }
 }
+
 @media (max-width: 480px) {
     .news {
         display: flex;
@@ -2430,7 +2445,7 @@ body {
     }
 
     .footer-video {
-        height: 550px;        
+        height: 550px;
     }
 
     .footer-links a {
