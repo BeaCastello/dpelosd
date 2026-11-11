@@ -1256,7 +1256,6 @@ body {
     color: #173e35;
     font-size: 25px;
     cursor: pointer;
-
     box-shadow:
         0 8px 25px rgba(0, 0, 0, .15);
     transform: translateY(-50%);
@@ -1417,9 +1416,7 @@ body {
 
 }
 
-/* ==========================================
-   CONSEJOS Y NOTICIAS
-========================================== */
+/* CONSEJOS Y NOTICIAS */
 
 .news-section {
     position: relative;
@@ -1459,7 +1456,6 @@ body {
     letter-spacing: 2px;
 }
 
-
 .news-title h2 {
     margin: 0;
     color: #173e35;
@@ -1468,7 +1464,6 @@ body {
     letter-spacing: -2px;
     font-weight: 900;
 }
-
 
 .news-title h2 span {
     color: rgb(255, 123, 0);
@@ -1581,7 +1576,6 @@ body {
     padding: 25px;
 }
 
-
 .news-meta {
     display: flex;
     justify-content: space-between;
@@ -1611,10 +1605,7 @@ body {
     line-height: 1.6;
 }
 
-
-/* ==========================================
-   LINK
-========================================== */
+/* LINK */
 
 .news-link {
     display: inline-flex;
@@ -1624,9 +1615,7 @@ body {
     font-size: 14px;
     font-weight: 900;
     text-decoration: none;
-
 }
-
 
 .news-link span {
     font-size: 20px;
@@ -1634,17 +1623,13 @@ body {
         transform .25s ease;
 }
 
-
 .news-link:hover span {
     transform: translateX(6px);
 
     color: #e6ad36;
 }
 
-
-/* ==========================================
-   ANIMACIÓN
-========================================== */
+/* ANIMACIÓN  */
 
 @keyframes newsAppear {
 
@@ -1697,7 +1682,6 @@ body {
     .news-meta {
         font-size: 12.2px;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -1717,9 +1701,7 @@ body {
 
 }
 
-/* ==========================
-   SECCIÓN CONTACTO
-========================== */
+/* SECCIÓN CONTACTO */
 
 .contact-section {
     display: grid;
@@ -1733,9 +1715,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* ==========================
-   COLUMNA IZQUIERDA
-========================== */
+/* COLUMNA IZQUIERDA */
 
 .contact-left {
     position: relative;
@@ -1777,9 +1757,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* ==========================
-   TARJETAS DE CONTACTO
-========================== */
+/* TARJETAS DE CONTACTO */
 
 .contact-info {
     display: flex;
@@ -1837,9 +1815,7 @@ body {
     text-decoration: underline;
 }
 
-/* ==========================
-   REDES SOCIALES
-========================== */
+/* REDES SOCIALES */
 
 .contact-social {
     margin-top: 30px;
@@ -1885,9 +1861,7 @@ body {
     background: #103329;
 }
 
-/* ==========================
-   IMAGEN DEL PERRO
-========================== */
+/* IMAGEN DEL PERRO */
 
 .contact-dog {
     position: absolute;
@@ -1905,9 +1879,7 @@ body {
     display: block;
 }
 
-/* ==========================
-   COLUMNA DERECHA
-========================== */
+/* COLUMNA DERECHA */
 
 .contact-right {
     background: white;
@@ -1953,9 +1925,7 @@ body {
     margin: 0;
 }
 
-/* ==========================
-   FORMULARIO
-========================== */
+/* FORMULARIO */
 
 .contact-form {
     display: flex;
@@ -2027,9 +1997,7 @@ body {
     resize: vertical;
 }
 
-/* ==========================
-   POLÍTICA DE PRIVACIDAD
-========================== */
+/* POLÍTICA DE PRIVACIDAD */
 
 .privacy {
     display: flex;
@@ -2056,9 +2024,7 @@ body {
     text-decoration: underline;
 }
 
-/* ==========================
-   BOTÓN ENVIAR
-========================== */
+/* BOTÓN ENVIAR */
 
 .contact-submit {
     display: flex;
@@ -2084,9 +2050,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ==========================
-   TABLETS
-========================== */
+/* TABLETS */
 
 @media (max-width: 1024px) {
     .contact-section {
@@ -2108,9 +2072,7 @@ body {
     }
 }
 
-/* ==========================
-   MÓVILES
-========================== */
+/* MÓVILES */
 
 @media (max-width: 768px) {
     .contact-section {
@@ -2210,10 +2172,7 @@ body {
 
 }
 
-
-/* ==========================================
-   FOOTER DE LA SECCIÓN
-========================================== */
+/* FOOTER DE LA SECCIÓN */
 
 .news-footer {
     display: flex;
@@ -2249,11 +2208,7 @@ body {
     transform: translateY(-3px);
 }
 
-
-
-/* ==========================================
-   MÓVIL
-========================================== */
+/* MÓVIL */
 
 @media (max-width: 480px) {
     .news-section {
@@ -2305,8 +2260,6 @@ body {
         flex-shrink: 0;
     }
 }
-
-
 @media (max-width: 480px) {
     .news {
         display: flex;
@@ -2381,7 +2334,6 @@ body {
     z-index: 0;
 }
 
-
 /* ELIMINA LA CAPA OSCURA */
 
 .footer-overlay {
@@ -2409,7 +2361,6 @@ body {
     color: #f7bd45;
     font-weight: 900;
 }
-
 
 /* ENLACES */
 
@@ -2598,8 +2549,6 @@ body {
     outline: 3px solid #173e35;
     outline-offset: 3px;
 }
-
-
 
 /* FONDO DEL MODAL */
 .reserva-modal {
