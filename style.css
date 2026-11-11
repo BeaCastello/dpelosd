@@ -356,6 +356,22 @@ body {
     background-size: cover;
     background-position: center top;
 }
+/* El banner siempre mantiene su espacio */
+.hero {
+    visibility: visible;
+}
+
+/* El botón espera a que cargue la imagen */
+.hero #service-link1 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Mostrar el botón cuando la imagen esté lista */
+.hero.hero-loaded #service-link1 {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* BANNER TABLET */
 @media (max-width: 1024px) {
