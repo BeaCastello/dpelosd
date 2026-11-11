@@ -726,7 +726,7 @@ body {
 
 @media (max-width: 768px) {
     .beneficios-section {
-        padding: 50px 15px;
+        padding: 40px 15px;
     }
 
     .beneficios-header {
@@ -1071,7 +1071,22 @@ body {
     }
 }*/
 
+.grooming-header {
+    margin-left: 40px;
+}
+
 /* CONTENEDOR DEL SLIDER */
+
+.grooming-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: rgb(255, 123, 0);
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
 
 .grooming-slider-wrapper {
     position: relative;
@@ -1206,7 +1221,7 @@ body {
 @media (max-width: 1024px) {
     #service-link1 {
         padding: 5px 5px;
-        margin-top: 222px;
+        margin-top: 207px;
         margin-left: 50px;
         border-radius: 3px;
     }
@@ -1219,6 +1234,12 @@ body {
         margin-top: 155px;
         margin-left: 40px;
         border-radius: 3px;
+    }
+
+    .grooming-header {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: -10px;
     }
 }
 
@@ -1335,11 +1356,6 @@ body {
 /*  TABLET */
 
 @media (max-width: 1024px) {
-    .grooming-header {
-
-        margin-top: -20px;
-    }
-
     .grooming-card {
         flex-basis: 250px;
         height: 420px;
@@ -1381,6 +1397,10 @@ body {
         margin: 0 0 10px;
     }
 
+    .news-header>p {
+        margin-right: 10px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1392,10 +1412,6 @@ body {
 
     .product-card {
         width: 80%;
-    }
-
-    .grooming-header {
-        margin-top: -45px;
     }
 
     .grooming-header h2 {
@@ -1433,15 +1449,13 @@ body {
 
 .news-section {
     position: relative;
-    padding: 90px 0;
     background: #ffffff;
     overflow: hidden;
-
 }
 
 .news-container {
     width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
+    margin-left: 40px;
 }
 
 
@@ -1451,11 +1465,13 @@ body {
     justify-content: space-between;
     gap: 50px;
     margin-bottom: 45px;
+
 }
 
 
 .news-title {
     flex-shrink: 0;
+    margin-top: 30px;
 }
 
 
@@ -1531,6 +1547,7 @@ body {
     grid-template-columns:
         repeat(3, 1fr);
     gap: 25px;
+    margin-bottom: 40px;
 }
 
 .news-card {
