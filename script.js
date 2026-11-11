@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imagen.onerror = mostrarBoton;
 
     // Debe coincidir con la URL del background-image
-    imagen.src = "URL_REAL_DEL_BANNER";
+    imagen.src = "img/bannerInicio.webp";
 
     if (imagen.complete) {
         mostrarBoton();
